@@ -84,7 +84,7 @@
                                     Nama lengkap pemohon
                                     <span class="danger">*</span>
                                   </label>
-                                  <input type="text" class="form-control required" id="firstName3" name="firstName">
+                                  <input type="text" class="form-control required" id="firstName3" name="nama_lengkap" placeholder="Nama lengkap">
                                 </div>
                               </div>
                               <div class="col-md-12">
@@ -94,7 +94,7 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea type="text" class="form-control required" id="lastName3" rows="5"
-                                    name="lastName"></textarea>
+                                    name="alamat_pemohon" placeholder="Alamat"></textarea>
                                 </div>
                               </div>
                             </div>
@@ -116,39 +116,44 @@
                                     </tr>
                                     <tr>
                                       <td>Bangunan &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
-                                          
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="nilai_bangungan" placeholder="Nilai bangunan"></td>
+
                                     </tr>
                                     <tr>
                                       <td>Mesin - mesin &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="nilai_mesin" placeholder="Nilai mesin - mesin"></td>
                                     </tr>
                                     <tr>
                                       <td>Persedian barang - barang &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="nilai_barang" placeholder="Nilai barang - barang"></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Barang - barang dagangan &nbsp;</td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="nilai_dagangan" placeholder="Nilai barang dagangan"></td>
                                     </tr>
                                     <tr>
                                       <td>Perabot rumah tangga &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="nilai_perabot_rumah" placeholder="Nilai perabot rumah"></td>
                                     </tr>
                                     <tr>
                                       <td>Perabot kantor/toko/gudang &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="nilai_perabot_kantor" placeholder="Nilai perabot kantor/toko/gudang"></td>
                                     </tr>
                                     <tr>
                                       <td>Dan lain lain &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="nilai_lain" placeholder="Nilai lain - lain"></td>
                                     </tr>
                                     <tr>
                                       <td>Total &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="total_keseluruhan" placeholder="Total keseluruhan"></td>
                                     </tr>
                                   </table>
 
@@ -345,7 +350,7 @@
 
                                     <tr>
                                       <td> <label for="emailAddress5">Jenis alat pemadam kebakaran yang dimiliki &nbsp;
-                                      <span class="danger">*</span></label>
+                                          <span class="danger">*</span></label>
                                       </td>
                                       <td> <input type="email" class="form-control required" id="emailAddress5"
                                           name="emailAddress"></td>
@@ -354,8 +359,9 @@
 
                                     </tr>
                                     <tr>
-                                      <td> <label for="emailAddress5">Jarak pos pemadam kebakaran dari lokasi yang dipertanggungkan   <span class="danger">*</span> &nbsp;</label></td>
-                                      <td> <input  type="email" class="form-control required" id="emailAddress5"
+                                      <td> <label for="emailAddress5">Jarak pos pemadam kebakaran dari lokasi yang
+                                          dipertanggungkan <span class="danger">*</span> &nbsp;</label></td>
+                                      <td> <input type="email" class="form-control required" id="emailAddress5"
                                           name="emailAddress"></td>
                                     </tr>
                                   </table>
@@ -373,16 +379,28 @@
                                     Apakah tersimpan barang milik orang lain dalam bangunan yang akan dipertanggungkan ?
                                     <span class="danger">*</span>
                                   </label>
-                                  <textarea placeholder="jika iya, beri penjalasan" rows="4" class="form-control required" id="eventName3" name="eventName"></textarea>
+                                  <textarea placeholder="jika iya, beri penjalasan" rows="4"
+                                    class="form-control required" id="eventName3" name="eventName"></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
-                                   Apakah harta benda yang akan dipertanggungkan di atas telah dipertanggungkan kepada perusahan asuransi lain ?
+                                    Apakah harta benda yang akan dipertanggungkan di atas telah dipertanggungkan kepada
+                                    perusahan asuransi lain ?
                                     <span class="danger">*</span>
                                   </label>
-                                  <textarea placeholder="jika iya, beri penjalasan. sebutkan perusahaan, jangka waktu dan nomor polisnya" rows="4" class="form-control required" id="eventName3" name="eventName"></textarea>
+                                  <textarea
+                                    placeholder="jika iya, beri penjalasan. sebutkan perusahaan, jangka waktu dan nomor polisnya"
+                                    rows="4" class="form-control required" id="eventName3" name="eventName"></textarea>
                                 </div>
                                 <div class="form-group">
+                                  <label for="eventName3">
+                                    Pernahkah terjadi kerugian kebakaran atas harta benda yang dipertanggungkan diatas ?
+                                    <span class="danger">*</span>
+                                  </label>
+                                  <textarea placeholder="jika iya, beri penjalasan." rows="4"
+                                    class="form-control required" id="eventName3" name="eventName"></textarea>
+                                </div>
+                                <!-- <div class="form-group">
                                   <label for="eventLocation3">Event Location :</label>
                                   <select class="c-select form-control" id="eventLocation3" name="eventLocation">
                                     <option value="">Select City</option>
@@ -390,36 +408,43 @@
                                     <option value="Berlin">Berlin</option>
                                     <option value="Frankfurt">Frankfurt</option>
                                   </select>
-                                </div>
+                                </div> -->
                               </div>
                               <div class="col-md-6">
-                              <div class="form-group">
+                                <div class="form-group">
                                   <label for="eventName3">
                                     Apakah tersimpan barang berbahaya dalam bangunan yang akan dipertanggungkan?
                                     <span class="danger">*</span>
                                   </label>
-                                  <textarea placeholder="jika iya, beri penjalasan" rows="4" class="form-control required" id="eventName3" name="eventName"></textarea>
+                                  <textarea placeholder="jika iya, beri penjalasan" rows="4"
+                                    class="form-control required" id="eventName3" name="eventName"></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
-                                   Pernahkah permohonan pertanggungan saudara di tolak atau dibatalkan oleh perusahan asuransi lain ?
+                                    Pernahkah permohonan pertanggungan saudara di tolak atau dibatalkan oleh perusahan
+                                    asuransi lain ?
                                     <span class="danger">*</span>
                                   </label>
-                                  <textarea placeholder="jika iya, beri penjalasan." rows="4" class="form-control required" id="eventName3" name="eventName"></textarea>
+                                  <textarea placeholder="jika iya, beri penjalasan." rows="4"
+                                    class="form-control required" id="eventName3" name="eventName"></textarea>
                                 </div>
-                                <div class="form-group">
-                                  <label>Requirements :</label>
-                                  <div class="c-inputs-stacked">
-                                    <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="status3" class="custom-control-input" id="staffing3">
-                                      <label class="custom-control-label" for="staffing3">Staffing</label>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label for="date3">Jangka waktu pertanggungan yang diminta <span
+                                          class="danger">*</span>
+                                      </label>
+                                      <input type="date" class="form-control" id="date3">
                                     </div>
-                                    <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="status3" class="custom-control-input" id="catering3">
-                                      <label class="custom-control-label" for="catering3">Catering</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      <label for="date3">Batas tanggal</label>
+                                      <input type="date" class="form-control" id="date3">
                                     </div>
                                   </div>
                                 </div>
+                               
                               </div>
                             </div>
                           </fieldset>
@@ -428,14 +453,76 @@
                           <fieldset>
                             <div class="row">
                               <div class="col-md-6">
-                                <div class="form-group">
-                                  <label for="meetingName3">
-                                    Name of Meeting :
-                                    <span class="danger">*</span>
-                                  </label>
-                                  <input type="text" class="form-control required" id="meetingName3" name="meetingName">
+                              <label>Pertanggungan - pertanggungan yang diminta</label>
+                                 <div class="form-group">
+                                 <br> 
+                                  <label>Perluasan jaminan ( Kerusuhan, Pemogokan, Akibat perbuatan jahat, tertabrak kendaraan, asap )</label>
+                                  <div class="c-inputs-stacked">
+                                    <div class="d-inline-block custom-control custom-checkbox">
+                                      <input type="checkbox" name="status3" class="custom-control-input" id="staffing3">
+                                      <label class="custom-control-label" for="staffing3">Ya</label>
+                                    </div>
+                                    <div class="d-inline-block custom-control custom-checkbox">
+                                      <input type="checkbox" name="status3" class="custom-control-input" id="catering3">
+                                      <label class="custom-control-label" for="catering3">Tidak</label>
+                                    </div>
+                                  </div>
+                                  <br> 
+                                  <input type="text" class="form-control required" id="meetingLocation3"
+                                    name="meetingLocation">
                                 </div>
                                 <div class="form-group">
+                               
+                                  <label>Gempa bumi, letusan gunung berapi</label>
+                                  <div class="c-inputs-stacked">
+                                    <div class="d-inline-block custom-control custom-checkbox">
+                                      <input type="checkbox" name="status3" class="custom-control-input" id="staffing3">
+                                      <label class="custom-control-label" for="staffing3">Ya</label>
+                                    </div>
+                                    <div class="d-inline-block custom-control custom-checkbox">
+                                      <input type="checkbox" name="status3" class="custom-control-input" id="catering3">
+                                      <label class="custom-control-label" for="catering3">Tidak</label>
+                                    </div>
+                                  </div>
+                                  <br> 
+                                  <input type="text" class="form-control required" id="meetingLocation3"
+                                    name="meetingLocation">
+                                </div>
+                                <div class="form-group">
+                                 
+                                  <label>Banjir/angin topan, badai/kerusakan karena air</label>
+                                  <div class="c-inputs-stacked">
+                                    <div class="d-inline-block custom-control custom-checkbox">
+                                      <input type="checkbox" name="status3" class="custom-control-input" id="staffing3">
+                                      <label class="custom-control-label" for="staffing3">Ya</label>
+                                    </div>
+                                    <div class="d-inline-block custom-control custom-checkbox">
+                                      <input type="checkbox" name="status3" class="custom-control-input" id="catering3">
+                                      <label class="custom-control-label" for="catering3">Tidak</label>
+                                    </div>
+                                  </div>
+                                  <br> 
+                                  <input type="text" class="form-control required" id="meetingLocation3"
+                                    name="meetingLocation">
+                                </div>
+                                <div class="form-group">
+                                 
+                                  <label>Biaya - biaya pembersihan</label>
+                                  <div class="c-inputs-stacked">
+                                    <div class="d-inline-block custom-control custom-checkbox">
+                                      <input type="checkbox" name="status3" class="custom-control-input" id="staffing3">
+                                      <label class="custom-control-label" for="staffing3">Ya</label>
+                                    </div>
+                                    <div class="d-inline-block custom-control custom-checkbox">
+                                      <input type="checkbox" name="status3" class="custom-control-input" id="catering3">
+                                      <label class="custom-control-label" for="catering3">Tidak</label>
+                                    </div>
+                                  </div>
+                                  <br> 
+                                  <input type="text" class="form-control required" id="meetingLocation3"
+                                    name="meetingLocation">
+                                </div>
+                                <!-- <div class="form-group">
                                   <label for="meetingLocation3">
                                     Location :
                                     <span class="danger">*</span>
@@ -447,38 +534,40 @@
                                   <label for="participants3">Names of Participants</label>
                                   <textarea name="participants" id="participants3" rows="4"
                                     class="form-control"></textarea>
-                                </div>
+                                </div> -->
                               </div>
                               <div class="col-md-6">
-                                <div class="form-group">
-                                  <label for="decisions3">Decisions Reached</label>
-                                  <textarea name="decisions" id="decisions3" rows="4" class="form-control"></textarea>
+                                
+                              <div class="form-group">
+                                  <table style="width:100%;">
+                                    <tr>
+                                      <td>
+                                        <!-- <label for="emailAddress5">
+                                          Jenis penerangan yang dipergunakan
+                                          <span class="danger">*</span> -->
+                                        </label>
+                                      </td>
+
+                                    </tr>
+                                    <tr>
+                                      <td>Biaya polis &nbsp;</td>
+                                      <td> <input type="email" class="form-control required" id="emailAddress5"
+                                          name="emailAddress"></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Premi dasar &nbsp;</td>
+                                      <td> <input type="email" class="form-control required" id="emailAddress5"
+                                          name="emailAddress"></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Total bayar &nbsp;</td>
+                                      <td> <input type="email" class="form-control required" id="emailAddress5"
+                                          name="emailAddress"></td>
+                                    </tr>
+
+                                  </table>
                                 </div>
-                                <div class="form-group">
-                                  <label>Agenda Items :</label>
-                                  <div class="c-inputs-stacked">
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" name="agenda3" class="custom-control-input" id="item31">
-                                      <label class="custom-control-label" for="item31">1st item</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" name="agenda3" class="custom-control-input" id="item32">
-                                      <label class="custom-control-label" for="item32">2nd item</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" name="agenda3" class="custom-control-input" id="item33">
-                                      <label class="custom-control-label" for="item33">3rd item</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" name="agenda3" class="custom-control-input" id="item34">
-                                      <label class="custom-control-label" for="item34">4th item</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" name="agenda3" class="custom-control-input" id="item35">
-                                      <label class="custom-control-label" for="item35">5th item</label>
-                                    </div>
-                                  </div>
-                                </div>
+                                
                               </div>
                             </div>
                           </fieldset>
@@ -519,7 +608,7 @@
       <script src=" app-assets/js/scripts/customizer.js" type="text/javascript"></script>
       <!-- END MODERN JS-->
       <!-- BEGIN PAGE LEVEL JS-->
-      <!-- <script src=" app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script> -->
+      <script src=" app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script>
       <!-- END PAGE LEVEL JS-->
     </body>
 

@@ -8,7 +8,7 @@ if(isset($_POST['Submit'])){
 
     // ambil data dari formulir
     $nama_lengkap = $_POST['nama_lengkap'];
-   $alamat_pemohon = $_POST['alamat_pemohon'];
+    $alamat_pemohon = $_POST['alamat_pemohon'];
     $nilai_bangungan = $_POST['nilai_bangungan'];
     $nilai_mesin = $_POST['nilai_mesin'];
     $nilai_barang = $_POST['nilai_barang'];
@@ -16,6 +16,7 @@ if(isset($_POST['Submit'])){
     $nilai_perabot_rumah = $_POST['nilai_perabot_rumah'];
     $nilai_perabot_kantor = $_POST['nilai_perabot_kantor'];
     $nilai_lain = $_POST['nilai_lain'];
+    $total_keseluruhan = $_POST['total_keseluruhan'];
     $ket_bangunan = $_POST['ket_bangunan'];
     $ket_lantai = $_POST['ket_lantai'];
     $ket_balok = $_POST['ket_balok'];
@@ -64,7 +65,7 @@ if(isset($_POST['Submit'])){
     '$nilai_barang',
     '$nilai_dagangan',
     '$nilai_perabot_rumah',
-    '$nilai_perabot_kantor','$nilai_lain','$ket_bangunan','$ket_lantai','$ket_balok',
+    '$nilai_perabot_kantor','$nilai_lain','.$total_keseluruhan.','$ket_bangunan','$ket_lantai','$ket_balok',
     '$ket_balok_lantai','$ket_pilar','$ket_tiang','$ket_antangga','$ket_atap','$ket_loteng',
     '$ket_banyaktingkat','$ket_pondasi','$jenis_penerangan_listrik','$jenis_lampu','$jarak_bangunan_kiri',
     '$jarak_bangunan_kanan','$jarak_bangunan_depan','$jarak_bangunan_belakang','$jenis_pemadam',
