@@ -17,7 +17,9 @@ if(isset($_POST['Submit'])){
     $nilai_perabot_kantor = $_POST['nilai_perabot_kantor'];
     $nilai_lain = $_POST['nilai_lain'];
     $total_keseluruhan = $_POST['total_keseluruhan'];
-    $ket_bangunan = $_POST['ket_bangunan'];
+    $ket_dinding_luar = $_POST['ket_dinding_luar'];
+    $ket_dinding_dalam = $_POST['ket_dinding_dalam'];
+    $ket_dinding_pemisah = $_POST['ket_dinding_pemisah'];
     $ket_lantai = $_POST['ket_lantai'];
     $ket_balok = $_POST['ket_balok'];
     $ket_balok_lantai = $_POST['ket_balok_lantai'];
@@ -34,14 +36,20 @@ if(isset($_POST['Submit'])){
     $jarak_bangunan_kanan = $_POST['jarak_bangunan_kanan'];
     $jarak_bangunan_depan = $_POST['jarak_bangunan_depan'];
     $jarak_bangunan_belakang = $_POST['jarak_bangunan_belakang'];
+    $ket_bangunan_digunakan = $_POST['ket_bangunan_digunakan'];
+    $lokasi_harta_benda_jalan = $_POST['lokasi_harta_benda_jalan'];
+    $lokasi_harta_benda_kota = $_POST['lokasi_harta_benda_kota'];
+    $lokasi_harta_benda_provinsi = $_POST['lokasi_harta_benda_provinsi'];
     $jenis_pemadam = $_POST['jenis_pemadam'];
     $jumlah_alat_pemadam = $_POST['jumlah_alat_pemadam'];
+    $jarak_pos_pemadam = $_POST['jarak_pos_pemadam'];
     $ket_barang_orang_lain = $_POST['ket_barang_orang_lain'];
     $ket_barang_berbahaya = $_POST['ket_barang_berbahaya'];
     $ket_barang_asuransi_lain = $_POST['ket_barang_asuransi_lain'];
     $ket_penolakan_asuransi = $_POST['ket_penolakan_asuransi'];
     $ket_kerugian_kebakaran = $_POST['ket_kerugian_kebakaran'];
     $jangka_waktu = $_POST['jangka_waktu'];
+    $batas_waktu = $_POST['batas_waktu'];
     $bangunan_dipertanggungkan = $_POST['bangunan_dipertanggungkan'];
     $pertanggungan_kebakaran = $_POST['pertanggungan_kebakaran'];
     $nilai_pertanggungan_kebakaran = $_POST['nilai_pertanggungan_kebakaran'];
@@ -65,12 +73,12 @@ if(isset($_POST['Submit'])){
     '$nilai_barang',
     '$nilai_dagangan',
     '$nilai_perabot_rumah',
-    '$nilai_perabot_kantor','$nilai_lain','.$total_keseluruhan.','$ket_bangunan','$ket_lantai','$ket_balok',
+    '$nilai_perabot_kantor','$nilai_lain','.$total_keseluruhan.','$ket_dinding_luar','$ket_dinding_dalam','$ket_dinding_pemisah','$ket_lantai','$ket_balok',
     '$ket_balok_lantai','$ket_pilar','$ket_tiang','$ket_antangga','$ket_atap','$ket_loteng',
     '$ket_banyaktingkat','$ket_pondasi','$jenis_penerangan_listrik','$jenis_lampu','$jarak_bangunan_kiri',
-    '$jarak_bangunan_kanan','$jarak_bangunan_depan','$jarak_bangunan_belakang','$jenis_pemadam',
-    '$jumlah_alat_pemadam','$ket_barang_orang_lain','$ket_barang_berbahaya','$ket_barang_asuransi_lain',
-    '$ket_penolakan_asuransi','$ket_kerugian_kebakaran','$jangka_waktu','$bangunan_dipertanggungkan',
+    '$jarak_bangunan_kanan','$jarak_bangunan_depan','$jarak_bangunan_belakang','$ket_bangunan_digunakan','$lokasi_harta_benda_jalan','$lokasi_harta_benda_kota','$lokasi_harta_benda_provinsi','$jenis_pemadam',
+    '$jumlah_alat_pemadam','$jarak_pos_pemadam','$ket_barang_orang_lain','$ket_barang_berbahaya','$ket_barang_asuransi_lain',
+    '$ket_penolakan_asuransi','$ket_kerugian_kebakaran','$jangka_waktu','$batas_waktu','$bangunan_dipertanggungkan',
     '$pertanggungan_kebakaran','$nilai_pertanggungan_kebakaran','$pertanggungan_kerusakan','$nilai_pertanggungan_kerusakan',
     '$pertanggungan_gempa','$nilai_pertanggungan_gempa','$pertanggungan_banjir','$nilai_pertanggungan_banjir',
     '$pertanggungan_biaya_pembersihan','$nilai_pertanggungan_biaya_pembersihan','$biaya_polis','$premi_dasar','$total_pembayaran')";

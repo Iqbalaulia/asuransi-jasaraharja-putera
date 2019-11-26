@@ -169,62 +169,62 @@
 
                                     <tr>
                                       <td>Dinding &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_dinding_luar" placeholder="Keterangan dinding luar"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_dinding_dalam" placeholder="Keterangan dinding dalam"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_dinding_pemisah" placeholder="Keterangan dinding pemisah"></td>
                                     </tr>
                                     <tr>
                                       <td>Lantai &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_lantai" placeholder="Keterangan lantai"></td>
                                     </tr>
                                     <tr>
                                       <td>Balok &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_balok" placeholder="Keterangan balok"></td>
                                     </tr>
                                     <tr>
                                       <td>Balok lantai &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_balok_lantai" placeholder="Keterangan balok lantai"></td>
                                     </tr>
                                     <tr>
                                       <td>Pilar &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_pilar" placeholder="Keterangan pilar"></td>
                                     </tr>
                                     <tr>
                                       <td>Tiang &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_tiang" placeholder="Keterangan tiang"></td>
                                     </tr>
                                     <tr>
                                       <td>Anak tangga &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_antangga" placeholder="Keterangan anak tangga"></td>
                                     </tr>
                                     <tr>
                                       <td>Atap &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_atap" placeholder="Keterangan atap"></td>
                                     </tr>
                                     <tr>
                                       <td>Loteng &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_loteng" placeholder="Keterangan loteng"></td>
                                     </tr>
                                     <tr>
                                       <td>Banyaknya tingkat &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_banyaktingkat" placeholder="Keterangan banyak tingkat"></td>
                                     </tr>
                                     <tr>
                                       <td>Pondasi &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="ket_pondasi" placeholder="Keterangan pondasi"></td>
                                     </tr>
                                   </table>
                                 </div>
@@ -263,13 +263,13 @@
                                     </tr>
                                     <tr>
                                       <td>Listrik &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="jenis_penerangan_listrik" placeholder="Jenis penerangan listrik"></td>
                                     </tr>
                                     <tr>
                                       <td>Lampu dengan menggunakan bensin atau minyak tanah atau solar &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="jenis_lampu" placeholder="Jenis bahan bakar lampu"></td>
                                     </tr>
 
                                   </table>
@@ -287,23 +287,23 @@
                                     </tr>
                                     <tr>
                                       <td>Sebelah kiri &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="jarak_bangunan_kiri" placeholder="Jarak sebalah kiri bangunan"></td>
                                     </tr>
                                     <tr>
                                       <td>Sebalah kanan &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="jarak_bangunan_kanan" placeholder="Jarak sebalah kanan bangunan"></td>
                                     </tr>
                                     <tr>
                                       <td>Dibagian belakang &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="jarak_bangunan_belakang" placeholder="Jarak bagian belakang bangunan"></td>
                                     </tr>
                                     <tr>
                                       <td>Dibagian depan &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="jarak_bangunan_depan" placeholder="Jarak bagian depan bangunan"></td>
                                     </tr>
                                   </table>
                                 </div>
@@ -312,8 +312,8 @@
                                 <div class="form-group">
                                   <label for="shortDescription3">Bangunan dipergunakan sebagai <span
                                       class="danger">*</span></label>
-                                  <textarea name="shortDescription" id="shortDescription3" rows="4"
-                                    class="form-control"></textarea>
+                                  <textarea name="ket_bangunan_digunakan" id="shortDescription3" rows="4"
+                                    class="form-control" placeholder="Jika sebagai pabrik, sebutkan jenis - jenis komoditi yang dihasilkan"></textarea>
                                 </div>
                                 <div class="form-group">
                                   <table style="width:100%;">
@@ -328,19 +328,19 @@
                                     </tr>
                                     <tr>
                                       <td>Jalan &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="lokasi_harta_benda_jalan" placeholder="Lokasi jalan"></td>
 
                                     </tr>
                                     <tr>
                                       <td>Kota &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="lokasi_harta_benda_kota" placeholder="Lokasi kota"></td>
                                     </tr>
                                     <tr>
                                       <td>Provinsi &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="lokasi_harta_benda_provinsi" placeholder="Lokasi provinsi"></td>
                                     </tr>
 
                                   </table>
@@ -352,17 +352,17 @@
                                       <td> <label for="emailAddress5">Jenis alat pemadam kebakaran yang dimiliki &nbsp;
                                           <span class="danger">*</span></label>
                                       </td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress" placeholder="Jumlah alat pemadam"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="jenis_pemadam" placeholder="Jenis pemadam yang digunakan"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="jumlah_alat_pemadam" placeholder="Jumlah alat pemadam"></td>
 
                                     </tr>
                                     <tr>
                                       <td> <label for="emailAddress5">Jarak pos pemadam kebakaran dari lokasi yang
                                           dipertanggungkan <span class="danger">*</span> &nbsp;</label></td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                          name="jarak_pos_pemadam" placeholder="Jarak pos pemadam kebakaran"></td>
                                     </tr>
                                   </table>
                                 </div>
@@ -380,7 +380,7 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan" rows="4"
-                                    class="form-control required" id="eventName3" name="eventName"></textarea>
+                                    class="form-control required" id="eventName3" name="ket_barang_orang_lain"></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
@@ -390,7 +390,7 @@
                                   </label>
                                   <textarea
                                     placeholder="jika iya, beri penjalasan. sebutkan perusahaan, jangka waktu dan nomor polisnya"
-                                    rows="4" class="form-control required" id="eventName3" name="eventName"></textarea>
+                                    rows="4" class="form-control required" id="eventName3" name="ket_barang_asuransi_lain"></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
@@ -398,7 +398,7 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan." rows="4"
-                                    class="form-control required" id="eventName3" name="eventName"></textarea>
+                                    class="form-control required" id="eventName3" name="ket_kerugian_kebakaran"></textarea>
                                 </div>
                                 <!-- <div class="form-group">
                                   <label for="eventLocation3">Event Location :</label>
@@ -417,7 +417,7 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan" rows="4"
-                                    class="form-control required" id="eventName3" name="eventName"></textarea>
+                                    class="form-control required" id="eventName3" name="ket_barang_berbahaya"></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
@@ -426,7 +426,7 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan." rows="4"
-                                    class="form-control required" id="eventName3" name="eventName"></textarea>
+                                    class="form-control required" id="eventName3" name="ket_penolakan_asuransi"></textarea>
                                 </div>
                                 <div class="row">
                                   <div class="col-md-6">
@@ -434,13 +434,13 @@
                                       <label for="date3">Jangka waktu pertanggungan yang diminta <span
                                           class="danger">*</span>
                                       </label>
-                                      <input type="date" class="form-control" id="date3">
+                                      <input type="date" class="form-control" id="date3" name="jangka_waktu">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="form-group">
-                                      <label for="date3">Batas tanggal</label>
-                                      <input type="date" class="form-control" id="date3">
+                                      <label for="date3">Batas waktu</label>
+                                      <input type="date" class="form-control" id="date3" name="batas_waktu">
                                     </div>
                                   </div>
                                 </div>
@@ -608,7 +608,7 @@
       <script src=" app-assets/js/scripts/customizer.js" type="text/javascript"></script>
       <!-- END MODERN JS-->
       <!-- BEGIN PAGE LEVEL JS-->
-      <script src=" app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script>
+      <!-- <script src=" app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script> -->
       <!-- END PAGE LEVEL JS-->
     </body>
 
