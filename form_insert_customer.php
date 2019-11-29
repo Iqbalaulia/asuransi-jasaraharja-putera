@@ -12,7 +12,7 @@ include 'connection.php';
  $nilai_barang = $_POST['nilai_barang'];
  $nilai_dagangan = $_POST['nilai_dagangan'];
  
- $nilai_perabot_rumah = $_POST['nilai_perabot_rumah'];
+    $nilai_perabot_rumah = $_POST['nilai_perabot_rumah'];
     $nilai_perabot_kantor = $_POST['nilai_perabot_kantor'];
     $nilai_lain = $_POST['nilai_lain'];
     $total_keseluruhan = $_POST['total_keseluruhan'];

@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html class="loading" lang="en" data-textdirection="ltr">
 
     <head>
@@ -38,9 +38,17 @@
 
     <body class="vertical-layout vertical-menu-modern 2-columns" data-open="click" data-menu="vertical-menu-modern"
       data-col="2-columns">
-      <!-- fixed-top-->
-
-      <!-- ////////////////////////////////////////////////////////////////////////////-->
+      <?php
+      // include database connection file
+      include_once("connection.php");
+      $id = $_GET['id'];
+      // Fetech user data based on id
+      $result = mysqli_query($koneksi, "SELECT * FROM form_customer WHERE id=$id");
+      ?>
+       <?php include('navbar.php') ?>
+  <!-- ////////////////////////////////////////////////////////////////////////////-->
+  <?php include('navbar_right.php')?>
+  <!-- ////////////////////////////////////////////////////////////////////////////-->
 
       <div class="app-content content">
         <div class="content-wrapper">
@@ -73,8 +81,70 @@
                     </div>
                     <div class="card-content collapse show">
                       <div class="card-body">
-                        <form action="form_insert_customer.php" class="steps-validation wizard-notification" method="POST">
+                        <form action="form_edit_customer.php" class="steps-validation wizard-notification" method="POST">
                           <!-- Step 1 -->
+                          <?php while($form_customer = mysqli_fetch_array($result)) {
+                                $nama_lengkap     = $form_customer['nama_lengkap'];
+                                $alamat_pemohon   = $form_customer['alamat_pemohon'];
+                                $nilai_bangunan   = $form_customer['nilai_bangunan'];
+                                $nilai_mesin = $form_customer['nilai_mesin'];
+                                $nilai_barang = $form_customer['nilai_barang'];
+                                $nilai_dagangan = $form_customer['nilai_dagangan'];
+                                
+                                 $nilai_perabot_rumah = $form_customer['nilai_perabot_rumah'];
+                                 $nilai_perabot_kantor = $form_customer['nilai_perabot_kantor'];
+                                 $nilai_lain = $form_customer['nilai_lain'];
+                                 $total_keseluruhan = $form_customer['total_keseluruhan'];
+                                 $ket_dinding_luar = $form_customer['ket_dinding_luar'];
+                                 $ket_dinding_dalam = $form_customer['ket_dinding_dalam'];
+                                 $ket_dinding_pemisah = $form_customer['ket_dinding_pemisah'];
+                                 $ket_lantai = $form_customer['ket_lantai'];
+                                 $ket_balok = $form_customer['ket_balok'];
+                                 $ket_balok_lantai = $form_customer['ket_balok_lantai'];
+                                 $ket_pilar = $form_customer['ket_pilar'];
+                                 $ket_tiang = $form_customer['ket_tiang'];
+                                 $ket_antangga = $form_customer['ket_antangga'];
+                                 $ket_atap = $form_customer['ket_atap'];
+                                 $ket_loteng = $form_customer['ket_loteng'];
+                                 $ket_banyaktingkat = $form_customer['ket_banyaktingkat'];
+                                 $ket_pondasi = $form_customer['ket_pondasi'];
+                             
+                                 $jenis_penerangan_listrik = $form_customer['jenis_penerangan_listrik'];
+                                 $jenis_lampu = $form_customer['jenis_lampu'];
+                                 $jarak_bangunan_kiri = $form_customer['jarak_bangunan_kiri'];
+                                 $jarak_bangunan_kanan = $form_customer['jarak_bangunan_kanan'];
+                                 $jarak_bangunan_belakang = $form_customer['jarak_bangunan_belakang'];
+                                 $jarak_bangunan_depan = $form_customer['jarak_bangunan_depan'];
+                                 $ket_bangunan_digunakan = $form_customer['ket_bangunan_digunakan'];
+                                 $lokasi_harta_benda_jalan = $form_customer['lokasi_harta_benda_jalan'];
+                                 $lokasi_harta_benda_kota = $form_customer['lokasi_harta_benda_kota'];
+                                 $lokasi_harta_benda_provinsi = $form_customer['lokasi_harta_benda_provinsi'];
+                                 $jenis_pemadam = $form_customer['jenis_pemadam'];
+                             
+                                 $jumlah_alat_pemadam = $form_customer['jumlah_alat_pemadam'];
+                                 $jarak_pos_pemadam = $form_customer['jarak_pos_pemadam'];
+                                 $ket_barang_orang_lain = $form_customer['ket_barang_orang_lain'];
+                                 $ket_barang_berbahaya = $form_customer['ket_barang_berbahaya'];
+                                 $ket_barang_asuransi_lain = $form_customer['ket_barang_asuransi_lain'];
+                                 $ket_penolakan_asuransi = $form_customer['ket_penolakan_asuransi'];
+                                 $ket_kerugian_kebakaran = $form_customer['ket_kerugian_kebakaran'];
+                                 $jangka_waktu = $form_customer['jangka_waktu'];
+                                 $batas_waktu = $form_customer['batas_waktu'];
+                                 $pertanggungan_kebakaran = $form_customer['pertanggungan_kebakaran'];
+                                 $nilai_pertanggungan_kebakaran = $form_customer['nilai_pertanggungan_kebakaran'];
+                                 $pertanggungan_kerusakan = $form_customer['pertanggungan_kerusakan'];
+                                 $nilai_pertanggungan_kerusakan = $form_customer['nilai_pertanggungan_kerusakan'];
+                                 $pertanggungan_gempa = $form_customer['pertanggungan_gempa'];
+                                 $nilai_pertanggungan_gempa = $form_customer['nilai_pertanggungan_gempa'];
+                                 $pertanggungan_banjir = $form_customer['pertanggungan_banjir'];
+                                 $nilai_pertanggungan_banjir = $form_customer['nilai_pertanggungan_banjir'];
+                                 $pertanggungan_biaya_pembersihan = $form_customer['pertanggungan_biaya_pembersihan'];
+                                 $nilai_pertanggungan_biaya_pembersihan = $form_customer['nilai_pertanggungan_biaya_pembersihan'];
+                                 $biaya_polis = $form_customer['biaya_polis'];
+                                 $premi_dasar = $form_customer['premi_dasar'];
+                                 $total_pembayaran = $form_customer['total_pembayaran'];
+                                 $status_form = 'Pending';
+                          } ?>
                           <h6>Step 1</h6>
                           <fieldset>
                             <div class="row">
@@ -85,7 +155,7 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <input type="text" class="form-control required" id="firstName3" name="nama_lengkap"
-                                    placeholder="Nama lengkap">
+                                    placeholder="Nama lengkap" value="<?php echo $nama_lengkap ?>">
                                 </div>
                               </div>
                               <div class="col-md-12">
@@ -95,7 +165,7 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea type="text" class="form-control required" id="lastName3" rows="5"
-                                    name="alamat_pemohon" placeholder="Alamat"></textarea>
+                                    name="alamat_pemohon" placeholder="Alamat"><?php echo $alamat_pemohon ?></textarea>
                                 </div>
                               </div>
                             </div>
@@ -118,44 +188,44 @@
                                     <tr>
                                       <td>Bangunan &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_bangungan" placeholder="Nilai bangunan"></td>
+                                          name="nilai_bangungan" placeholder="Nilai bangunan"value="<?php echo $nilai_bangunan ?>"></td>
 
                                     </tr>
                                     <tr>
                                       <td>Mesin - mesin &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_mesin" placeholder="Nilai mesin - mesin"></td>
+                                          name="nilai_mesin" placeholder="Nilai mesin - mesin" value="<?php echo $nilai_mesin ?>"></td>
                                     </tr>
                                     <tr>
                                       <td>Persedian barang - barang &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_barang" placeholder="Nilai barang - barang"></td>
+                                          name="nilai_barang" placeholder="Nilai barang - barang" value="<?php echo $nilai_barang ?>"></td>
                                     </tr>
                                     <tr>
                                       <td>Barang - barang dagangan &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_dagangan" placeholder="Nilai barang dagangan"></td>
+                                          name="nilai_dagangan" placeholder="Nilai barang dagangan" value="<?php echo $nilai_dagangan ?>"></td>
                                     </tr>
                                     <tr>
                                       <td>Perabot rumah tangga &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_perabot_rumah" placeholder="Nilai perabot rumah"></td>
+                                          name="nilai_perabot_rumah" placeholder="Nilai perabot rumah" value="<?php echo $nilai_perabot_rumah ?>"></td>
                                     </tr>
                                     <tr>
                                       <td>Perabot kantor/toko/gudang &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_perabot_kantor" placeholder="Nilai perabot kantor/toko/gudang">
+                                          name="nilai_perabot_kantor" placeholder="Nilai perabot kantor/toko/gudang" value="<?php echo $nilai_perabot_kantor ?>">
                                       </td>
                                     </tr>
                                     <tr>
                                       <td>Dan lain lain &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_lain" placeholder="Nilai lain - lain"></td>
+                                          name="nilai_lain" placeholder="Nilai lain - lain" value="<?php echo $nilai_lain ?>"></td>
                                     </tr>
                                     <tr>
                                       <td>Total &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="total_keseluruhan" placeholder="Total keseluruhan"></td>
+                                          name="total_keseluruhan" placeholder="Total keseluruhan" value="<?php echo $total_keseluruhan ?>"></td>
                                     </tr>
                                   </table>
 
@@ -172,61 +242,87 @@
                                     <tr>
                                       <td>Dinding &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_dinding_luar" placeholder="Keterangan dinding luar"></td>
+                                          name="ket_dinding_luar" placeholder="Keterangan dinding luar"
+                                          value="<?php echo $ket_dinding_luar ?>"
+                                          ></td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_dinding_dalam" placeholder="Keterangan dinding dalam"></td>
+                                          name="ket_dinding_dalam" placeholder="Keterangan dinding dalam"
+                                          value="<?php echo $ket_dinding_dalam ?>"
+                                          ></td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_dinding_pemisah" placeholder="Keterangan dinding pemisah"></td>
+                                          name="ket_dinding_pemisah" placeholder="Keterangan dinding pemisah"
+                                          value="<?php echo $ket_dinding_pemisah ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Lantai &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_lantai" placeholder="Keterangan lantai"></td>
+                                          name="ket_lantai" placeholder="Keterangan lantai"
+                                          value="<?php echo $ket_lantai ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Balok &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_balok" placeholder="Keterangan balok"></td>
+                                          name="ket_balok" placeholder="Keterangan balok"
+                                          value="<?php echo $ket_balok ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Balok lantai &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_balok_lantai" placeholder="Keterangan balok lantai"></td>
+                                          name="ket_balok_lantai" placeholder="Keterangan balok lantai"
+                                          value="<?php echo $ket_balok_lantai ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Pilar &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_pilar" placeholder="Keterangan pilar"></td>
+                                          name="ket_pilar" placeholder="Keterangan pilar"
+                                          value="<?php echo $ket_pilar ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Tiang &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_tiang" placeholder="Keterangan tiang"></td>
+                                          name="ket_tiang" placeholder="Keterangan tiang"
+                                          value="<?php echo $ket_tiang ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Anak tangga &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_antangga" placeholder="Keterangan anak tangga"></td>
+                                          name="ket_antangga" placeholder="Keterangan anak tangga"
+                                          value="<?php echo $ket_antangga ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Atap &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_atap" placeholder="Keterangan atap"></td>
+                                          name="ket_atap" placeholder="Keterangan atap"
+                                          value="<?php echo $ket_atap ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Loteng &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_loteng" placeholder="Keterangan loteng"></td>
+                                          name="ket_loteng" placeholder="Keterangan loteng"
+                                          value="<?php echo $ket_loteng ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Banyaknya tingkat &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_banyaktingkat" placeholder="Keterangan banyak tingkat"></td>
+                                          name="ket_banyaktingkat" placeholder="Keterangan banyak tingkat"
+                                          value="<?php echo $ket_banyaktingkat ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Pondasi &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="ket_pondasi" placeholder="Keterangan pondasi"></td>
+                                          name="ket_pondasi" placeholder="Keterangan pondasi"
+                                          value="<?php echo $ket_pondasi ?>"
+                                          ></td>
                                     </tr>
                                   </table>
                                 </div>
@@ -266,12 +362,16 @@
                                     <tr>
                                       <td>Listrik &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="jenis_penerangan_listrik" placeholder="Jenis penerangan listrik"></td>
+                                          name="jenis_penerangan_listrik" placeholder="Jenis penerangan listrik"
+                                          value="<?php echo $jenis_penerangan_listrik ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Lampu dengan menggunakan bensin atau minyak tanah atau solar &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="jenis_lampu" placeholder="Jenis bahan bakar lampu"></td>
+                                          name="jenis_lampu" placeholder="Jenis bahan bakar lampu"
+                                          value="<?php echo $jenis_lampu ?>"
+                                          ></td>
                                     </tr>
 
                                   </table>
@@ -290,23 +390,33 @@
                                     <tr>
                                       <td>Sebelah kiri &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="jarak_bangunan_kiri" placeholder="Jarak sebalah kiri bangunan"></td>
+                                          name="jarak_bangunan_kiri" placeholder="Jarak sebalah kiri bangunan"
+                                          value="<?php echo $jarak_bangunan_kiri ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Sebalah kanan &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="jarak_bangunan_kanan" placeholder="Jarak sebalah kanan bangunan"></td>
+                                          name="jarak_bangunan_kanan" placeholder="Jarak sebalah kanan bangunan"
+                                          value="<?php echo $jarak_bangunan_kanan ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Dibagian belakang &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="jarak_bangunan_belakang" placeholder="Jarak bagian belakang bangunan">
+                                          name="jarak_bangunan_belakang" placeholder="Jarak bagian belakang bangunan"
+                                          value="<?php echo $jarak_bangunan_belakang ?>"
+
+                                          >
                                       </td>
                                     </tr>
                                     <tr>
                                       <td>Dibagian depan &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="jarak_bangunan_depan" placeholder="Jarak bagian depan bangunan"></td>
+                                          name="jarak_bangunan_depan" placeholder="Jarak bagian depan bangunan"
+                                          value="<?php echo $jarak_bangunan_depan ?>"
+
+                                          ></td>
                                     </tr>
                                   </table>
                                 </div>
@@ -317,7 +427,8 @@
                                       class="danger">*</span></label>
                                   <textarea name="ket_bangunan_digunakan" id="shortDescription3" rows="4"
                                     class="form-control"
-                                    placeholder="Jika sebagai pabrik, sebutkan jenis - jenis komoditi yang dihasilkan"></textarea>
+                                    placeholder="Jika sebagai pabrik, sebutkan jenis - jenis komoditi yang dihasilkan"><?php echo $ket_bangunan_digunakan ?>
+                                </textarea>
                                 </div>
                                 <div class="form-group">
                                   <table style="width:100%;">
@@ -333,18 +444,25 @@
                                     <tr>
                                       <td>Jalan &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="lokasi_harta_benda_jalan" placeholder="Lokasi jalan"></td>
+                                          name="lokasi_harta_benda_jalan" placeholder="Lokasi jalan"
+                                          value="<?php echo $lokasi_harta_benda_jalan ?>
+"
+                                          ></td>
 
                                     </tr>
                                     <tr>
                                       <td>Kota &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="lokasi_harta_benda_kota" placeholder="Lokasi kota"></td>
+                                          name="lokasi_harta_benda_kota" placeholder="Lokasi kota"
+                                          value="<?php echo $lokasi_harta_benda_kota ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Provinsi &nbsp;</td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="lokasi_harta_benda_provinsi" placeholder="Lokasi provinsi"></td>
+                                          name="lokasi_harta_benda_provinsi" placeholder="Lokasi provinsi"
+                                          value="<?php echo $lokasi_harta_benda_provinsi ?>"
+                                          ></td>
                                     </tr>
 
                                   </table>
@@ -357,16 +475,22 @@
                                           <span class="danger">*</span></label>
                                       </td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="jenis_pemadam" placeholder="Jenis pemadam yang digunakan"></td>
+                                          name="jenis_pemadam" placeholder="Jenis pemadam yang digunakan"
+                                          value="<?php echo $jenis_pemadam ?>"
+                                          ></td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="jumlah_alat_pemadam" placeholder="Jumlah alat pemadam"></td>
+                                          name="jumlah_alat_pemadam" placeholder="Jumlah alat pemadam"
+                                          value="<?php echo $jumlah_alat_pemadam ?>"
+                                          ></td>
 
                                     </tr>
                                     <tr>
                                       <td> <label for="emailAddress5">Jarak pos pemadam kebakaran dari lokasi yang
                                           dipertanggungkan <span class="danger">*</span> &nbsp;</label></td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
-                                          name="jarak_pos_pemadam" placeholder="Jarak pos pemadam kebakaran"></td>
+                                          name="jarak_pos_pemadam" placeholder="Jarak pos pemadam kebakaran"
+                                          value="<?php echo $jarak_pos_pemadam ?>"
+                                          ></td>
                                     </tr>
                                   </table>
                                 </div>
@@ -385,7 +509,7 @@
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan" rows="4"
                                     class="form-control required" id="eventName3"
-                                    name="ket_barang_orang_lain"></textarea>
+                                    name="ket_barang_orang_lain"><?php echo $ket_barang_orang_lain ?></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
@@ -396,7 +520,7 @@
                                   <textarea
                                     placeholder="jika iya, beri penjalasan. sebutkan perusahaan, jangka waktu dan nomor polisnya"
                                     rows="4" class="form-control required" id="eventName3"
-                                    name="ket_barang_asuransi_lain"></textarea>
+                                    name="ket_barang_asuransi_lain"><?php echo $ket_barang_asuransi_lain ?></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
@@ -405,7 +529,7 @@
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan." rows="4"
                                     class="form-control required" id="eventName3"
-                                    name="ket_kerugian_kebakaran"></textarea>
+                                    name="ket_kerugian_kebakaran"><?php echo $ket_kerugian_kebakaran ?></textarea>
                                 </div>
                                 <!-- <div class="form-group">
                                   <label for="eventLocation3">Event Location :</label>
@@ -425,7 +549,7 @@
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan" rows="4"
                                     class="form-control required" id="eventName3"
-                                    name="ket_barang_berbahaya"></textarea>
+                                    name="ket_barang_berbahaya"><?php echo $ket_barang_berbahaya ?></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
@@ -435,7 +559,7 @@
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan." rows="4"
                                     class="form-control required" id="eventName3"
-                                    name="ket_penolakan_asuransi"></textarea>
+                                    name="ket_penolakan_asuransi"><?php echo $ket_penolakan_asuransi ?></textarea>
                                 </div>
                                 <div class="row">
                                   <div class="col-md-6">
@@ -443,13 +567,13 @@
                                       <label for="date3">Jangka waktu pertanggungan yang diminta <span
                                           class="danger">*</span>
                                       </label>
-                                      <input type="date" class="form-control" id="date3" name="jangka_waktu">
+                                      <input type="date" class="form-control" id="date3" name="jangka_waktu" value="<?php echo $jangka_waktu ?>">
                                     </div>
                                   </div>
                                   <div class="col-md-6">
                                     <div class="form-group">
                                       <label for="date3">Batas waktu</label>
-                                      <input type="date" class="form-control" id="date3" name="batas_waktu">
+                                      <input type="date" class="form-control" id="date3" name="batas_waktu" value="<?php echo $batas_waktu ?>">
                                     </div>
                                   </div>
                                 </div>
@@ -480,7 +604,9 @@
                                   </div>
                                   <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
-                                    name="nilai_pertanggungan_kebakaran" placeholder="Nilai pertanggungan kebakaran">
+                                    name="nilai_pertanggungan_kebakaran" placeholder="Nilai pertanggungan kebakaran"
+                                    value="<?php echo $nilai_pertanggungan_kebakaran ?>"
+                                    >
                                 </div>
                                 <div class="form-group">
                                   <br>
@@ -501,7 +627,9 @@
                                   <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
                                     name="nilai_pertanggungan_kerusakan"
-                                    placeholder="Nilai pertanggungan perluasan jaminan">
+                                    placeholder="Nilai pertanggungan perluasan jaminan"
+                                    value="<?php echo $nilai_pertanggungan_kerusakan ?>"
+                                    >
                                 </div>
                                 <div class="form-group">
 
@@ -521,7 +649,9 @@
                                   <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
                                     name="nilai_pertanggungan_gempa"
-                                    placeholder="Nilai pertanggungan gempa bumi dan letusan gunung berapi">
+                                    placeholder="Nilai pertanggungan gempa bumi dan letusan gunung berapi"
+                                    value="<?php echo $nilai_pertanggungan_gempa ?>"
+                                    >
                                 </div>
                                 <div class="form-group">
 
@@ -541,7 +671,9 @@
                                   <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
                                     name="nilai_pertanggungan_banjir"
-                                    placeholder="Nilai pertanggungan banjir/angin topan, badai/kerusakan karena air">
+                                    placeholder="Nilai pertanggungan banjir/angin topan, badai/kerusakan karena air"
+                                    value="<?php echo $nilai_pertanggungan_banjir ?>"
+                                    >
                                 </div>
                                 <div class="form-group">
 
@@ -561,7 +693,9 @@
                                   <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
                                     name="nilai_pertanggungan_biaya_pembersihan"
-                                    placeholder="Nilai pertanggungan biaya pembersihan">
+                                    placeholder="Nilai pertanggungan biaya pembersihan"
+                                    value="<?php echo $nilai_pertanggungan_biaya_pembersihan ?>"
+                                    >
                                 </div>
                                 <!-- <div class="form-group">
                                   <label for="meetingLocation3">
@@ -593,17 +727,23 @@
                                     <tr>
                                       <td>Biaya polis &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="biaya_polis" placeholder="Biaya polis"></td>
+                                          name="biaya_polis" placeholder="Biaya polis"
+                                          value="<?php echo $biaya_polis ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Premi dasar &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="premi_dasar" placeholder="Premi dasar"></td>
+                                          name="premi_dasar" placeholder="Premi dasar"
+                                          value="<?php echo $premi_dasar ?>"
+                                          ></td>
                                     </tr>
                                     <tr>
                                       <td>Total bayar &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="total_pembayaran" placeholder="Total pembayaran"></td>
+                                          name="total_pembayaran" placeholder="Total pembayaran"
+                                          value="<?php echo $total_pembayaran ?>"
+                                          ></td>
                                     </tr>
 
                                   </table>
@@ -611,7 +751,8 @@
 
                               </div>
                             </div>
-                            <Button type="submit">simpen</Button>
+                            <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+                            <input type="submit" name="update" value="Update">
 
                           </fieldset>
 
