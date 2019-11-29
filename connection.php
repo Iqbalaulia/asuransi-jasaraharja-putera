@@ -1,15 +1,11 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "sepatusandal12";
-$database = "benny-project";
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-
+<?php 
+$koneksi = mysqli_connect("localhost","root","sepatusandal12","jasarahaja");
+ 
 // Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+if (mysqli_connect_errno()){
+	echo "Koneksi database gagal : " . mysqli_connect_error();
+}else{
 
+};
+ 
 ?>
-

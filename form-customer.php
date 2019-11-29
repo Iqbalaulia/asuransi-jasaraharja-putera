@@ -73,7 +73,7 @@
                     </div>
                     <div class="card-content collapse show">
                       <div class="card-body">
-                        <form action="#" class="steps-validation wizard-notification">
+                        <form action="insert_form_cust.php" class="steps-validation wizard-notification" method="POST">
                           <!-- Step 1 -->
                           <h6>Step 1</h6>
                           <fieldset>
@@ -84,7 +84,8 @@
                                     Nama lengkap pemohon
                                     <span class="danger">*</span>
                                   </label>
-                                  <input type="text" class="form-control required" id="firstName3" name="nama_lengkap" placeholder="Nama lengkap">
+                                  <input type="text" class="form-control required" id="firstName3" name="nama_lengkap"
+                                    placeholder="Nama lengkap">
                                 </div>
                               </div>
                               <div class="col-md-12">
@@ -143,7 +144,8 @@
                                     <tr>
                                       <td>Perabot kantor/toko/gudang &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_perabot_kantor" placeholder="Nilai perabot kantor/toko/gudang"></td>
+                                          name="nilai_perabot_kantor" placeholder="Nilai perabot kantor/toko/gudang">
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td>Dan lain lain &nbsp;</td>
@@ -298,7 +300,8 @@
                                     <tr>
                                       <td>Dibagian belakang &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="jarak_bangunan_belakang" placeholder="Jarak bagian belakang bangunan"></td>
+                                          name="jarak_bangunan_belakang" placeholder="Jarak bagian belakang bangunan">
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td>Dibagian depan &nbsp;</td>
@@ -313,7 +316,8 @@
                                   <label for="shortDescription3">Bangunan dipergunakan sebagai <span
                                       class="danger">*</span></label>
                                   <textarea name="ket_bangunan_digunakan" id="shortDescription3" rows="4"
-                                    class="form-control" placeholder="Jika sebagai pabrik, sebutkan jenis - jenis komoditi yang dihasilkan"></textarea>
+                                    class="form-control"
+                                    placeholder="Jika sebagai pabrik, sebutkan jenis - jenis komoditi yang dihasilkan"></textarea>
                                 </div>
                                 <div class="form-group">
                                   <table style="width:100%;">
@@ -380,7 +384,8 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan" rows="4"
-                                    class="form-control required" id="eventName3" name="ket_barang_orang_lain"></textarea>
+                                    class="form-control required" id="eventName3"
+                                    name="ket_barang_orang_lain"></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
@@ -390,7 +395,8 @@
                                   </label>
                                   <textarea
                                     placeholder="jika iya, beri penjalasan. sebutkan perusahaan, jangka waktu dan nomor polisnya"
-                                    rows="4" class="form-control required" id="eventName3" name="ket_barang_asuransi_lain"></textarea>
+                                    rows="4" class="form-control required" id="eventName3"
+                                    name="ket_barang_asuransi_lain"></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
@@ -398,7 +404,8 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan." rows="4"
-                                    class="form-control required" id="eventName3" name="ket_kerugian_kebakaran"></textarea>
+                                    class="form-control required" id="eventName3"
+                                    name="ket_kerugian_kebakaran"></textarea>
                                 </div>
                                 <!-- <div class="form-group">
                                   <label for="eventLocation3">Event Location :</label>
@@ -417,7 +424,8 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan" rows="4"
-                                    class="form-control required" id="eventName3" name="ket_barang_berbahaya"></textarea>
+                                    class="form-control required" id="eventName3"
+                                    name="ket_barang_berbahaya"></textarea>
                                 </div>
                                 <div class="form-group">
                                   <label for="eventName3">
@@ -426,7 +434,8 @@
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea placeholder="jika iya, beri penjalasan." rows="4"
-                                    class="form-control required" id="eventName3" name="ket_penolakan_asuransi"></textarea>
+                                    class="form-control required" id="eventName3"
+                                    name="ket_penolakan_asuransi"></textarea>
                                 </div>
                                 <div class="row">
                                   <div class="col-md-6">
@@ -444,7 +453,7 @@
                                     </div>
                                   </div>
                                 </div>
-                               
+
                               </div>
                             </div>
                           </fieldset>
@@ -453,74 +462,106 @@
                           <fieldset>
                             <div class="row">
                               <div class="col-md-6">
-                              <label>Pertanggungan - pertanggungan yang diminta</label>
-                                 <div class="form-group">
-                                 <br> 
-                                  <label>Perluasan jaminan ( Kerusuhan, Pemogokan, Akibat perbuatan jahat, tertabrak kendaraan, asap )</label>
+                                <label>Pertanggungan - pertanggungan yang diminta</label>
+                                <div class="form-group">
+                                  <br>
+                                  <label>Kebakaran ( kebakaran, petir, ledakan, kejatuhan pesawat udara )</label>
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="status3" class="custom-control-input" id="staffing3">
+                                      <input type="checkbox" name="pertanggungan_kebakaran" class="custom-control-input"
+                                        id="staffing3">
                                       <label class="custom-control-label" for="staffing3">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="status3" class="custom-control-input" id="catering3">
+                                      <input type="checkbox" name="pertanggungan_kebakaran" class="custom-control-input"
+                                        id="catering3">
                                       <label class="custom-control-label" for="catering3">Tidak</label>
                                     </div>
                                   </div>
-                                  <br> 
+                                  <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
-                                    name="meetingLocation">
+                                    name="nilai_pertanggungan_kebakaran" placeholder="Nilai pertanggungan kebakaran">
                                 </div>
                                 <div class="form-group">
-                               
+                                  <br>
+                                  <label>Perluasan jaminan ( Kerusuhan, Pemogokan, Akibat perbuatan jahat, tertabrak
+                                    kendaraan, asap )</label>
+                                  <div class="c-inputs-stacked">
+                                    <div class="d-inline-block custom-control custom-checkbox">
+                                      <input type="checkbox" name="pertanggungan_kerusakan" class="custom-control-input"
+                                        id="staffing3">
+                                      <label class="custom-control-label" for="staffing3">Ya</label>
+                                    </div>
+                                    <div class="d-inline-block custom-control custom-checkbox">
+                                      <input type="checkbox" name="pertanggungan_kerusakan" class="custom-control-input"
+                                        id="catering3">
+                                      <label class="custom-control-label" for="catering3">Tidak</label>
+                                    </div>
+                                  </div>
+                                  <br>
+                                  <input type="text" class="form-control required" id="meetingLocation3"
+                                    name="nilai_pertanggungan_kerusakan"
+                                    placeholder="Nilai pertanggungan perluasan jaminan">
+                                </div>
+                                <div class="form-group">
+
                                   <label>Gempa bumi, letusan gunung berapi</label>
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="status3" class="custom-control-input" id="staffing3">
+                                      <input type="checkbox" name="pertanggungan_gempa" class="custom-control-input"
+                                        id="staffing3">
                                       <label class="custom-control-label" for="staffing3">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="status3" class="custom-control-input" id="catering3">
+                                      <input type="checkbox" name="pertanggungan_gempa" class="custom-control-input"
+                                        id="catering3">
                                       <label class="custom-control-label" for="catering3">Tidak</label>
                                     </div>
                                   </div>
-                                  <br> 
+                                  <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
-                                    name="meetingLocation">
+                                    name="nilai_pertanggungan_gempa"
+                                    placeholder="Nilai pertanggungan gempa bumi dan letusan gunung berapi">
                                 </div>
                                 <div class="form-group">
-                                 
+
                                   <label>Banjir/angin topan, badai/kerusakan karena air</label>
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="status3" class="custom-control-input" id="staffing3">
+                                      <input type="checkbox" name="pertanggungan_banjir" class="custom-control-input"
+                                        id="staffing3">
                                       <label class="custom-control-label" for="staffing3">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="status3" class="custom-control-input" id="catering3">
+                                      <input type="checkbox" name="pertanggungan_banjir" class="custom-control-input"
+                                        id="catering3">
                                       <label class="custom-control-label" for="catering3">Tidak</label>
                                     </div>
                                   </div>
-                                  <br> 
+                                  <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
-                                    name="meetingLocation">
+                                    name="nilai_pertanggungan_banjir"
+                                    placeholder="Nilai pertanggungan banjir/angin topan, badai/kerusakan karena air">
                                 </div>
                                 <div class="form-group">
-                                 
+
                                   <label>Biaya - biaya pembersihan</label>
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="status3" class="custom-control-input" id="staffing3">
+                                      <input type="checkbox" name="pertanggungan_biaya_pembersihan"
+                                        class="custom-control-input" id="staffing3">
                                       <label class="custom-control-label" for="staffing3">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="status3" class="custom-control-input" id="catering3">
+                                      <input type="checkbox" name="pertanggungan_biaya_pembersihan"
+                                        class="custom-control-input" id="catering3">
                                       <label class="custom-control-label" for="catering3">Tidak</label>
                                     </div>
                                   </div>
-                                  <br> 
+                                  <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
-                                    name="meetingLocation">
+                                    name="nilai_pertanggungan_biaya_pembersihan"
+                                    placeholder="Nilai pertanggungan biaya pembersihan">
                                 </div>
                                 <!-- <div class="form-group">
                                   <label for="meetingLocation3">
@@ -537,8 +578,8 @@
                                 </div> -->
                               </div>
                               <div class="col-md-6">
-                                
-                              <div class="form-group">
+
+                                <div class="form-group">
                                   <table style="width:100%;">
                                     <tr>
                                       <td>
@@ -551,26 +592,29 @@
                                     </tr>
                                     <tr>
                                       <td>Biaya polis &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="biaya_polis" placeholder="Biaya polis"></td>
                                     </tr>
                                     <tr>
                                       <td>Premi dasar &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="premi_dasar" placeholder="Premi dasar"></td>
                                     </tr>
                                     <tr>
                                       <td>Total bayar &nbsp;</td>
-                                      <td> <input type="email" class="form-control required" id="emailAddress5"
-                                          name="emailAddress"></td>
+                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                          name="total_pembayaran" placeholder="Total pembayaran"></td>
                                     </tr>
 
                                   </table>
                                 </div>
-                                
+
                               </div>
                             </div>
+                            <Button type="submit">simpen</Button>
+
                           </fieldset>
+
                         </form>
                       </div>
                     </div>
