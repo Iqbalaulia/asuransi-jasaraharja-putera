@@ -6,7 +6,9 @@ include 'connection.php';
  
 // menangkap data yang di kirim dari form
  $nama_lengkap = $_POST['nama_lengkap'];
+ $no_telp = $_POST['no_telp'];
  $alamat_pemohon = $_POST['alamat_pemohon'];
+ $alamat_bangunan = $_POST['alamat_bangunan'];
  $nilai_bangungan = $_POST['nilai_bangungan'];
  $nilai_mesin = $_POST['nilai_mesin'];
  $nilai_barang = $_POST['nilai_barang'];
@@ -68,7 +70,7 @@ include 'connection.php';
 
 // menginput data ke database
 mysqli_query($koneksi,"INSERT INTO form_customer 
-(id,nama_lengkap,alamat_pemohon,nilai_bangunan,nilai_mesin,nilai_barang,nilai_dagangan,
+(id,nama_lengkap,no_telp,alamat_pemohon,alamat_bangunan,nilai_bangunan,nilai_mesin,nilai_barang,nilai_dagangan,
 nilai_perabot_rumah,nilai_perabot_kantor,nilai_lain,total_keseluruhan,ket_dinding_luar,
 ket_dinding_dalam,ket_dinding_pemisah,ket_lantai,ket_balok,ket_balok_lantai,ket_pilar,
 ket_tiang,ket_antangga,ket_atap,ket_loteng,ket_banyaktingkat,ket_pondasi,jenis_penerangan_listrik,
@@ -79,7 +81,7 @@ ket_penolakan_asuransi,ket_kerugian_kebakaran,jangka_waktu,batas_waktu,pertanggu
 pertanggungan_kerusakan,nilai_pertanggungan_kerusakan,pertanggungan_gempa,nilai_pertanggungan_gempa,pertanggungan_banjir,
 nilai_pertanggungan_banjir,pertanggungan_biaya_pembersihan,nilai_pertanggungan_biaya_pembersihan,
 biaya_polis,premi_dasar,total_pembayaran,status_form) VALUES
-(NULL,'$nama_lengkap','$alamat_pemohon','$nilai_bangungan','$nilai_mesin','$nilai_barang','$nilai_dagangan',
+(NULL,'$nama_lengkap','$no_telp','$alamat_pemohon','$alamat_bangunan','$nilai_bangungan','$nilai_mesin','$nilai_barang','$nilai_dagangan',
 '$nilai_perabot_rumah','$nilai_perabot_kantor','$nilai_lain','$total_keseluruhan','$ket_dinding_luar',
 '$ket_dinding_dalam','$ket_dinding_pemisah','$ket_lantai','$ket_balok','$ket_balok_lantai','$ket_pilar',
 '$ket_tiang','$ket_antangga','$ket_atap','$ket_loteng','$ket_banyaktingkat','$ket_pondasi','$jenis_penerangan_listrik',

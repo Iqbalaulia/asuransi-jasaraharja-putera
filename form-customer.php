@@ -73,12 +73,13 @@
                     </div>
                     <div class="card-content collapse show">
                       <div class="card-body">
-                        <form action="form_insert_customer.php" class="steps-validation wizard-notification" method="POST">
+                        <form action="form_insert_customer.php" class="steps-validation wizard-notification"
+                          method="POST">
                           <!-- Step 1 -->
                           <h6>Step 1</h6>
                           <fieldset>
                             <div class="row">
-                              <div class="col-md-12">
+                              <div class="col-md-6">
                                 <div class="form-group">
                                   <label for="firstName3">
                                     Nama lengkap pemohon
@@ -88,21 +89,72 @@
                                     placeholder="Nama lengkap">
                                 </div>
                               </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label for="firstName3">
+                                    No Telepon HP
+                                    <span class="danger">*</span>
+                                  </label>
+                                  <input type="text" class="form-control required" id="firstName3" name="no_telp"
+                                    placeholder="No telepon HP">
+                                </div>
+                              </div>
                               <div class="col-md-12">
                                 <div class="form-group">
                                   <label for="lastName3">
-                                    Alamat :
+                                    Alamat Pribadi :
                                     <span class="danger">*</span>
                                   </label>
                                   <textarea type="text" class="form-control required" id="lastName3" rows="5"
                                     name="alamat_pemohon" placeholder="Alamat"></textarea>
                                 </div>
                               </div>
+                              <div class="col-md-12">
+                                <div class="form-group">
+                                  <label for="lastName3">
+                                    Alamat Bangunan :
+                                    <span class="danger">*</span>
+                                  </label>
+                                  <textarea type="text" class="form-control required" id="lastName3" rows="5"
+                                    name="alamat_bangunan" placeholder="Alamat bangunan"></textarea>
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <div class="form-group">
+                                  <label for="lastName3">
+                                  Jenis Bangunan :
+                                    <span class="danger">*</span>
+                                  </label>
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                    <select class="form-control" name="jenis_bangunan" id="basicSelect">
+                                          <option>Select Option</option>
+                                          <option>Option 1</option>
+                                          <option>Option 2</option>
+                                          <option>Option 3</option>
+                                          <option>Option 4</option>
+                                          <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <select class="form-control" name="jenis_bangunan" id="basicSelect">
+                                          <option>Select Option</option>
+                                          <option>Option 1</option>
+                                          <option>Option 2</option>
+                                          <option>Option 3</option>
+                                          <option>Option 4</option>
+                                          <option>Option 5</option>
+                                        </select>
+                                    </div>
+                                  </div>
+                                        
+                                </div>
+                              </div>
                             </div>
                             <div class="row">
                               <div class="col-md-6">
                                 <div class="form-group">
-                                  <table style="width:100%;">
+                                  <table style="width:100%;" class="perhitungan">
                                     <tr>
                                       <td>
                                         <label for="emailAddress5">
@@ -111,52 +163,65 @@
                                         </label>
                                       </td>
                                       <td><label for="emailAddress5">
-                                          Nilai yang akan dipertanggungkan
+                                          Harga yang akan dipertanggungkan
                                           <span class="danger">*</span>
                                         </label></td>
                                     </tr>
-                                    <tr>
-                                      <td>Bangunan &nbsp;</td>
-                                      <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_bangungan" placeholder="Nilai bangunan"></td>
+                                    <div>
+                                      <tr>
+                                        <td></td>
+                                        <td>
+                                        
+                                        </td>
+                                        <td>
+                                        
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Bangunan &nbsp;</td>
+                                        <td> <input type="number" class="form-control required" name="nilai_bangungan"
+                                            id="nilai_bangungan" placeholder="Harga bangunan"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Mesin - mesin &nbsp;</td>
+                                        <td> <input type="number" class="form-control required" name="nilai_mesin"
+                                            id="nilai_mesin" placeholder="Harga mesin - mesin"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Persedian barang - barang &nbsp;</td>
+                                        <td> <input type="number" class="form-control required" name="nilai_barang"
+                                            id="nilai_barang" placeholder="Harga barang - barang"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Barang - barang dagangan &nbsp;</td>
+                                        <td> <input type="number" class="form-control required" name="nilai_dagangan"
+                                            id="nilai_dagangan" placeholder="Harga barang dagangan"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Perabot rumah tangga &nbsp;</td>
+                                        <td> <input type="number" class="form-control required"
+                                            name="nilai_perabot_rumah" id="nilai_perabot_rumah"
+                                            placeholder="Harga perabot rumah"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Perabot kantor/toko/gudang &nbsp;</td>
+                                        <td> <input type="number" class="form-control required"
+                                            name="nilai_perabot_kantor" id="nilai_perabot_kantor"
+                                            placeholder="Harga perabot kantor/toko/gudang">
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Dan lain lain &nbsp;</td>
+                                        <td> <input type="number" class="form-control required" name="nilai_lain"
+                                            id="nilai_lain" placeholder="Harga lain - lain"></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Total &nbsp;</td>
+                                        <td> <input type="number" class="form-control required" name="total_keseluruhan"
+                                            id="total_keseluruhan" placeholder="Total keseluruhan" value=""></td>
+                                      </tr>
+                                    </div>
 
-                                    </tr>
-                                    <tr>
-                                      <td>Mesin - mesin &nbsp;</td>
-                                      <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_mesin" placeholder="Nilai mesin - mesin"></td>
-                                    </tr>
-                                    <tr>
-                                      <td>Persedian barang - barang &nbsp;</td>
-                                      <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_barang" placeholder="Nilai barang - barang"></td>
-                                    </tr>
-                                    <tr>
-                                      <td>Barang - barang dagangan &nbsp;</td>
-                                      <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_dagangan" placeholder="Nilai barang dagangan"></td>
-                                    </tr>
-                                    <tr>
-                                      <td>Perabot rumah tangga &nbsp;</td>
-                                      <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_perabot_rumah" placeholder="Nilai perabot rumah"></td>
-                                    </tr>
-                                    <tr>
-                                      <td>Perabot kantor/toko/gudang &nbsp;</td>
-                                      <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_perabot_kantor" placeholder="Nilai perabot kantor/toko/gudang">
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td>Dan lain lain &nbsp;</td>
-                                      <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="nilai_lain" placeholder="Nilai lain - lain"></td>
-                                    </tr>
-                                    <tr>
-                                      <td>Total &nbsp;</td>
-                                      <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="total_keseluruhan" placeholder="Total keseluruhan"></td>
-                                    </tr>
                                   </table>
 
                                 </div>
@@ -462,12 +527,17 @@
                           <fieldset>
                             <div class="row">
                               <div class="col-md-6">
-                                <label>Pertanggungan - pertanggungan yang diminta</label>
+                                <label>Luas jaminan pertanggungan yang diminta</label>
+
                                 <div class="form-group">
+                                  <br>
+                                  <label class=""
+                                    style="font-weight:bold; font-size:16px;text-transform:uppercase;">Jaminan
+                                    pokok</label>
                                   <br>
                                   <label>Kebakaran ( kebakaran, petir, ledakan, kejatuhan pesawat udara )</label>
                                   <div class="c-inputs-stacked">
-                                    <div class="d-inline-block custom-control custom-checkbox">
+                                    <!-- <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="checkbox" name="pertanggungan_kebakaran" class="custom-control-input"
                                         id="staffing3">
                                       <label class="custom-control-label" for="staffing3">Ya</label>
@@ -476,13 +546,17 @@
                                       <input type="checkbox" name="pertanggungan_kebakaran" class="custom-control-input"
                                         id="catering3">
                                       <label class="custom-control-label" for="catering3">Tidak</label>
-                                    </div>
+                                    </div> -->
                                   </div>
                                   <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
-                                    name="nilai_pertanggungan_kebakaran" placeholder="Nilai pertanggungan kebakaran">
+                                    name="nilai_pertanggungan_kebakaran" placeholder="Harga pertanggungan kebakaran">
                                 </div>
                                 <div class="form-group">
+                                  <br>
+                                  <label class=""
+                                    style="font-weight:bold; font-size:16px;text-transform:uppercase;">Perluasan
+                                    Jaminan</label>
                                   <br>
                                   <label>Perluasan jaminan ( Kerusuhan, Pemogokan, Akibat perbuatan jahat, tertabrak
                                     kendaraan, asap )</label>
@@ -499,9 +573,9 @@
                                     </div>
                                   </div>
                                   <br>
-                                  <input type="text" class="form-control required" id="meetingLocation3"
+                                  <input type="text" class="form-control required" id="nilai_pertanggungan_kerusakan"
                                     name="nilai_pertanggungan_kerusakan"
-                                    placeholder="Nilai pertanggungan perluasan jaminan">
+                                    placeholder="Harga pertanggungan perluasan jaminan">
                                 </div>
                                 <div class="form-group">
 
@@ -519,9 +593,9 @@
                                     </div>
                                   </div>
                                   <br>
-                                  <input type="text" class="form-control required" id="meetingLocation3"
+                                  <input type="text" class="form-control required" id="nilai_pertanggungan_gempa"
                                     name="nilai_pertanggungan_gempa"
-                                    placeholder="Nilai pertanggungan gempa bumi dan letusan gunung berapi">
+                                    placeholder="Harga pertanggungan gempa bumi dan letusan gunung berapi">
                                 </div>
                                 <div class="form-group">
 
@@ -539,11 +613,11 @@
                                     </div>
                                   </div>
                                   <br>
-                                  <input type="text" class="form-control required" id="meetingLocation3"
+                                  <input type="text" class="form-control required" id="nilai_pertanggungan_banjir"
                                     name="nilai_pertanggungan_banjir"
-                                    placeholder="Nilai pertanggungan banjir/angin topan, badai/kerusakan karena air">
+                                    placeholder="Harga pertanggungan banjir/angin topan, badai/kerusakan karena air">
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
 
                                   <label>Biaya - biaya pembersihan</label>
                                   <div class="c-inputs-stacked">
@@ -559,10 +633,11 @@
                                     </div>
                                   </div>
                                   <br>
-                                  <input type="text" class="form-control required" id="meetingLocation3"
+                                  <input type="text" class="form-control required"
+                                    id="nilai_pertanggungan_biaya_pembersihan"
                                     name="nilai_pertanggungan_biaya_pembersihan"
-                                    placeholder="Nilai pertanggungan biaya pembersihan">
-                                </div>
+                                    placeholder="Harga pertanggungan biaya pembersihan">
+                                </div> -->
                                 <!-- <div class="form-group">
                                   <label for="meetingLocation3">
                                     Location :
@@ -654,6 +729,22 @@
       <!-- BEGIN PAGE LEVEL JS-->
       <!-- <script src=" app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script> -->
       <!-- END PAGE LEVEL JS-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript">
+        $(".perhitungan").keyup(function () {
+          let nilai_bangungan = parseInt($("#nilai_bangungan").val())
+          let nilai_mesin = parseInt($("#nilai_mesin").val())
+          let nilai_barang = parseInt($("#nilai_barang").val())
+          let nilai_dagangan = parseInt($("#nilai_dagangan").val())
+          let nilai_perabot_rumah = parseInt($("#nilai_perabot_rumah").val())
+          let nilai_perabot_kantor = parseInt($("#nilai_perabot_kantor").val())
+          let nilai_lain = parseInt($("#nilai_lain").val())
+          let total_keseluruhan = nilai_bangungan + nilai_mesin + nilai_barang + nilai_dagangan +
+            nilai_perabot_rumah + nilai_perabot_kantor + nilai_lain;
+          $("#total_keseluruhan").attr("value", total_keseluruhan)
+
+        });
+      </script>
     </body>
 
     </html>

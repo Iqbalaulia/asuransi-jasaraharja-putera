@@ -12,6 +12,9 @@
         <li class=" nav-item"><a href="form-customer-jasarahaja.php"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Form Customer</span><span class="badge badge badge-pill badge-danger float-right mr-2">New</span></a>
           
         </li>
+        <li class=" nav-item"><a href="form-polis-index.php"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Form Polis Customer</span><span class="badge badge badge-pill badge-danger float-right mr-2">New</span></a>
+          
+        </li>
         <!-- <li class=" nav-item"><a href="#"><i class="la la-navicon"></i><span class="menu-title" data-i18n="nav.navbars.main">Navbars</span></a>
           <ul class="menu-content">
             <li><a class="menu-item" href="navbar-light.html" data-i18n="nav.navbars.nav_light">Navbar Light</a>

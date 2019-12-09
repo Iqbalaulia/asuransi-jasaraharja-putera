@@ -44,7 +44,7 @@
 include_once("connection.php");
 
 // Fetch all users data from database
-$result = mysqli_query($koneksi, "SELECT id,nama_lengkap,no_telp,alamat_pemohon,biaya_polis,premi_dasar,total_pembayaran,status_form,status_polis FROM form_customer");
+$result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,jangka_waktu,batas_waktu,lokasi_obyek,alamat FROM form_polis");
 ?>
 
     <!-- fixed-top-->
@@ -89,96 +89,60 @@ $result = mysqli_query($koneksi, "SELECT id,nama_lengkap,no_telp,alamat_pemohon,
                                         <table class="table table-striped table-bordered zero-configuration">
                                             <thead>
                                                 <tr>
-                                                    <th>Nama</th>
-                                                    <th>Alamat</th>
-                                                    <th>Biaya Polis</th>
-                                                    <th>Premi Dasar</th>
-                                                    <th>Total Pembayaran</th>
-                                                    <th>Status</th>
+                                                    <th>No</th>
+                                                    <th>Nomor Polis</th>
+                                                    <th>Tertanggung</th>
+                                                    <th>Nomor Telepon</th>
+                                                    <th>Obyek Pertanggungan</th>
+                                                    <th>Harga Pertanggungan</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php while($form_customer = mysqli_fetch_array($result)) {    ?>
+                                                <?php 
+                                                $no_urut = 0;
+                                                while($form_polis = mysqli_fetch_array($result)) {   
+                                                    $no_urut++;
+                                                    ?>
                                                 <tr>
-                                                    <td><?php echo $form_customer['nama_lengkap'] ?></td>
-                                                    <td><?php echo $form_customer['alamat_pemohon'] ?></td>
-                                                    <td><?php echo $form_customer['biaya_polis'] ?></td>
-                                                    <td><?php echo $form_customer['premi_dasar'] ?></td>
-                                                    <td><?php echo $form_customer['total_pembayaran'] ?></td>
-                                                    <td><?php echo $form_customer['status_form'] ?></td>
+                                                    <td><?php echo $no_urut ?></td>
+                                                    <td><?php echo $form_polis['no_polis'] ?></td>
+                                                    <td><?php echo $form_polis['tertanggung'] ?></td>
+                                                    <td><?php echo $form_polis['no_telp'] ?></td>
+                                                    <td><?php echo $form_polis['obyek_pertanggungan'] ?></td>
+                                                    <td><?php echo $form_polis['harga_pertanggungan'] ?></td>
                                                     <td>
                                                         <div class="row">
-                                                            <div class="col-md-2">
+                                                        <div class="col-md-3">
                                                                 <a
-                                                                    href='form-customer-edit.php?id=<?php echo $form_customer['id'] ?>'>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary mr-1 mb-1"><i
-                                                                            class="icon-pencil"></i></button>
+                                                                    href="form-preview-polis.php?id=<?php echo $form_polis['id'];?>">
+                                                                    <button type="submit" name="approved"
+                                                                        class="btn btn-primary mr-1 mb-1"> <i
+                                                                            class="icon-pencil"></i> Edit </button>
                                                                 </a>
-
-
                                                             </div>
-                                                            <div class="col-md-2">
+                                                            <div class="col-md-3">
                                                                 <a
-                                                                    href='form_delete_customer.php?id=<?php echo $form_customer['id'] ?>'>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger mr-1 mb-1"><i
-                                                                            class="icon-trash"></i></button>
-
-                                                                </a>
-
-                                                            </div>
-                                                            <?php if($form_customer['status_form'] == "Approved" ){ ?>
-
-                                                                    <?php if($form_customer['status_polis'] == "Telah dibuat"){ ?>
-                                                                           
-                                                                    <?php }else{ ?>
-                                                                        <div class="col-md-2">
-                                                                        <a
-                                                                            href="form-polis-customer.php?id=<?php echo $form_customer['id'] ?>">
-                                                                            <button type="submit" name="approved"
-                                                                                class="btn btn-info mr-1 mb-1"> <i
-                                                                                    class="icon-docs"></i></button>
-                                                                        </a>
-                                                                    </div>
-                                                                    <?php } ?>
-                                                                    
-                                                            <?php }else{ ?>
-
-                                                            <div class="col-md-2">
-                                                                <form action="form_approved_customer.php">
-                                                                    <input type="hidden" name="id"
-                                                                        value=<?php echo $form_customer['id'];?>>
+                                                                    href="form-preview-polis.php?id=<?php echo $form_polis['id'];?>">
                                                                     <button type="submit" name="approved"
                                                                         class="btn btn-success mr-1 mb-1"> <i
-                                                                            class="icon-check"></i></button>
-                                                                </form>
-                                                            </div>
-                                                            <div class="col-md-2">
-                                                                <a
-                                                                    href="https://api.whatsapp.com/send?phone=<?php echo $form_customer['no_telp'] ?>&text=Kepada%20Bapak/Ibu%20<?php echo $form_customer['nama_lengkap'] ?>%20diberitahukan,%20bahwa%20pengajuan%20Asuransi%20anda%20telah%20kami%20terima.%20Mohon%20segera%20konfirmasi%20pengajuannya%20dengan%20membalas%20pesan%20ini.">
-                                                                    <button type="submit" name="approved"
-                                                                        class="btn btn-success mr-1 mb-1"> <i
-                                                                            class="icon-call-out"></i></button>
+                                                                            class="icon-eye"></i> Preview</button>
                                                                 </a>
                                                             </div>
-                                                            <?php } ?>
-
+                                                            
                                                         </div>
-
                                                     </td>
                                                 </tr>
                                                 <?php } ?>
                                             </tbody>
                                             <tfoot>
                                                 <tr>
-                                                    <th>Nama</th>
-                                                    <th>Alamat</th>
-                                                    <th>Biaya Polis</th>
-                                                    <th>Premi Dasar</th>
-                                                    <th>Total Pembayaran</th>
-                                                    <th>Status</th>
+                                                    <th>No</th>
+                                                    <th>Nomor Polis</th>
+                                                    <th>Tertanggung</th>
+                                                    <th>Nomor Telepon</th>
+                                                    <th>Obyek Pertanggungan</th>
+                                                    <th>Harga Pertanggungan</th>
                                                     <th></th>
                                                 </tr>
                                             </tfoot>

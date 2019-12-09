@@ -8,6 +8,7 @@ if(isset($_POST['update']))
     $id = $_POST['id'];
 
     $nama_lengkap = $_POST['nama_lengkap'];
+    $no_telp = $_POST['no_telp'];
     $alamat_pemohon = $_POST['alamat_pemohon'];
     $nilai_bangungan = $_POST['nilai_bangungan'];
     $nilai_mesin = $_POST['nilai_mesin'];
