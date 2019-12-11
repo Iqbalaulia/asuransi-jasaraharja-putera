@@ -86,101 +86,125 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                 </div>
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
-                                       <div class="container">
-                                       <table style="width:100%">
-                                        <?php while($form_polis = mysqli_fetch_array($result)) { ?>
+                                        <div class="container">
+                                            <table style="width:100%">
+                                                <?php while($form_polis = mysqli_fetch_array($result)) { ?>
 
-                                            <tr>
-                                                <td style="width:30%"><label>Nomor Polis &nbsp;</label></td>
-                                                <td>
-                                                <input type="text" class="form-control required" id="emailAddress5"
-                                          name=""" value=" <?php echo $form_polis['no_polis'] ?>" disabled>
-                                                    
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td style="width:30%"><label>Nomor Polis &nbsp;</label></td>
+                                                    <td>
+                                                        <input type="text" class="form-control required"
+                                                            id="emailAddress5" name=""
+                                                            value="<?php echo $form_polis['no_polis'] ?>" disabled>
 
-                                            <tr>
-                                                <td style="width:30%"><label>Tertanggung &nbsp;</label></td>
-                                                <td>
-                                                <input type="text" class="form-control required" id="emailAddress5"
-                                          name=""" value=" <?php echo $form_polis['tertanggung'] ?>" disabled>
-                                                    
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td style="width:30%"><label>Nomor Telepon &nbsp;</label></td>
-                                                <td>
-                                                <input type="text" class="form-control required" id="emailAddress5"
-                                          name=""" value=" <?php echo $form_polis['no_telp'] ?>" disabled>
-                                                    
-                                                </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td style="width:30%"><label>Obyek Pertanggungan &nbsp;</label></td>
-                                                <td>
-                                                <input type="text" class="form-control required" id="emailAddress5"
-                                          name=""" value=" <?php echo $form_polis['obyek_pertanggungan'] ?>" disabled>
-                                                    
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td style="width:30%"><label>Tertanggung &nbsp;</label></td>
+                                                    <td>
+                                                        <input type="text" class="form-control required"
+                                                            id="emailAddress5" name=""
+                                                            value="<?php echo $form_polis['tertanggung'] ?>" disabled>
 
-                                            <tr>
-                                                <td style="width:30%"><label>Harga Pertanggungan &nbsp;</label></td>
-                                                <td>
-                                                <input type="text" class="form-control required" id="emailAddress5"
-                                          name=""" value=" <?php echo $form_polis['harga_pertanggungan'] ?>" disabled>
-                                                    
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td style="width:30%"><label>Luas Jaminan &nbsp;</label></td>
-                                                <td>
-                                                <input type="text" class="form-control required" id="emailAddress5"
-                                          name=""" value=" <?php echo $form_polis['luas_jaminan'] ?>" disabled>
-                                                    
-                                                </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td style="width:30%"><label>Jangka Waktu &nbsp;</label></td>
-                                                <td>
-                                                <input type="date" class="form-control" id="date3" name="jangka_waktu" value="<?php echo $form_polis['jangka_waktu'] ?>" disabled>
-                                                    
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td style="width:30%"><label>Nomor Telepon &nbsp;</label></td>
+                                                    <td>
+                                                        <input type="text" class="form-control required"
+                                                            id="emailAddress5" name=""
+                                                            value="<?php echo $form_polis['no_telp'] ?>" disabled>
 
-                                            <tr>
-                                                <td style="width:30%"><label>Batas Waktu &nbsp;</label></td>
-                                                <td>
-                                                <input type="date" class="form-control" id="date3" name="jangka_waktu" value="<?php echo $form_polis['batas_waktu'] ?>" disabled>
+                                                    </td>
+                                                </tr>
 
-                                                    
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td style="width:30%"><label>Obyek Pertanggungan &nbsp;</label></td>
+                                                    <td>
+                                                        <input type="text" class="form-control required"
+                                                            id="emailAddress5" name=""
+                                                            value=" <?php echo $form_polis['obyek_pertanggungan'] ?>"
+                                                            disabled>
 
-                                            <tr>
-                                                <td style="width:30%"><label>Lokasi Obyek &nbsp;</label></td>
-                                                <td>
-                                                <input type="text" class="form-control required" id="emailAddress5"
-                                          name=""" value=" <?php echo $form_polis['lokasi_obyek'] ?>" disabled>
-                                                    
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td style="width:30%"><label>Alamat &nbsp;</label></td>
-                                                <td>
-                                                <textarea name="" id="shortDescription3" rows="4"
-                                    class="form-control" disabled > <?php echo $form_polis['alamat'] ?></textarea>
-                                                </td>
-                                            </tr>
-                                            
-                                        <?php } ?>
-                                    </table>
-                                       </div>
+                                                <tr>
+                                                    <td style="width:30%"><label>Harga Pertanggungan &nbsp;</label></td>
+                                                    <td>
+                                                        <input type="text" class="form-control required"
+                                                            id="emailAddress5" name=""" value="<?php echo $form_polis['harga_pertanggungan'] ?>" disabled>
+
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width:30%"><label>Luas Jaminan &nbsp;</label></td>
+                                                    <td>
+                                                        <input type="text" class="form-control required"
+                                                            id="emailAddress5" name=""" value="<?php echo $form_polis['luas_jaminan'] ?>" disabled>
+
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width:30%"><label>Jangka Waktu &nbsp;</label></td>
+                                                    <td>
+                                                        <input type="date" class="form-control" id="date3"
+                                                            name="jangka_waktu"
+                                                            value="<?php echo $form_polis['jangka_waktu'] ?>" disabled>
+
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width:30%"><label>Batas Waktu &nbsp;</label></td>
+                                                    <td>
+                                                        <input type="date" class="form-control" id="date3"
+                                                            name="jangka_waktu"
+                                                            value="<?php echo $form_polis['batas_waktu'] ?>" disabled>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width:30%"><label>Lokasi Obyek &nbsp;</label></td>
+                                                    <td>
+                                                        <input type="text" class="form-control required"
+                                                            id="emailAddress5" name=""" value="<?php echo $form_polis['lokasi_obyek'] ?>" disabled>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width:30%"><label>Alamat &nbsp;</label></td>
+                                                    <td>
+                                                        <textarea name="" id="shortDescription3" rows="4"
+                                                            class="form-control" disabled><?php echo $form_polis['alamat'] ?></textarea>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+
+                                            <div class="row">
+                                                <div class="col-md-12 mt-2 p-0" align="right">
+                                                    <form
+                                                        action="form-polis-print.php?id=<?php echo $form_polis['id'];?>"
+                                                        method="post">  
+                                                        <a href="">
+                                                            <button type="submit" name="approved"
+                                                                class="btn btn-success mr-1 mb-1"> <i
+                                                                    class="icon-printer"></i>
+                                                                Cetak Polis
+                                                                <input type="text" name="status_polis" hidden value="Telah Dicetak">
+
+                                                            </button>
+                                                        </a>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -24,8 +24,8 @@ mysqli_query($koneksi,"INSERT INTO form_polis
 jangka_waktu,batas_waktu,lokasi_obyek,alamat) VALUES
 (NULL,'$no_polis','$tertanggung','$no_telp','$obyek_pertanggungan','$harga_pertanggungan','$luas_jaminan',
 '$jangka_waktu','$batas_waktu','$lokasi_obyek','$alamat')");
-// mengalihkan halaman kembali ke index.php
 
+// mengalihkan halaman kembali ke index.php
 mysqli_query($koneksi, "UPDATE form_customer SET status_polis='$status_polis' WHERE id=$id");
 
 header("location:form-customer-jasarahaja.php");

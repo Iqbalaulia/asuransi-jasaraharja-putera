@@ -44,7 +44,7 @@
 include_once("connection.php");
 
 // Fetch all users data from database
-$result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,jangka_waktu,batas_waktu,lokasi_obyek,alamat FROM form_polis");
+$result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,jangka_waktu,batas_waktu,lokasi_obyek,alamat,status_polis FROM form_polis");
 ?>
 
     <!-- fixed-top-->
@@ -113,12 +113,39 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <td><?php echo $form_polis['harga_pertanggungan'] ?></td>
                                                     <td>
                                                         <div class="row">
-                                                        <div class="col-md-3">
-                                                                <a
+                                                            <?php if($form_polis['status_polis'] == 'Telah Dicetak'){ ?>
+                                                            <!-- <div class="col-md-3">
+                                                                <a hidden
+                                                                    href="form-polis-edit.php?id=<?php echo $form_polis['id'];?>">
+                                                                    <button type="submit" name="approved"
+                                                                        class="btn btn-primary mb-1"> <i
+                                                                            class="icon-pencil"></i> Edit </button>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <a hidden
                                                                     href="form-preview-polis.php?id=<?php echo $form_polis['id'];?>">
                                                                     <button type="submit" name="approved"
+                                                                        class="btn btn-success mr-1 mb-1"> <i
+                                                                            class="icon-eye"></i> Preview</button>
+                                                                </a>
+                                                            </div> -->
+                                                            <?php }else { ?>
+
+                                                            <div class="col-md-3">
+                                                                <a
+                                                                    href="form-polis-edit.php?id=<?php echo $form_polis['id'];?>">
+                                                                    <button type="submit" name="approved"
+                                                                        class="btn btn-primary mb-1"> <i
+                                                                            class="icon-pencil"></i>  </button>
+                                                                </a>
+                                                            </div>
+                                                            <div class="col-md-3">
+                                                                <a
+                                                                    href="form-polis-edit.php?id=<?php echo $form_polis['id'];?>">
+                                                                    <button type="submit" name="approved"
                                                                         class="btn btn-primary mr-1 mb-1"> <i
-                                                                            class="icon-pencil"></i> Edit </button>
+                                                                            class="icon-plus"></i> </button>
                                                                 </a>
                                                             </div>
                                                             <div class="col-md-3">
@@ -126,10 +153,11 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                                     href="form-preview-polis.php?id=<?php echo $form_polis['id'];?>">
                                                                     <button type="submit" name="approved"
                                                                         class="btn btn-success mr-1 mb-1"> <i
-                                                                            class="icon-eye"></i> Preview</button>
+                                                                            class="icon-eye"></i> </button>
                                                                 </a>
                                                             </div>
-                                                            
+                                                            <?php }?>
+
                                                         </div>
                                                     </td>
                                                 </tr>

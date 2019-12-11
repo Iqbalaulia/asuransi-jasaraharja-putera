@@ -1,8 +1,18 @@
 <?php
+include_once("connection.php");
+// Update status polis pada form polis
+$status_polis = $_POST['status_polis'];
+$id_polis = $_GET['id'];
+$result = mysqli_query($koneksi, "UPDATE form_polis SET status_polis='$status_polis' WHERE id=$id_polis");
+// ------------------------------------------------------------------------------------------------
+
+
+
+
 // memanggil library FPDF
 require('fpdf.php');
 // intance object dan memberikan pengaturan halaman PDF
-$pdf = new FPDF('l','mm','A5');
+$pdf = new FPDF('P','mm','A4');
 // membuat halaman baru
 
 $pdf->AddPage();
@@ -22,6 +32,125 @@ $pdf->SetFont('Arial','',12);
 $pdf->Cell(180,-5,'PT. JASARAHARJA PUTERA dengan ini menyatakan bahwa atas dasar ikhtisar di bawah ini,',0,1,'FJ');
 $pdf->Cell(171,20,'tertanggung diansuransikan untuk hak dan kepentingan masing - masing, sesuai dengan',0,1,'FJ');
 $pdf->Cell(82,-5,'ketentuan dan syarat - syarat polis induk.',0,1,'FJ');
+
+//colom tabel
+$pdf->Cell(10,7,'',0,1);
+$pdf->Cell(10,7,'',0,1);
+
+$pdf->SetFont('Arial','',12);
+
+$i=1;
+$id = $_GET['id'];
+$cetak_polis = mysqli_query($koneksi, "SELECT * FROM form_polis WHERE id='$id_polis' ");
+while ($polis = mysqli_fetch_array($cetak_polis)){
+//isi item
+$pdf->SetFont('Arial','B',12);
+
+
+$pdf->Cell(80,7,'',0,0);
+$pdf->Cell(50,7,'IKHTISAR',0,0);
+
+$pdf->SetFont('Arial','',12);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+$pdf->Cell(30,7,$polis[''],0,1);
+
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'Nomor Polis  ',0,0);
+$pdf->Cell(15,7,$polis['no_polis'],0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+$i++;
+
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'Tertanggung     ',0,0);
+$pdf->Cell(50,7,$polis['tertanggung'],0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'Alamat  ',0,0);
+$pdf->Cell(100,7,$polis['alamat'],0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'Nomor Telepon  ',0,0);
+$pdf->Cell(50,7,$polis['no_telp'],0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'Obyek Pertanggungan  ',0,0);
+$pdf->Cell(50,7,$polis['obyek_pertanggungan'],0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'Harga Pertanggungan  ',0,0);
+$pdf->Cell(50,7,$polis['harga_pertanggungan'],0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'Luas Jaminan  ',0,0);
+$pdf->Cell(50,7,$polis['luas_jaminan'],0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'Lokasi Obyek ',0,0);
+$pdf->Cell(50,7,$polis['lokasi_obyek'],0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'Jangka Waktu  ',0,0);
+$pdf->Cell(50,7,$polis['jangka_waktu'],0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+
+$pdf->SetFont('Arial','',8);
+}
+
+$pdf->SetFont('Arial','B',12);
+$pdf->Cell(10,7,'',0,1);
+$pdf->Cell(10,7,'',0,1);
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'Surabaya',0,0);
+$pdf->Cell(10,7,'',0,1);
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(30,7,'',0,0);
+$pdf->Cell(50,7,'PT. JASARAHARJA PUTERA  ',0,0);
+$pdf->Cell(10,7,'',0,1);
+$pdf->Cell(10,7,'',0,1);
+$pdf->Cell(10,7,'',0,1);
+$pdf->Cell(10,7,'',0,1);
+$pdf->Cell(10,7,'',0,1);
+
+$pdf->SetFont('Arial','',10);
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(45,7,'',0,0);
+$pdf->Cell(50,7,'Yang diberi kuasa  ',0,0);
+
+
+
+
+
 
 
 
