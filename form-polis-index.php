@@ -44,7 +44,7 @@
 include_once("connection.php");
 
 // Fetch all users data from database
-$result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,jangka_waktu,batas_waktu,lokasi_obyek,alamat,status_polis FROM form_polis");
+$result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,jangka_waktu,batas_waktu,lokasi_obyek,alamat,status_polis,status_pembayaran FROM form_polis");
 ?>
 
     <!-- fixed-top-->
@@ -95,6 +95,7 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <th>Nomor Telepon</th>
                                                     <th>Obyek Pertanggungan</th>
                                                     <th>Harga Pertanggungan</th>
+                                                    <th>Status Pembayaran</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -111,6 +112,7 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <td><?php echo $form_polis['no_telp'] ?></td>
                                                     <td><?php echo $form_polis['obyek_pertanggungan'] ?></td>
                                                     <td><?php echo $form_polis['harga_pertanggungan'] ?></td>
+                                                    <td><?php echo $form_polis['status_pembayaran'] ?></td>
                                                     <td>
                                                         <div class="row">
                                                             <?php if($form_polis['status_polis'] == 'Telah Dicetak'){ ?>
@@ -136,26 +138,26 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                                 <a
                                                                     href="form-polis-edit.php?id=<?php echo $form_polis['id'];?>">
                                                                     <button type="submit" name="approved"
-                                                                        class="btn btn-primary mb-1"> <i
+                                                                        class="btn btn-primary mb-1 mr-1"> <i
                                                                             class="icon-pencil"></i>  </button>
                                                                 </a>
                                                             </div>
                                                             <div class="col-md-3">
                                                                 <a
-                                                                    href="form-polis-edit.php?id=<?php echo $form_polis['id'];?>">
+                                                                    href="form-polis-pembayaran.php?id=<?php echo $form_polis['id'];?>">
                                                                     <button type="submit" name="approved"
-                                                                        class="btn btn-primary mr-1 mb-1"> <i
+                                                                        class="btn btn-success mr-1 mb-1"> <i
                                                                             class="icon-plus"></i> </button>
                                                                 </a>
                                                             </div>
-                                                            <div class="col-md-3">
+                                                            <!-- <div class="col-md-3">
                                                                 <a
                                                                     href="form-preview-polis.php?id=<?php echo $form_polis['id'];?>">
                                                                     <button type="submit" name="approved"
                                                                         class="btn btn-success mr-1 mb-1"> <i
                                                                             class="icon-eye"></i> </button>
                                                                 </a>
-                                                            </div>
+                                                            </div> -->
                                                             <?php }?>
 
                                                         </div>
@@ -171,6 +173,7 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <th>Nomor Telepon</th>
                                                     <th>Obyek Pertanggungan</th>
                                                     <th>Harga Pertanggungan</th>
+                                                    <th>Status Pembayaran</th>
                                                     <th></th>
                                                 </tr>
                                             </tfoot>
