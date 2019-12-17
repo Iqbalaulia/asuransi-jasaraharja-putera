@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu-modern.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
     <link rel="stylesheet" type="text/css" href="app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/fonts/line-awesome/css/line-awesome.min.css">
 
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
@@ -138,16 +139,15 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                                 <a
                                                                     href="form-polis-edit.php?id=<?php echo $form_polis['id'];?>">
                                                                     <button type="submit" name="approved"
-                                                                        class="btn btn-primary mb-1 mr-1"> <i
-                                                                            class="icon-pencil"></i>  </button>
+                                                                        class="btn btn-primary mb-1 mr-5"> <i
+                                                                            class="la la-edit"></i>  </button>
                                                                 </a>
                                                             </div>
                                                             <div class="col-md-3">
                                                                 <a
                                                                     href="form-polis-pembayaran.php?id=<?php echo $form_polis['id'];?>">
                                                                     <button type="submit" name="approved"
-                                                                        class="btn btn-success mr-1 mb-1"> <i
-                                                                            class="icon-plus"></i> </button>
+                                                                        class="btn btn-success mr-1 mb-1"> <i class="la la-money"></i> </button>
                                                                 </a>
                                                             </div>
                                                             <!-- <div class="col-md-3">

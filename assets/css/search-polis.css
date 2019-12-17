@@ -1,0 +1,16 @@
+.table-review {
+    width: 100%;
+    height: auto;
+    border: 1px solid #CACFE7;
+    padding: 1%;
+    border-radius: 4px;
+    
+}
+
+.table-review h1{
+    margin-bottom: 4%;
+    text-align: center;
+    text-decoration: underline;
+    color: #000000;
+    font-weight: bold;
+}

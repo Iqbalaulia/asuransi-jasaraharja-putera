@@ -8,15 +8,14 @@
           <span data-i18n="nav.category.layouts">Kasir</span><i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"
           data-placement="right" data-original-title="Layouts"></i>
         </li>
-        <li class=" nav-item"><a href="pencarian-polis.php"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Pencarian Polis</span></a>
+        <li class=" nav-item"><a href="search-polis.php"><i class="la la-search"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Pencarian Polis</span></a>
           
         </li>
-        <li class=" nav-item"><a href="nota-pembayaran.php"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Nota Pembayaran</span></a>
+        <li class=" nav-item"><a href="nota-pembayaran.php"><i class="la la-sticky-note"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Nota Pembayaran</span></a>
           
         </li>
-        <li class=" nav-item"><a href="laporan-keuangan.php"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Laporan Keuangan</span></a>
-          
-        </li>
+        
+        
         <!-- <li class=" nav-item"><a href="#"><i class="la la-navicon"></i><span class="menu-title" data-i18n="nav.navbars.main">Navbars</span></a>
           <ul class="menu-content">
             <li><a class="menu-item" href="navbar-light.html" data-i18n="nav.navbars.nav_light">Navbar Light</a>
@@ -959,15 +958,11 @@
           </ul>
         </li> -->
         <li class=" navigation-header">
-          <span data-i18n="nav.category.support">Support</span><i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"
+          <span data-i18n="nav.category.support">Laporan</span><i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"
           data-placement="right" data-original-title="Support"></i>
         </li>
-        <li class=" nav-item"><a href="http://support.pixinvent.com/"><i class="la la-support"></i><span class="menu-title" data-i18n="nav.support_raise_support.main">Raise Support</span></a>
-        </li>
-        <li class=" nav-item">
-          <a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation"><i class="la la-text-height"></i>
-            <span class="menu-title" data-i18n="nav.support_documentation.main">Documentation</span>
-          </a>
+        <li class=" nav-item"><a href="laporan-keuangan.php"><i class="la la-file-archive-o"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Laporan Keuangan</span></a>
+          
         </li>
       </ul>
     </div>
