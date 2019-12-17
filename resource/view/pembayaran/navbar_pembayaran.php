@@ -5,7 +5,7 @@
           <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
           <li class="nav-item mr-auto">
             <a class="navbar-brand" href="index.html">
-              <img class="brand-logo" alt="modern admin logo" src="app-assets/images/logo/logo.png">
+              <img class="brand-logo" alt="modern admin logo" src="../../../app-assets/images/logo/logo.png">
               <h3 class="brand-text">Modern Admin</h3>
             </a>
           </li>
@@ -165,7 +165,7 @@
                 <a class="dropdown-item" href="#"><i class="ft-mail"></i> My Inbox</a>
                 <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
                 <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" href="logout.php"><i class="ft-power"></i> Logout</a>
+                <div class="dropdown-divider"></div><a class="dropdown-item" href="../../../logout.php"><i class="ft-power"></i> Logout</a>
               </div>
             </li>
             <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"

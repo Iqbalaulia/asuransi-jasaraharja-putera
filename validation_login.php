@@ -30,12 +30,12 @@ if($cek > 0){
 		header("location:index.php");
 
 	// cek jika user login sebagai pegawai
-	}else if($data['level']=="pegawai"){
+	}else if($data['level']=="kasir"){
 		// buat session login dan username
 		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "pegawai";
+		$_SESSION['level'] = "kasir";
 		// alihkan ke halaman dashboard pegawai
-		header("location:halaman_pegawai.php");
+		header("location:resource/view/pembayaran/dashboard-pembayaran.php");
 
 	// cek jika user login sebagai pengurus
 	}else if($data['level']=="pengurus"){
