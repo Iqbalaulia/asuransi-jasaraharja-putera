@@ -35,7 +35,7 @@
       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
       <!-- END Custom CSS-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
 
@@ -707,10 +707,14 @@
 
                               </div>
                             </div>
-                            <Button type="submit">simpen</Button>
-
+                            <div class="row">
+                              <div class="col-md-12 col-lg-12">
+                                <div class="button-save-form-customer" align="right">
+                                  <Button type="submit" class="btn btn-success">Simpan</Button>
+                                </div>
+                              </div>
+                            </div>
                           </fieldset>
-
                         </form>
                       </div>
                     </div>
@@ -807,7 +811,6 @@
             }
           });
         });
-        
       </script>
     </body>
 

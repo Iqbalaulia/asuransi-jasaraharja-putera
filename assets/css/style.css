@@ -9,3 +9,23 @@ NOTE:
 ------
 PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
 WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+/* login  */
+.login-case img {
+	width: 100%;
+	max-height: 300px;
+}
+
+/* .card-body .form-horizontal input{
+
+} */
+/* login ends */
+
+
+/* Profile */
+
+.card-dashboard-profile img{
+	width: 100%;
+	max-height: 400px;
+}
+/* Profile Ends */

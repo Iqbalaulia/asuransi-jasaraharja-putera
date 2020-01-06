@@ -50,9 +50,9 @@
                         <div class="col-md-4 col-10 box-shadow-2 p-0">
                             <div class="card border-grey border-lighten-3 m-0">
                                 <div class="card-header border-0">
-                                    <div class="card-title text-center">
+                                    <div class="card-title text-center login-case">
                                         <div class="p-1">
-                                            <img src="  app-assets/images/logo/logo-dark.png" alt="branding logo">
+                                            <img src="assets/images/logoJP.jpeg" alt="branding logo">
                                         </div>
                                     </div>
                                     <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
@@ -63,7 +63,7 @@
                                     <div class="card-body">
                                         <form class="form-horizontal form-simple" method="POST" action="validation_login.php" re>
                                             <fieldset class="form-group position-relative has-icon-left mb-0">
-                                                <input type="text" name="username" class="form-control form-control-lg input-lg"
+                                                <input type="text" name="username" class="form-control form-control-lg input-lg mb-2"
                                                     id="user-name" placeholder="Your Username" required>
                                                 <div class="form-control-position">
                                                     <i class="ft-user"></i>
@@ -94,7 +94,8 @@
                                 </div>
                                 <div class="card-footer">
                                     <div class="">
-                                        <p class="float-sm-left text-center m-0"><a href="recover-password.html"
+                                        <p class="float-sm-left text-center m-0">
+                                            <a href="recover-password.html"
                                                 class="card-link">Recover password</a></p>
                                         <p class="float-sm-right text-center m-0">New to Moden Admin? <a
                                                 href="register-simple.html" class="card-link">Sign Up</a></p>

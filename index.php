@@ -7,11 +7,10 @@
   <meta name="description" content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
   <meta name="keywords" content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
   <meta name="author" content="PIXINVENT">
-  <title>Dashboard sales - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
-    Dashboard
+  <title>Dashboard Underwriting
   </title>
    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png"> <!-- Clear -->
-  <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico"><!-- Clear -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo.png"><!-- Clear -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
   rel="stylesheet"><!-- Clear -->
   <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"
@@ -38,7 +37,13 @@
 data-open="click" data-menu="vertical-menu-modern" data-col="2-columns">
   <!-- fixed-top-->
   <?php 
-	session_start();
+  session_start();
+  include 'connection.php';
+
+  $id = $_SESSION['id'];
+
+  $profile = mysqli_query($koneksi,"select * from user where id='$id'");
+  
 	// cek apakah yang mengakses halaman ini sudah login
 	if($_SESSION['level']==""){
 		header("location:index.php?pesan=gagal");

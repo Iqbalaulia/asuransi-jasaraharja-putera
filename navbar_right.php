@@ -1,18 +1,16 @@
 <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="main-menu-content">
       <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-        <li class=" nav-item"><a href="index.php"><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span><span class="badge badge badge-info badge-pill float-right mr-2">3</span></a>
-          
+        <li class=" nav-item"><a href="index.php"><i class="la la-home"></i><span class="menu-title" data-i18n="nav.dash.main">Dashboard</span><span class="badge badge badge-info badge-pill float-right mr-2">3</span></a>  
         </li>
-        
         <li class=" navigation-header">
           <span data-i18n="nav.category.layouts">Customer</span><i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"
           data-placement="right" data-original-title="Layouts"></i>
         </li>
-        <li class=" nav-item"><a href="form-customer-jasarahaja.php"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Form Customer</span><span class="badge badge badge-pill badge-danger float-right mr-2">New</span></a>
+        <li class=" nav-item"><a href="form-customer-jasarahaja.php"><i class="la la-file-text-o"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Form Customer</span></a>
           
         </li>
-        <li class=" nav-item"><a href="form-polis-index.php"><i class="la la-columns"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Form Polis Customer</span><span class="badge badge badge-pill badge-danger float-right mr-2">New</span></a>
+        <li class=" nav-item"><a href="form-polis-index.php"><i class="la la-file"></i><span class="menu-title" data-i18n="nav.page_layouts.main">Form Polis Customer</span></a>
           
         </li>
         <!-- <li class=" nav-item"><a href="#"><i class="la la-navicon"></i><span class="menu-title" data-i18n="nav.navbars.main">Navbars</span></a>
@@ -960,7 +958,7 @@
           <span data-i18n="nav.category.support">Support</span><i class="la la-ellipsis-h ft-minus" data-toggle="tooltip"
           data-placement="right" data-original-title="Support"></i>
         </li>
-        <li class=" nav-item"><a href="http://support.pixinvent.com/"><i class="la la-support"></i><span class="menu-title" data-i18n="nav.support_raise_support.main">Raise Support</span></a>
+        <li class=" nav-item"><a href="profile.php"><i class="la la-user"></i><span class="menu-title" data-i18n="nav.support_raise_support.main">Profile</span></a>
         </li>
         <li class=" nav-item">
           <a href="https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/documentation"><i class="la la-text-height"></i>
