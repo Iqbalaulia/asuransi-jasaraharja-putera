@@ -34,7 +34,10 @@
       <!-- BEGIN Custom CSS-->
       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
       <!-- END Custom CSS-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
+
 
     <body class="vertical-layout vertical-menu-modern 2-columns" data-open="click" data-menu="vertical-menu-modern"
       data-col="2-columns">
@@ -109,6 +112,24 @@
                                     name="alamat_pemohon" placeholder="Alamat"></textarea>
                                 </div>
                               </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label for="lastName3">
+                                    Provinsi :
+                                    <span class="danger">*</span>
+                                  </label>
+                                  <select class="form-control" id="provinsi"></select>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label for="lastName3">
+                                    Kabupaten / Kota :
+                                    <span class="danger">*</span>
+                                  </label>
+                                  <select class="form-control" id="kabupaten"></select>
+                                </div>
+                              </div>
                               <div class="col-md-12">
                                 <div class="form-group">
                                   <label for="lastName3">
@@ -122,32 +143,32 @@
                               <div class="col-md-12">
                                 <div class="form-group">
                                   <label for="lastName3">
-                                  Jenis Bangunan :
+                                    Jenis Bangunan :
                                     <span class="danger">*</span>
                                   </label>
                                   <div class="row">
                                     <div class="col-md-6">
-                                    <select class="form-control" name="jenis_bangunan" id="basicSelect">
-                                          <option>Select Option</option>
-                                          <option>Option 1</option>
-                                          <option>Option 2</option>
-                                          <option>Option 3</option>
-                                          <option>Option 4</option>
-                                          <option>Option 5</option>
-                                        </select>
+                                      <select class="form-control" name="jenis_bangunan" id="basicSelect">
+                                        <option>Select Option</option>
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                        <option>Option 4</option>
+                                        <option>Option 5</option>
+                                      </select>
                                     </div>
                                     <div class="col-md-6">
-                                    <select class="form-control" name="jenis_bangunan" id="basicSelect">
-                                          <option>Select Option</option>
-                                          <option>Option 1</option>
-                                          <option>Option 2</option>
-                                          <option>Option 3</option>
-                                          <option>Option 4</option>
-                                          <option>Option 5</option>
-                                        </select>
+                                      <select class="form-control" name="jenis_bangunan" id="basicSelect">
+                                        <option>Select Option</option>
+                                        <option>Option 1</option>
+                                        <option>Option 2</option>
+                                        <option>Option 3</option>
+                                        <option>Option 4</option>
+                                        <option>Option 5</option>
+                                      </select>
                                     </div>
                                   </div>
-                                        
+
                                 </div>
                               </div>
                             </div>
@@ -171,10 +192,10 @@
                                       <tr>
                                         <td></td>
                                         <td>
-                                        
+
                                         </td>
                                         <td>
-                                        
+
                                         </td>
                                       </tr>
                                       <tr>
@@ -562,19 +583,19 @@
                                     kendaraan, asap )</label>
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="pertanggungan_kerusakan" class="custom-control-input"
+                                      <input type="radio" name="pertanggungan_kerusakan" class="custom-control-input"
                                         id="staffing3">
                                       <label class="custom-control-label" for="staffing3">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="pertanggungan_kerusakan" class="custom-control-input"
+                                      <input type="radio" name="pertanggungan_kerusakan" class="custom-control-input"
                                         id="catering3">
                                       <label class="custom-control-label" for="catering3">Tidak</label>
                                     </div>
                                   </div>
                                   <br>
-                                  <input type="text" class="form-control required" id="nilai_pertanggungan_kerusakan"
-                                    name="nilai_pertanggungan_kerusakan"
+                                  <input hidden type="text" class="form-control required"
+                                    id="nilai_pertanggungan_kerusakan" name="nilai_pertanggungan_kerusakan"
                                     placeholder="Harga pertanggungan perluasan jaminan">
                                 </div>
                                 <div class="form-group">
@@ -582,18 +603,18 @@
                                   <label>Gempa bumi, letusan gunung berapi</label>
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="pertanggungan_gempa" class="custom-control-input"
-                                        id="staffing3">
-                                      <label class="custom-control-label" for="staffing3">Ya</label>
+                                      <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
+                                        id="staffing4">
+                                      <label class="custom-control-label" for="staffing4">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="pertanggungan_gempa" class="custom-control-input"
-                                        id="catering3">
-                                      <label class="custom-control-label" for="catering3">Tidak</label>
+                                      <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
+                                        id="catering4">
+                                      <label class="custom-control-label" for="catering4">Tidak</label>
                                     </div>
                                   </div>
                                   <br>
-                                  <input type="text" class="form-control required" id="nilai_pertanggungan_gempa"
+                                  <input hidden type="text" class="form-control required" id="nilai_pertanggungan_gempa"
                                     name="nilai_pertanggungan_gempa"
                                     placeholder="Harga pertanggungan gempa bumi dan letusan gunung berapi">
                                 </div>
@@ -602,19 +623,19 @@
                                   <label>Banjir/angin topan, badai/kerusakan karena air</label>
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="pertanggungan_banjir" class="custom-control-input"
-                                        id="staffing3">
-                                      <label class="custom-control-label" for="staffing3">Ya</label>
+                                      <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
+                                        id="staffing5">
+                                      <label class="custom-control-label" for="staffing5">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="checkbox" name="pertanggungan_banjir" class="custom-control-input"
-                                        id="catering3">
-                                      <label class="custom-control-label" for="catering3">Tidak</label>
+                                      <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
+                                        id="catering5">
+                                      <label class="custom-control-label" for="catering5">Tidak</label>
                                     </div>
                                   </div>
                                   <br>
-                                  <input type="text" class="form-control required" id="nilai_pertanggungan_banjir"
-                                    name="nilai_pertanggungan_banjir"
+                                  <input hidden type="text" class="form-control required"
+                                    id="nilai_pertanggungan_banjir" name="nilai_pertanggungan_banjir"
                                     placeholder="Harga pertanggungan banjir/angin topan, badai/kerusakan karena air">
                                 </div>
                                 <!-- <div class="form-group">
@@ -713,21 +734,21 @@
         </p>
       </footer>
       <!-- BEGIN VENDOR JS-->
-      <script src=" app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+      <script src="app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
       <!-- BEGIN VENDOR JS-->
       <!-- BEGIN PAGE VENDOR JS-->
-      <script src=" app-assets/vendors/js/extensions/jquery.steps.min.js" type="text/javascript"></script>
-      <script src=" app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js" type="text/javascript"></script>
-      <script src=" app-assets/vendors/js/pickers/daterange/daterangepicker.js" type="text/javascript"></script>
-      <script src=" app-assets/vendors/js/forms/validation/jquery.validate.min.js" type="text/javascript"></script>
+      <script src="app-assets/vendors/js/extensions/jquery.steps.min.js" type="text/javascript"></script>
+      <script src="app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js" type="text/javascript"></script>
+      <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js" type="text/javascript"></script>
+      <script src="app-assets/vendors/js/forms/validation/jquery.validate.min.js" type="text/javascript"></script>
       <!-- END PAGE VENDOR JS-->
       <!-- BEGIN MODERN JS-->
-      <script src=" app-assets/js/core/app-menu.js" type="text/javascript"></script>
-      <script src=" app-assets/js/core/app.js" type="text/javascript"></script>
-      <script src=" app-assets/js/scripts/customizer.js" type="text/javascript"></script>
+      <script src="app-assets/js/core/app-menu.js" type="text/javascript"></script>
+      <script src="app-assets/js/core/app.js" type="text/javascript"></script>
+      <script src="app-assets/js/scripts/customizer.js" type="text/javascript"></script>
       <!-- END MODERN JS-->
       <!-- BEGIN PAGE LEVEL JS-->
-      <!-- <script src=" app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script> -->
+      <script src=" app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script>
       <!-- END PAGE LEVEL JS-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <script type="text/javascript">
@@ -744,6 +765,49 @@
           $("#total_keseluruhan").attr("value", total_keseluruhan)
 
         });
+      </script>
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $("#provinsi").append('<option value="">Pilih</option>');
+          $("#kabupaten").html('');
+          $("#kecamatan").html('');
+          $("#kelurahan").html('');
+          $("#kabupaten").append('<option value="">Pilih</option>');
+          $("#kecamatan").append('<option value="">Pilih</option>');
+          $("#kelurahan").append('<option value="">Pilih</option>');
+          url = 'get_provinsi.php';
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#provinsi").append('<option value="' + result[i].id_prov + '">' + result[i].nama +
+                  '</option>');
+            }
+          });
+        });
+        $("#provinsi").change(function () {
+          var id_prov = $("#provinsi").val();
+          var url = 'get_kabupaten.php?id_prov=' + id_prov;
+          $("#kabupaten").html('');
+          $("#kecamatan").html('');
+          $("#kelurahan").html('');
+          $("#kabupaten").append('<option value="">Pilih</option>');
+          $("#kecamatan").append('<option value="">Pilih</option>');
+          $("#kelurahan").append('<option value="">Pilih</option>');
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#kabupaten").append('<option value="' + result[i].id_kab + '">' + result[i].nama +
+                  '</option>');
+            }
+          });
+        });
+        
       </script>
     </body>
 

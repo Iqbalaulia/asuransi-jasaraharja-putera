@@ -21,11 +21,11 @@ if($cek > 0){
 	$data = mysqli_fetch_assoc($login);
 
 	// cek jika user login sebagai admin
-	if($data['level']=="admin"){
+	if($data['level']=="underwriter"){
 
 		// buat session login dan username
 		$_SESSION['username'] = $username;
-		$_SESSION['level'] = "admin";
+		$_SESSION['level'] = "underwriter";
 		// alihkan ke halaman dashboard admin
 		header("location:index.php");
 

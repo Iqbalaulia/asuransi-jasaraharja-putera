@@ -187,7 +187,7 @@
                                   <span class="danger">*</span>
                                   </label>
                                   <input type="number" class="form-control required" id="firstName3" name="harga_pertanggungan"
-                                    placeholder="Nama lengkap" value="">
+                                    placeholder="Nama lengkap" value="<?php echo $total_keseluruhan?>">
                                 </div>
                               </div>
                               <div class="col-md-12">
