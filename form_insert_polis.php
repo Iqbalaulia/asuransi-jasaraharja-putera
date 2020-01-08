@@ -3,10 +3,28 @@
     // koneksi database
 include 'connection.php';
  
+//data untuk nomor polis
+$tanggalSekarang=getdate();
+echo $tanggalSekarang['year'];
+
+$carikode = mysqli_query($koneksi,"select max(no_polis) from form_polis");
+$datakode = mysqli_fetch_array($carikode);
+if ($datakode) {
+ $nilaikode = substr($datakode[0], 1);
+ $kode = (int) $nilaikode;
+ $kode = $kode + 1;
+ $hasilkode = str_pad($kode, 3, "0", STR_PAD_LEFT);
+  
+} else {
+ 
+}
+
+
+
 // menangkap data yang di kirim dari form
     $id = $_POST['id'];
     $status_polis = 'Telah dibuat';
-    $no_polis = '121';
+    $no_polis = $hasilkode.'/'.$tanggalSekarang['year'] ;
     $tertanggung = $_POST['tertanggung'];
     $no_telp = $_POST['no_telp'];
     $obyek_pertanggungan = $_POST['obyek_pertanggungan'];
