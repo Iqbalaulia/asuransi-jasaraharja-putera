@@ -118,7 +118,7 @@
                                     Provinsi :
                                     <span class="danger">*</span>
                                   </label>
-                                  <select class="form-control" id="provinsi"></select>
+                                  <select class="form-control" name="provinsi" id="provinsi"></select>
                                 </div>
                               </div>
                               <div class="col-md-6">
@@ -127,9 +127,12 @@
                                     Kabupaten / Kota :
                                     <span class="danger">*</span>
                                   </label>
-                                  <select class="form-control" id="kabupaten"></select>
+                                  <select class="form-control" name="kabkot" id="kabupaten"></select>
                                 </div>
                               </div>
+
+
+                              
                               <div class="col-md-12">
                                 <div class="form-group">
                                   <label for="lastName3">
@@ -709,7 +712,7 @@
                             </div>
                             <div class="row">
                               <div class="col-md-12 col-lg-12">
-                                <div class="button-save-form-customer" align="right">
+                                <div class="button-save-form-customer mb-2" align="right">
                                   <Button type="submit" class="btn btn-success">Simpan</Button>
                                 </div>
                               </div>

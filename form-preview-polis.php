@@ -44,7 +44,7 @@
 include_once("connection.php");
 
 // Fetch all users data from database
-$result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,jangka_waktu,batas_waktu,lokasi_obyek,alamat FROM form_polis");
+$result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,jangka_waktu,batas_waktu,lokasi_obyek,alamat, total_kembalian FROM form_polis");
 ?>
 
     <!-- fixed-top-->
@@ -172,7 +172,7 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <td style="width:30%"><label>Lokasi Obyek &nbsp;</label></td>
                                                     <td>
                                                         <input type="text" class="form-control required"
-                                                            id="emailAddress5" name=""" value="<?php echo $form_polis['lokasi_obyek'] ?>" disabled>
+                                                            id="emailAddress5" name="" value="<?php echo $form_polis['lokasi_obyek'] ?>" disabled>
                                                     </td>
                                                 </tr>
 
@@ -181,6 +181,15 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <td>
                                                         <textarea name="" id="shortDescription3" rows="4"
                                                             class="form-control" disabled><?php echo $form_polis['alamat'] ?></textarea>
+                                                    </td>
+                                                </tr>
+                                              
+                                                <tr>
+                                                    
+                                                    <td style="width:30%"><label>Total Kembalian &nbsp;</label></td>
+                                                    <td>
+                                                    <input type="text" class="form-control required"
+                                                            id="emailAddress5" name="" value="<?php echo $form_polis['total_kembalian'] ?>" disabled>
                                                     </td>
                                                 </tr>
 

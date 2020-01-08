@@ -44,7 +44,7 @@
 include_once("connection.php");
 
 // Fetch all users data from database
-$result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,jangka_waktu,batas_waktu,lokasi_obyek,alamat FROM form_polis");
+$result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,jangka_waktu,batas_waktu,lokasi_obyek,alamat,status_pembayaran FROM form_polis");
 ?>
 
     <!-- fixed-top-->
@@ -176,8 +176,7 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <td style="width:30%"><label>Lokasi Obyek &nbsp;</label></td>
                                                     <td>
                                                         <input type="text" class="form-control required"
-                                                            id="emailAddress5" name="lokasi_obyek"" value="
-                                                            <?php echo $form_polis['lokasi_obyek'] ?>">
+                                                            id="emailAddress5" name="lokasi_obyek"" value=" <?php echo $form_polis['lokasi_obyek'] ?>">
                                                     </td>
                                                 </tr>
 
@@ -193,11 +192,11 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <td style="width:30%"><label>Status Pembayaran &nbsp;</label></td>
                                                     <td>
                                                         <input type="text" class="form-control required"
-                                                            id="emailAddress5" name="lokasi_obyek"" value="
-                                                            <?php echo $form_polis['status_pembayaran'] ?>">
+                                                            id="emailAddress5" name="lokasi_obyek"" value="<?php echo $form_polis['status_pembayaran'] ?>">
                                                     </td>
                                                 </tr>
 
+                                                
                                             </table>
 
                                             <div class="row">

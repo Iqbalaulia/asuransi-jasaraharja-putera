@@ -197,7 +197,7 @@
                                   <span class="danger">*</span>
                                   </label>
                                   <input type="number" class="form-control required" id="firstName3" name="luas_jaminan"
-                                    placeholder="Nama lengkap" value="">
+                                    placeholder="Nama lengkap" value="" required>
                                 </div>
                               </div>
                                   <div class="col-md-6">
@@ -242,7 +242,13 @@
 
                           
                           
-                          <Button type="submit">Simpen</Button>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="btn-save-polis" align="right">
+                            <Button type="submit" class="btn btn-success">Simpan</Button>
+                            </div>
+                          </div>
+                        </div>
 
                         </form>
                       </div>
