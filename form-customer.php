@@ -242,7 +242,7 @@
                                       <tr>
                                         <td>Total &nbsp;</td>
                                         <td> <input type="number" class="form-control required" name="total_keseluruhan"
-                                            id="total_keseluruhan" placeholder="Total keseluruhan" value=""></td>
+                                            id="total_keseluruhan" placeholder="Total keseluruhan" value="" disabled></td>
                                       </tr>
                                     </div>
 
@@ -587,12 +587,12 @@
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_kerusakan" class="custom-control-input"
-                                        id="staffing3">
+                                        id="staffing3" value="">
                                       <label class="custom-control-label" for="staffing3">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_kerusakan" class="custom-control-input"
-                                        id="catering3">
+                                        id="catering3" value="0">
                                       <label class="custom-control-label" for="catering3">Tidak</label>
                                     </div>
                                   </div>
@@ -612,7 +612,7 @@
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
-                                        id="catering4">
+                                        id="catering4" value="0">
                                       <label class="custom-control-label" for="catering4">Tidak</label>
                                     </div>
                                   </div>
@@ -632,7 +632,7 @@
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
-                                        id="catering5">
+                                        id="catering5" value="0">
                                       <label class="custom-control-label" for="catering5">Tidak</label>
                                     </div>
                                   </div>
@@ -755,7 +755,7 @@
       <script src="app-assets/js/scripts/customizer.js" type="text/javascript"></script>
       <!-- END MODERN JS-->
       <!-- BEGIN PAGE LEVEL JS-->
-      <script src=" app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script>
+      <!-- <script src=" app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script> -->
       <!-- END PAGE LEVEL JS-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <script type="text/javascript">

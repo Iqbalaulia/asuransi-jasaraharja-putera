@@ -155,6 +155,7 @@ $result = mysqli_query($koneksi, "SELECT id,nama_lengkap,no_telp,alamat_pemohon,
                                                                             class="icon-check"></i></button>
                                                                 </form>
                                                             </div>
+                                                            &nbsp;
                                                             <div class="col-md-2">
                                                                 <a
                                                                     href="https://api.whatsapp.com/send?phone=<?php echo $form_customer['no_telp'] ?>&text=Kepada%20Bapak/Ibu%20<?php echo $form_customer['nama_lengkap'] ?>%20diberitahukan,%20bahwa%20pengajuan%20Asuransi%20anda%20telah%20kami%20terima.%20Mohon%20segera%20konfirmasi%20pengajuannya%20dengan%20membalas%20pesan%20ini.">

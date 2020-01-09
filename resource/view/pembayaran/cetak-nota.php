@@ -11,26 +11,18 @@ mysqli_query($koneksi, "INSERT INTO cetak_polis(id, id_polis, status_nota) VALUE
 // memanggil library FPDF
 require('../../../fpdf.php');
 // intance object dan memberikan pengaturan halaman PDF
-$pdf = new FPDF('P','mm','A4');
+$pdf = new FPDF('L','mm','A4');
 // membuat halaman baru
 
 $pdf->AddPage();
-$pdf->Image('../../../assets/images/logoJP.jpeg',10,10,-600);
+$pdf->Image('../../../assets/images/logoJP.jpeg',230,10,-600);
 
 // setting jenis font yang akan digunakan
 
 $pdf->SetFont('Arial','B',16);
 // mencetak string 
-$pdf->Cell(200,25,'POLIS ASURANSI KEBAKARAN',0,1,'C');
+$pdf->Cell(280,25,'KWITANSI PREMI',0,1,'C');
 $pdf->SetFont('Arial','B',12);
-$pdf->SetFont('Times','BU');
-$pdf->Cell(200,-10,'NO. 01.052.2008.02656',0,1,'C');
-$pdf->Cell(200,30,'_________________________________________________________________________________________',0,1);
-
-$pdf->SetFont('Arial','',12);
-$pdf->Cell(180,-5,'PT. JASARAHARJA PUTERA dengan ini menyatakan bahwa atas dasar ikhtisar di bawah ini,',0,1,'FJ');
-$pdf->Cell(171,20,'tertanggung diansuransikan untuk hak dan kepentingan masing - masing, sesuai dengan',0,1,'FJ');
-$pdf->Cell(82,-5,'ketentuan dan syarat - syarat polis induk.',0,1,'FJ');
 
 //colom tabel
 $pdf->Cell(10,7,'',0,1);
@@ -46,40 +38,46 @@ while ($polis = mysqli_fetch_array($cetak_polis)){
 $pdf->SetFont('Arial','B',12);
 
 
-$pdf->Cell(80,7,'',0,0);
-$pdf->Cell(50,7,'IKHTISAR',0,0);
+// $pdf->Cell(5,7,'',0,0);
+// $pdf->Cell(5,7,$polis['tertanggung'],0,0);
+// $pdf->Cell(20,7,$polis[''],0,0);
+// $pdf->Cell(20,7,$polis[''],0,0);
+// $pdf->Cell(20,7,$polis[''],0,1);
+// $pdf->Cell(20,7,$polis['alamat'],0,1);
+
 
 $pdf->SetFont('Arial','',12);
 $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,1);
-$pdf->Cell(30,7,$polis[''],0,1);
 
+$pdf->Cell(20,7,'',0,0);
+$pdf->Cell(40,7,$polis['tertanggung'],0,0);
 $pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Nomor Polis  ',0,0);
-$pdf->Cell(15,7,$polis['no_polis'],0,0);
 $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,1);
 $i++;
 
+$pdf->Cell(20,7,'',0,0);
+$pdf->Cell(40,7,$polis['alamat'],0,0);
 $pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Tertanggung     ',0,0);
-$pdf->Cell(50,7,$polis['tertanggung'],0,0);
 $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,1);
+
+$pdf->Cell(20,7,'',0,0);
+$pdf->Cell(40,7,'Kami telah menerimah pembayaran berikut ini :',0,0);
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
+
+
 
 $pdf->Cell(50,7,'',0,0);
 $pdf->Cell(50,7,'Alamat  ',0,0);
 $pdf->Cell(100,7,$polis['alamat'],0,0);
-$pdf->Cell(20,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,1);
-
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Nomor Telepon  ',0,0);
-$pdf->Cell(50,7,$polis['no_telp'],0,0);
 $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,1);
@@ -122,29 +120,40 @@ $pdf->Cell(30,7,$polis[''],0,1);
 $pdf->SetFont('Arial','',8);
 }
 
+
+// $pdf->Cell(10,7,'',0,1);
+// $pdf->Cell(10,7,'',0,1);
+// $pdf->Cell(80,7,'',0,0);
+// $pdf->Cell(80,7,'',0,0);
+// $pdf->Cell(80,7,'',0,0);
+// $pdf->Cell(80,7,'Surabaya',0,0);
 $pdf->SetFont('Arial','B',12);
 $pdf->Cell(10,7,'',0,1);
+$pdf->Cell(65,7,'',0,0);
+$pdf->Cell(65,7,'',0,0);
+$pdf->Cell(65,7,'',0,0);
+$pdf->Cell(65,7,'PT. JASARAHARJA PUTERA  ',0,0);
+
+
+$pdf->SetFont('Arial','',12);
 $pdf->Cell(10,7,'',0,1);
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Surabaya',0,0);
-$pdf->Cell(10,7,'',0,1);
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(30,7,'',0,0);
-$pdf->Cell(50,7,'PT. JASARAHARJA PUTERA  ',0,0);
+$pdf->Cell(65,7,'',0,0);
+$pdf->Cell(65,7,'',0,0);
+$pdf->Cell(65,7,'',0,0);
+$pdf->Cell(65,7,'Tanggal: '.date('d F Y'),0,0);
+
+
 $pdf->Cell(10,7,'',0,1);
 $pdf->Cell(10,7,'',0,1);
 $pdf->Cell(10,7,'',0,1);
 $pdf->Cell(10,7,'',0,1);
 $pdf->Cell(10,7,'',0,1);
 
-$pdf->SetFont('Arial','',10);
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(45,7,'',0,0);
-$pdf->Cell(50,7,'Yang diberi kuasa  ',0,0);
+// $pdf->SetFont('Arial','',10);
+// $pdf->Cell(50,7,'',0,0);
+// $pdf->Cell(50,7,'',0,0);
+// $pdf->Cell(45,7,'',0,0);
+// $pdf->Cell(50,7,'Yang diberi kuasa  ',0,0);
 
 
 
