@@ -132,7 +132,7 @@
                               </div>
 
 
-                              
+
                               <div class="col-md-12">
                                 <div class="form-group">
                                   <label for="lastName3">
@@ -242,7 +242,8 @@
                                       <tr>
                                         <td>Total &nbsp;</td>
                                         <td> <input type="number" class="form-control required" name="total_keseluruhan"
-                                            id="total_keseluruhan" placeholder="Total keseluruhan" value="" disabled></td>
+                                            id="total_keseluruhan" placeholder="Total keseluruhan" value="" disabled>
+                                        </td>
                                       </tr>
                                     </div>
 
@@ -587,57 +588,62 @@
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_kerusakan" class="custom-control-input"
-                                        id="staffing3" value="">
+                                        id="staffing3" value="" id="chkYes" onclick="ShowHideDivPerluasanJaminan()">
                                       <label class="custom-control-label" for="staffing3">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_kerusakan" class="custom-control-input"
-                                        id="catering3" value="0">
+                                        id="catering3" value="0" onclick="ShowHideDivPerluasanJaminan()">
                                       <label class="custom-control-label" for="catering3">Tidak</label>
                                     </div>
                                   </div>
                                   <br>
-                                  <input hidden type="text" class="form-control required"
+                                  <input style="display: none" type="text" class="form-control required"
                                     id="nilai_pertanggungan_kerusakan" name="nilai_pertanggungan_kerusakan"
                                     placeholder="Harga pertanggungan perluasan jaminan">
                                 </div>
+
+
+
                                 <div class="form-group">
 
                                   <label>Gempa bumi, letusan gunung berapi</label>
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
-                                        id="staffing4">
+                                        id="staffing4" onclick="ShowHideDivGempaBumi()">
                                       <label class="custom-control-label" for="staffing4">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
-                                        id="catering4" value="0">
+                                        id="catering4" value="0" onclick="ShowHideDivGempaBumi()">
                                       <label class="custom-control-label" for="catering4">Tidak</label>
                                     </div>
                                   </div>
                                   <br>
-                                  <input hidden type="text" class="form-control required" id="nilai_pertanggungan_gempa"
-                                    name="nilai_pertanggungan_gempa"
+                                  <input style="display: none" type="text" class="form-control required"
+                                    id="nilai_pertanggungan_gempa" name="nilai_pertanggungan_gempa"
                                     placeholder="Harga pertanggungan gempa bumi dan letusan gunung berapi">
                                 </div>
+
+
                                 <div class="form-group">
 
                                   <label>Banjir/angin topan, badai/kerusakan karena air</label>
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
-                                        id="staffing5">
+                                        id="staffing5" onclick="ShowHideDivBanjir()">
                                       <label class="custom-control-label" for="staffing5">Ya</label>
                                     </div>
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
-                                        id="catering5" value="0">
+                                        id="catering5" value="0" onclick="ShowHideDivBanjir()">
                                       <label class="custom-control-label" for="catering5">Tidak</label>
                                     </div>
                                   </div>
                                   <br>
-                                  <input hidden type="text" class="form-control required"
+                                  <input style="display: none;" type="text" class="form-control required"
                                     id="nilai_pertanggungan_banjir" name="nilai_pertanggungan_banjir"
                                     placeholder="Harga pertanggungan banjir/angin topan, badai/kerusakan karena air">
                                 </div>
@@ -814,6 +820,28 @@
             }
           });
         });
+      </script>
+
+      <!-- onclick -->
+
+      <script type="text/javascript">
+        function ShowHideDivPerluasanJaminan() {
+          var chkYes = document.getElementById("staffing3");
+          var dvPassport = document.getElementById("nilai_pertanggungan_kerusakan");
+          dvPassport.style.display = chkYes.checked ? "block" : "none";
+        }
+
+        function ShowHideDivGempaBumi() {
+          var chkYes = document.getElementById("staffing4");
+          var dvPassport = document.getElementById("nilai_pertanggungan_gempa");
+          dvPassport.style.display = chkYes.checked ? "block" : "none";
+        }
+
+        function ShowHideDivBanjir() {
+          var chkYes = document.getElementById("staffing5");
+          var dvPassport = document.getElementById("nilai_pertanggungan_banjir");
+          dvPassport.style.display = chkYes.checked ? "block" : "none";
+        }
       </script>
     </body>
 
