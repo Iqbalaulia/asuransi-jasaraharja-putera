@@ -145,29 +145,34 @@
                               </div>
                               <div class="col-md-12">
                                 <div class="form-group">
-                                  <label for="lastName3">
-                                    Jenis Bangunan :
-                                    <span class="danger">*</span>
-                                  </label>
+
                                   <div class="row">
-                                    <div class="col-md-6">
-                                      <select class="form-control" name="jenis_bangunan" id="basicSelect">
-                                        <option>Select Option</option>
-                                        <option>Option 1</option>
-                                        <option>Option 2</option>
-                                        <option>Option 3</option>
-                                        <option>Option 4</option>
-                                        <option>Option 5</option>
+                                    <div class="col-md-4">
+                                      <label for="lastName3">
+                                        Jenis Bangunan :
+                                        <span class="danger">*</span>
+                                      </label>
+
+                                      <select class="form-control" name="jenis_bangunan" id="jenis_bangunan">
                                       </select>
                                     </div>
-                                    <div class="col-md-6">
-                                      <select class="form-control" name="jenis_bangunan" id="basicSelect">
-                                        <option>Select Option</option>
-                                        <option>Option 1</option>
-                                        <option>Option 2</option>
-                                        <option>Option 3</option>
-                                        <option>Option 4</option>
-                                        <option>Option 5</option>
+
+                                    <div class="col-md-4">
+                                      <label for="lastName3">
+                                        Jenis Konstruksi :
+                                        <span class="danger">*</span>
+                                      </label>
+                                      <select class="form-control" name="jenis_konstruksi" id="jenis_konstruksi">
+
+                                      </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label for="lastName3">
+                                        Nilai Bangunan :
+                                        <span class="danger">*</span>
+                                      </label>
+                                      <select class="form-control" name="nilai_bangunan" id="nilai_bangunan">
+
                                       </select>
                                     </div>
                                   </div>
@@ -242,7 +247,7 @@
                                       <tr>
                                         <td>Total &nbsp;</td>
                                         <td> <input type="number" class="form-control required" name="total_keseluruhan"
-                                            id="total_keseluruhan" placeholder="Total keseluruhan" value="" disabled>
+                                            id="total_keseluruhan" placeholder="Total keseluruhan" value="" readonly>
                                         </td>
                                       </tr>
                                     </div>
@@ -630,7 +635,22 @@
                                 <div class="form-group">
 
                                   <label>Banjir/angin topan, badai/kerusakan karena air</label>
-                                  <div class="c-inputs-stacked">
+
+                                  <div class="row">
+                                    <div class="col-md-4">
+                                    <select class="form-control" name="zona_banjir" id="zona_banjir"></select>
+                                    </div>
+                                    <div class="col-md-4">
+                                    <select class="form-control" name="daerah_banjir" id="daerah_banjir"></select>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                    <select class="form-control" name="nilai_zona_banjir" id="nilai_zona_banjir"></select>
+
+                                    </div>
+                                  </div>                                  
+                                  
+                                  <div class="c-inputs-stacked mt-2">
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
                                         id="staffing5" onclick="ShowHideDivBanjir()">
@@ -698,7 +718,7 @@
                                     <tr>
                                       <td>Biaya polis &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="biaya_polis" placeholder="Biaya polis"></td>
+                                          name="biaya_polis" value="50.000" readonly></td>
                                     </tr>
                                     <tr>
                                       <td>Premi dasar &nbsp;</td>
@@ -708,7 +728,7 @@
                                     <tr>
                                       <td>Total bayar &nbsp;</td>
                                       <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="total_pembayaran" placeholder="Total pembayaran"></td>
+                                          name="total_pembayaran" placeholder="Total pembayaran" readonly></td>
                                     </tr>
 
                                   </table>
@@ -777,8 +797,123 @@
             nilai_perabot_rumah + nilai_perabot_kantor + nilai_lain;
           $("#total_keseluruhan").attr("value", total_keseluruhan)
 
+          console.log(total_keseluruhan);
         });
       </script>
+
+      <!-- Banjir -->
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $("#zona_banjir").append('<option value="">Zona Banjir</option>');
+          url = 'get_zona_banjir.php';
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#zona_banjir").append('<option value="' + result[i].id_zona_banjir + '">' + result[i]
+                  .nilai_zona + 
+                  '</option>');
+            }
+          });
+        });
+
+        $(document).ready(function () {
+          $("#daerah_banjir").append('<option value="">Daerah Banjir</option>');
+          url = 'get_daerah_zona_banjir.php';
+          
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#daerah_banjir").append('<option value="' + result[i].id_daerah + '">' + result[i]
+                  .nama +
+                  '</option>');
+            }
+          });
+        });
+        
+        $("#zona_banjir").change(function () {
+          var id_zona_banjir = $("#zona_banjir").val();
+          var url = 'get_nilai_zona_banjir.php?id_zona_banjir=' + id_zona_banjir;
+          $("#nilai_zona_banjir").html('');          
+          $("#nilai_zona_banjir").append('<option value="">Nilai Zona Banjir</option>');          
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#nilai_zona_banjir").append('<option value="' + result[i].id_nilai_banjir + '">' + result[i].nilai +
+                  '</option>');
+            }
+          });
+        });
+        
+      </script>
+
+
+
+
+<!-- Bangunan -->
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $("#jenis_bangunan").append('<option value="">Pilih</option>');
+          url = 'get_jenis_bangunan.php';
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#jenis_bangunan").append('<option value="' + result[i].id_bangunan + '">' + result[i]
+                  .tipe_bangunan +
+                  '</option>');
+            }
+          });
+        });
+
+        $(document).ready(function () {
+          $("#jenis_konstruksi").append('<option value="">Pilih</option>');
+          url = 'get_jenis_konstruksi.php';
+          
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#jenis_konstruksi").append('<option value="' + result[i].id_jenis + '">' + result[i]
+                  .jenis +
+                  '</option>');
+            }
+          });
+        });
+        
+        $("#jenis_konstruksi").change(function () {
+          var id_jenis = $("#jenis_konstruksi").val();
+          var url = 'get_nilai_bangunan.php?id_jenis=' + id_jenis;
+          $("#nilai_bangunan").html('');          
+          $("#nilai_bangunan").append('<option value="">Pilih</option>');          
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#nilai_bangunan").append('<option value="' + result[i].id_nilai + '">' + result[i].nilai +
+                  '</option>');
+            }
+          });
+        });
+        
+      </script>
+
+
+      <!-- Pronvinsi -->
       <script type="text/javascript">
         $(document).ready(function () {
           $("#provinsi").append('<option value="">Pilih</option>');
