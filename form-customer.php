@@ -582,12 +582,49 @@
                                   <input type="text" class="form-control required" id="meetingLocation3"
                                     name="nilai_pertanggungan_kebakaran" placeholder="Harga pertanggungan kebakaran">
                                 </div>
+
                                 <div class="form-group">
                                   <br>
                                   <label class=""
                                     style="font-weight:bold; font-size:16px;text-transform:uppercase;">Perluasan
                                     Jaminan</label>
                                   <br>
+
+                                <div class="form-group">
+
+<label>Banjir/angin topan, badai/kerusakan karena air</label>
+
+<div class="row">
+  <div class="col-md-4">
+  <select class="form-control" name="zona_banjir" id="zona_banjir"></select>
+  </div>
+  <div class="col-md-4">
+  <select class="form-control" name="daerah_banjir" id="daerah_banjir"></select>
+
+  </div>
+  <div class="col-md-4">
+  <select class="form-control" name="nilai_zona_banjir" id="nilai_zona_banjir"></select>
+
+  </div>
+</div>                                  
+
+<div class="c-inputs-stacked mt-2">
+  <div class="d-inline-block custom-control custom-checkbox">
+    <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
+      id="staffing5" onclick="ShowHideDivBanjir()">
+    <label class="custom-control-label" for="staffing5">Ya</label>
+  </div>
+  <div class="d-inline-block custom-control custom-checkbox">
+    <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
+      id="catering5" value="0" onclick="ShowHideDivBanjir()">
+    <label class="custom-control-label" for="catering5">Tidak</label>
+  </div>
+</div>
+<br>
+<input style="display: none;" type="text" class="form-control required"
+  id="nilai_pertanggungan_banjir" name="nilai_pertanggungan_banjir"
+  placeholder="Harga pertanggungan banjir/angin topan, badai/kerusakan karena air">
+</div>
                                   <label>Perluasan jaminan ( Kerusuhan, Pemogokan, Akibat perbuatan jahat, tertabrak
                                     kendaraan, asap )</label>
                                   <div class="c-inputs-stacked">
@@ -632,41 +669,6 @@
                                 </div>
 
 
-                                <div class="form-group">
-
-                                  <label>Banjir/angin topan, badai/kerusakan karena air</label>
-
-                                  <div class="row">
-                                    <div class="col-md-4">
-                                    <select class="form-control" name="zona_banjir" id="zona_banjir"></select>
-                                    </div>
-                                    <div class="col-md-4">
-                                    <select class="form-control" name="daerah_banjir" id="daerah_banjir"></select>
-
-                                    </div>
-                                    <div class="col-md-4">
-                                    <select class="form-control" name="nilai_zona_banjir" id="nilai_zona_banjir"></select>
-
-                                    </div>
-                                  </div>                                  
-                                  
-                                  <div class="c-inputs-stacked mt-2">
-                                    <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
-                                        id="staffing5" onclick="ShowHideDivBanjir()">
-                                      <label class="custom-control-label" for="staffing5">Ya</label>
-                                    </div>
-                                    <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
-                                        id="catering5" value="0" onclick="ShowHideDivBanjir()">
-                                      <label class="custom-control-label" for="catering5">Tidak</label>
-                                    </div>
-                                  </div>
-                                  <br>
-                                  <input style="display: none;" type="text" class="form-control required"
-                                    id="nilai_pertanggungan_banjir" name="nilai_pertanggungan_banjir"
-                                    placeholder="Harga pertanggungan banjir/angin topan, badai/kerusakan karena air">
-                                </div>
                                 <!-- <div class="form-group">
 
                                   <label>Biaya - biaya pembersihan</label>
@@ -836,11 +838,11 @@
           });
         });
         
-        $("#zona_banjir").change(function () {
+        $("#daerah_banjir").change(function () {
+          var id_daerah = $("#daerah_banjir").val();
           var id_zona_banjir = $("#zona_banjir").val();
-          var url = 'get_nilai_zona_banjir.php?id_zona_banjir=' + id_zona_banjir;
+          var url = 'get_nilai_zona_banjir.php?id_daerah=' + id_daerah + '&id_zona_banjir=' + id_zona_banjir;
           $("#nilai_zona_banjir").html('');          
-          $("#nilai_zona_banjir").append('<option value="">Nilai Zona Banjir</option>');          
           $.ajax({
             url: url,
             type: 'GET',
@@ -895,9 +897,9 @@
         
         $("#jenis_konstruksi").change(function () {
           var id_jenis = $("#jenis_konstruksi").val();
-          var url = 'get_nilai_bangunan.php?id_jenis=' + id_jenis;
+          var id_bangunan = $("#jenis_bangunan").val();
+          var url = 'get_nilai_bangunan.php?id_jenis=' + id_jenis + '&id_bangunan=' + id_bangunan;
           $("#nilai_bangunan").html('');          
-          $("#nilai_bangunan").append('<option value="">Pilih</option>');          
           $.ajax({
             url: url,
             type: 'GET',
