@@ -36,6 +36,7 @@
       <!-- END Custom CSS-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
     </head>
 
 
@@ -76,7 +77,7 @@
                     </div>
                     <div class="card-content collapse show">
                       <div class="card-body">
-                        <form action="form_insert_customer.php" class="steps-validation wizard-notification"
+                        <form action="#" class="steps-validation wizard-notification"
                           method="POST">
                           <!-- Step 1 -->
                           <h6>Step 1</h6>
@@ -171,7 +172,8 @@
                                         Nilai Bangunan :
                                         <span class="danger">*</span>
                                       </label>
-                                      <select class="form-control" name="nilai_bangunan" id="nilai_bangunan">
+                                      <select class="form-control" name="nilai_bangunan"
+                                        id="nilai_bangunan" >
 
                                       </select>
                                     </div>
@@ -246,8 +248,9 @@
                                       </tr>
                                       <tr>
                                         <td>Total &nbsp;</td>
-                                        <td> <input type="number" class="form-control required" name="total_keseluruhan"
-                                            id="total_keseluruhan" placeholder="Total keseluruhan" value="" readonly>
+                                        <td> <input readonly type="number" class="form-control required" name="total_keseluruhan"
+                                            id="total_keseluruhan" placeholder="Total keseluruhan" value=""
+                                             >
                                         </td>
                                       </tr>
                                     </div>
@@ -266,7 +269,7 @@
 
                                     <tr>
                                       <td>Dinding &nbsp;</td>
-                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                      <td> <input type="text" class="form-control required" id="ket_dinding_luar"
                                           name="ket_dinding_luar" placeholder="Keterangan dinding luar"></td>
                                       <td> <input type="text" class="form-control required" id="emailAddress5"
                                           name="ket_dinding_dalam" placeholder="Keterangan dinding dalam"></td>
@@ -275,7 +278,7 @@
                                     </tr>
                                     <tr>
                                       <td>Lantai &nbsp;</td>
-                                      <td> <input type="text" class="form-control required" id="emailAddress5"
+                                      <td> <input type="text" class="form-control required" id="ket_lantai"
                                           name="ket_lantai" placeholder="Keterangan lantai"></td>
                                     </tr>
                                     <tr>
@@ -580,7 +583,7 @@
                                   </div>
                                   <br>
                                   <input type="text" class="form-control required" id="meetingLocation3"
-                                    name="nilai_pertanggungan_kebakaran" placeholder="Harga pertanggungan kebakaran">
+                                    name="nilai_pertanggungan_kebakaran" placeholder="Harga pertanggungan kebakaran" value="0">
                                 </div>
 
                                 <div class="form-group">
@@ -590,41 +593,42 @@
                                     Jaminan</label>
                                   <br>
 
-                                <div class="form-group">
+                                  <div class="form-group">
 
-<label>Banjir/angin topan, badai/kerusakan karena air</label>
+                                    <label>Banjir/angin topan, badai/kerusakan karena air</label>
 
-<div class="row">
-  <div class="col-md-4">
-  <select class="form-control" name="zona_banjir" id="zona_banjir"></select>
-  </div>
-  <div class="col-md-4">
-  <select class="form-control" name="daerah_banjir" id="daerah_banjir"></select>
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                        <select style="display: none;" class="form-control" onclick="ShowHideDivBanjir()" name="zona_banjir" id="zona_banjir"></select>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <select style="display: none;" class="form-control" onclick="ShowHideDivBanjir()" name="daerah_banjir" id="daerah_banjir"></select>
 
-  </div>
-  <div class="col-md-4">
-  <select class="form-control" name="nilai_zona_banjir" id="nilai_zona_banjir"></select>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <select style="display: none;" class="form-control" onclick="ShowHideDivBanjir()" name="nilai_zona_banjir"
+                                          id="nilai_zona_banjir"></select>
 
-  </div>
-</div>                                  
+                                      </div>
+                                    </div>
 
-<div class="c-inputs-stacked mt-2">
-  <div class="d-inline-block custom-control custom-checkbox">
-    <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
-      id="staffing5" onclick="ShowHideDivBanjir()">
-    <label class="custom-control-label" for="staffing5">Ya</label>
-  </div>
-  <div class="d-inline-block custom-control custom-checkbox">
-    <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
-      id="catering5" value="0" onclick="ShowHideDivBanjir()">
-    <label class="custom-control-label" for="catering5">Tidak</label>
-  </div>
-</div>
-<br>
-<input style="display: none;" type="text" class="form-control required"
-  id="nilai_pertanggungan_banjir" name="nilai_pertanggungan_banjir"
-  placeholder="Harga pertanggungan banjir/angin topan, badai/kerusakan karena air">
-</div>
+                                    <div class="c-inputs-stacked mt-2">
+                                      <div class="d-inline-block custom-control custom-checkbox">
+                                        <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
+                                          id="staffing5" onclick="ShowHideDivBanjir()">
+                                        <label class="custom-control-label" for="staffing5">Ya</label>
+                                      </div>
+                                      <div class="d-inline-block custom-control custom-checkbox">
+                                        <input type="radio" name="pertanggungan_banjir" class="custom-control-input"
+                                          id="catering5" value="0" onclick="ShowHideDivBanjir()">
+                                        <label class="custom-control-label" for="catering5">Tidak</label>
+                                      </div>
+                                    </div>
+                                    <br>
+                                    <input readonly style="display: none;" type="text" class="form-control required"
+                                      id="nilai_pertanggungan_banjir" name="nilai_pertanggungan_banjir"
+                                      placeholder="Harga pertanggungan banjir/angin topan, badai/kerusakan karena air">
+                                  </div>
                                   <label>Perluasan jaminan ( Kerusuhan, Pemogokan, Akibat perbuatan jahat, tertabrak
                                     kendaraan, asap )</label>
                                   <div class="c-inputs-stacked">
@@ -640,9 +644,9 @@
                                     </div>
                                   </div>
                                   <br>
-                                  <input style="display: none" type="text" class="form-control required"
+                                  <input readonly style="display: none" type="text" class="form-control required"
                                     id="nilai_pertanggungan_kerusakan" name="nilai_pertanggungan_kerusakan"
-                                    placeholder="Harga pertanggungan perluasan jaminan">
+                                    placeholder="Harga pertanggungan perluasan jaminan" >
                                 </div>
 
 
@@ -650,6 +654,7 @@
                                 <div class="form-group">
 
                                   <label>Gempa bumi, letusan gunung berapi</label>
+                                  
                                   <div class="c-inputs-stacked">
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
@@ -724,13 +729,13 @@
                                     </tr>
                                     <tr>
                                       <td>Premi dasar &nbsp;</td>
-                                      <td> <input type="number" class="form-control required" id="emailAddress5"
+                                      <td> <input type="number" class="form-control required" id="premi_dasar"
                                           name="premi_dasar" placeholder="Premi dasar"></td>
                                     </tr>
                                     <tr>
                                       <td>Total bayar &nbsp;</td>
-                                      <td> <input type="number" class="form-control required" id="emailAddress5"
-                                          name="total_pembayaran" placeholder="Total pembayaran" readonly></td>
+                                      <td> <input readonly type="number" class="form-control required" id="total_pembayaran"
+                                          name="total_pembayaran" placeholder="Total pembayaran" ></td>
                                     </tr>
 
                                   </table>
@@ -741,7 +746,7 @@
                             <div class="row">
                               <div class="col-md-12 col-lg-12">
                                 <div class="button-save-form-customer mb-2" align="right">
-                                  <Button type="submit" class="btn btn-success">Simpan</Button>
+                                  <Button type="submit" id="btn-show" class="btn btn-success">Simpan</Button>
                                 </div>
                               </div>
                             </div>
@@ -786,8 +791,22 @@
       <!-- <script src=" app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script> -->
       <!-- END PAGE LEVEL JS-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      
+
       <script type="text/javascript">
+        // $("#btn-show").keyup(function () {
+        //        let sasa = 'sdadwa';
+        //        alert(sasa);
+        //         }
+        let nilai_bangunan = 0;
+        let nilai_banjir = 0;
+        let total_nilai_bangunan = 0;
+        let premi_dasar = 0;
+        let huru_hara = 0;
+        let biaya_polis = 0;
+
         $(".perhitungan").keyup(function () {
+          
           let nilai_bangungan = parseInt($("#nilai_bangungan").val())
           let nilai_mesin = parseInt($("#nilai_mesin").val())
           let nilai_barang = parseInt($("#nilai_barang").val())
@@ -795,13 +814,29 @@
           let nilai_perabot_rumah = parseInt($("#nilai_perabot_rumah").val())
           let nilai_perabot_kantor = parseInt($("#nilai_perabot_kantor").val())
           let nilai_lain = parseInt($("#nilai_lain").val())
+          
+
+
+          // let total_keseluruhan = nilai_bangungan + nilai_mesin + nilai_barang + nilai_dagangan +
+          //   nilai_perabot_rumah + nilai_perabot_kantor + nilai_lain  ;
+
           let total_keseluruhan = nilai_bangungan + nilai_mesin + nilai_barang + nilai_dagangan +
             nilai_perabot_rumah + nilai_perabot_kantor + nilai_lain;
+          $("#premi_dasar").attr("value", total_keseluruhan * (nilai_bangunan / 100));
           $("#total_keseluruhan").attr("value", total_keseluruhan)
+          $("#total_pembayaran").attr("value", total_keseluruhan * (nilai_bangunan / 100));
+
+          
+          premi_dasar = total_keseluruhan * (nilai_bangunan / 100);
+          total_nilai_bangunan = total_keseluruhan;
+          huru_hara = (total_keseluruhan * (nilai_bangunan / 100)) * 100/100;
+          biaya_polis = 50000;
+          // $("#ket_lantai").attr("value", sasa)
 
           console.log(total_keseluruhan);
         });
       </script>
+      
 
       <!-- Banjir -->
       <script type="text/javascript">
@@ -815,7 +850,7 @@
             success: function (result) {
               for (var i = 0; i < result.length; i++)
                 $("#zona_banjir").append('<option value="' + result[i].id_zona_banjir + '">' + result[i]
-                  .nilai_zona + 
+                  .nilai_zona +
                   '</option>');
             }
           });
@@ -824,7 +859,7 @@
         $(document).ready(function () {
           $("#daerah_banjir").append('<option value="">Daerah Banjir</option>');
           url = 'get_daerah_zona_banjir.php';
-          
+
           $.ajax({
             url: url,
             type: 'GET',
@@ -837,30 +872,40 @@
             }
           });
         });
-        
+
         $("#daerah_banjir").change(function () {
           var id_daerah = $("#daerah_banjir").val();
           var id_zona_banjir = $("#zona_banjir").val();
           var url = 'get_nilai_zona_banjir.php?id_daerah=' + id_daerah + '&id_zona_banjir=' + id_zona_banjir;
-          $("#nilai_zona_banjir").html('');          
+          $("#nilai_zona_banjir").html('');
           $.ajax({
             url: url,
             type: 'GET',
             dataType: 'json',
             success: function (result) {
               for (var i = 0; i < result.length; i++)
-                $("#nilai_zona_banjir").append('<option value="' + result[i].id_nilai_banjir + '">' + result[i].nilai +
-                  '</option>');
+                $("#nilai_zona_banjir").append('<option value="' + result[i].id_nilai_banjir + '">' + result[
+                    i].nilai +'</option>');
+
+                    nilai_banjir = result[0].nilai;
+                    perluasanJaminanBanjir = total_nilai_bangunan * (nilai_banjir / 100);
+                    premiDasar = premi_dasar;
+                    huruHara = huru_hara;
+                    biayaPolis = biaya_polis;
+                    
+                    $("#total_pembayaran").attr("value", perluasanJaminanBanjir + premiDasar + huruHara + biayaPolis);
+                    $("#nilai_pertanggungan_banjir").attr("value", perluasanJaminanBanjir);
+                    $("#nilai_pertanggungan_kerusakan").attr("value", huruHara);
+
             }
           });
         });
-        
       </script>
 
 
 
 
-<!-- Bangunan -->
+      <!-- Bangunan -->
       <script type="text/javascript">
         $(document).ready(function () {
           $("#jenis_bangunan").append('<option value="">Pilih</option>');
@@ -881,7 +926,7 @@
         $(document).ready(function () {
           $("#jenis_konstruksi").append('<option value="">Pilih</option>');
           url = 'get_jenis_konstruksi.php';
-          
+
           $.ajax({
             url: url,
             type: 'GET',
@@ -894,12 +939,12 @@
             }
           });
         });
-        
+
         $("#jenis_konstruksi").change(function () {
           var id_jenis = $("#jenis_konstruksi").val();
           var id_bangunan = $("#jenis_bangunan").val();
           var url = 'get_nilai_bangunan.php?id_jenis=' + id_jenis + '&id_bangunan=' + id_bangunan;
-          $("#nilai_bangunan").html('');          
+          $("#nilai_bangunan").html('');
           $.ajax({
             url: url,
             type: 'GET',
@@ -908,10 +953,14 @@
               for (var i = 0; i < result.length; i++)
                 $("#nilai_bangunan").append('<option value="' + result[i].id_nilai + '">' + result[i].nilai +
                   '</option>');
+
+                  // Global
+                  nilai_bangunan = result[0].nilai;  
+    
             }
+            
           });
         });
-        
       </script>
 
 
@@ -959,9 +1008,23 @@
         });
       </script>
 
+
+
       <!-- onclick -->
 
       <script type="text/javascript">
+      function ShowHideDivBanjir() {
+          var chkYes = document.getElementById("staffing5");
+          var dvPassport = document.getElementById("nilai_pertanggungan_banjir");
+          var dvZonaBanjir = document.getElementById("zona_banjir");
+          var dvDaerahBanjir = document.getElementById("daerah_banjir");
+          var dvNilaiZonaBanjir = document.getElementById("nilai_zona_banjir");
+
+          dvPassport.style.display = chkYes.checked ? "block" : "none";
+          dvZonaBanjir.style.display = chkYes.checked ? "block" : "none";
+          dvDaerahBanjir.style.display = chkYes.checked ? "block" : "none";
+          dvNilaiZonaBanjir.style.display = chkYes.checked ? "block" : "none";
+        }
         function ShowHideDivPerluasanJaminan() {
           var chkYes = document.getElementById("staffing3");
           var dvPassport = document.getElementById("nilai_pertanggungan_kerusakan");
@@ -974,12 +1037,10 @@
           dvPassport.style.display = chkYes.checked ? "block" : "none";
         }
 
-        function ShowHideDivBanjir() {
-          var chkYes = document.getElementById("staffing5");
-          var dvPassport = document.getElementById("nilai_pertanggungan_banjir");
-          dvPassport.style.display = chkYes.checked ? "block" : "none";
-        }
+        
       </script>
+
+    
     </body>
 
     </html>
