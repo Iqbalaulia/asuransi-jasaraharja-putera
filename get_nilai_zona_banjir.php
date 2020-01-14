@@ -9,3 +9,4 @@ $data[] = array("id_nilai_banjir" => $row['id_nilai_banjir'], "id_daerah" => $ro
 }
 echo json_encode($data);
 ?>
+

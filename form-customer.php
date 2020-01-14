@@ -77,7 +77,7 @@
                     </div>
                     <div class="card-content collapse show">
                       <div class="card-body">
-                        <form action="#" class="steps-validation wizard-notification"
+                        <form action="form_insert_customer.php" class="steps-validation wizard-notification"
                           method="POST">
                           <!-- Step 1 -->
                           <h6>Step 1</h6>
@@ -654,8 +654,25 @@
                                 <div class="form-group">
 
                                   <label>Gempa bumi, letusan gunung berapi</label>
-                                  
-                                  <div class="c-inputs-stacked">
+                                  <div class="row">
+                                      <div class="col-md-3">
+                                        <select style="" class="form-control"  name="jaminan_gempa" id="jaminan_gempa"></select>
+                                      </div>
+                                      <div class="col-md-3">
+                                        <select style="" class="form-control"  name="jenis_jaminan_gempa" id="jenis_jaminan_gempa"></select>
+                                      </div>
+                                      <div class="col-md-3">
+                                        <select style="" class="form-control"  name="zona_gempa"
+                                          id="zona_gempa"></select>
+
+                                      </div>
+                                      <div class="col-md-3">
+                                        <select style="" class="form-control"  name="nilai_jaminan_gempa"
+                                          id="nilai_jaminan_gempa"></select>
+                                      </div>
+                                    </div>
+
+                                  <div class="c-inputs-stacked mt-2">
                                     <div class="d-inline-block custom-control custom-checkbox">
                                       <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
                                         id="staffing4" onclick="ShowHideDivGempaBumi()">
@@ -804,6 +821,7 @@
         let premi_dasar = 0;
         let huru_hara = 0;
         let biaya_polis = 0;
+        let nilai_jaminan_gempa = 0;
 
         $(".perhitungan").keyup(function () {
           
@@ -891,13 +909,89 @@
                     perluasanJaminanBanjir = total_nilai_bangunan * (nilai_banjir / 100);
                     premiDasar = premi_dasar;
                     huruHara = huru_hara;
-                    biayaPolis = biaya_polis;
-                    
-                    $("#total_pembayaran").attr("value", perluasanJaminanBanjir + premiDasar + huruHara + biayaPolis);
-                    $("#nilai_pertanggungan_banjir").attr("value", perluasanJaminanBanjir);
+                    biayaPolis = biaya_polis;                  
+                   
                     $("#nilai_pertanggungan_kerusakan").attr("value", huruHara);
+                    $("#total_pembayaran").attr("value", perluasanJaminanBanjir + premiDasar + huruHara + biayaPolis );
+                    $("#nilai_pertanggungan_banjir").attr("value", perluasanJaminanBanjir);
 
             }
+          });
+        });
+      </script>
+      <!-- Gempa -->
+
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $("#jaminan_gempa").append('<option value="">Jaminan gempa</option>');
+          url = 'get_jaminan_gempa.php';
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#jaminan_gempa").append('<option value="' + result[i].id_jaminan_gempa + '">' + result[i]
+                  .nama_jaminan +
+                  '</option>');
+            }
+          });
+        });
+
+        $("#jaminan_gempa").change(function () {
+          var id_jaminan_gempa = $("#jaminan_gempa").val();
+          var url = 'get_jenis_jaminan_gempa.php?id_jaminan_gempa=' + id_jaminan_gempa ;
+          $("#jenis_jaminan_gempa").append('<option value="">Jenis Jaminan Gempa</option>');
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#jenis_jaminan_gempa").append('<option value="' + result[i].id_jenis_jaminan_gempa + '">' + result[i].nama_jenis_jaminan +
+                  '</option>');
+    
+            }      
+          });
+        });
+
+        $(document).ready(function () {
+          $("#zona_gempa").append('<option value="">Zona Gempa</option>');
+          url = 'get_zona_gempa.php';
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#zona_gempa").append('<option value="' + result[i].id_zona + '">' + result[i]
+                  .nama_zona_gempa +
+                  '</option>');
+            }
+          });
+        });
+
+        $("#zona_gempa").change(function () {
+          var id_zona = $("#zona_gempa").val();
+          var id_jaminan_gempa = $("#jaminan_gempa").val();
+          var id_jenis_jaminan_gempa = $("#jenis_jaminan_gempa").val();
+
+          var url = 'get_nilai_jaminan_gempa.php?id_zona=' + id_zona + '&id_jenis_jaminan_gempa=' + id_jenis_jaminan_gempa + '&id_jaminan_gempa=' + id_jaminan_gempa ;
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#nilai_jaminan_gempa").append('<option value="' + result[i].id_nilai_gempa + '">' + result[i].nilai_zona_gempa +
+                  '</option>');
+
+                  nilai_jaminan_gempa = result[0].nilai_zona_gempa;  
+                  nilaiGempa = total_nilai_bangunan * (nilai_jaminan_gempa/100);
+
+                  $("#nilai_pertanggungan_gempa").attr("value", nilaiGempa);
+
+            }      
           });
         });
       </script>
