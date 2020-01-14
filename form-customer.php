@@ -593,6 +593,45 @@
                                     Jaminan</label>
                                   <br>
 
+
+                                  <div class="form-group">
+
+<label>Gempa bumi, letusan gunung berapi</label>
+<div class="row">
+    <div class="col-md-3">
+      <select style="" class="form-control"  name="jaminan_gempa" id="jaminan_gempa"></select>
+    </div>
+    <div class="col-md-3">
+      <select style="" class="form-control"  name="jenis_jaminan_gempa" id="jenis_jaminan_gempa"></select>
+    </div>
+    <div class="col-md-3">
+      <select style="" class="form-control"  name="zona_gempa"
+        id="zona_gempa"></select>
+
+    </div>
+    <div class="col-md-3">
+      <select style="" class="form-control"  name="nilai_jaminan_gempa"
+        id="nilai_jaminan_gempa"></select>
+    </div>
+  </div>
+
+<div class="c-inputs-stacked mt-2">
+  <div class="d-inline-block custom-control custom-checkbox">
+    <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
+      id="staffing4" onclick="ShowHideDivGempaBumi()">
+    <label class="custom-control-label" for="staffing4">Ya</label>
+  </div>
+  <div class="d-inline-block custom-control custom-checkbox">
+    <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
+      id="catering4" value="0" onclick="ShowHideDivGempaBumi()">
+    <label class="custom-control-label" for="catering4">Tidak</label>
+  </div>
+</div>
+<br>
+<input style="display: none" type="text" class="form-control required"
+  id="nilai_pertanggungan_gempa" name="nilai_pertanggungan_gempa"
+  placeholder="Harga pertanggungan gempa bumi dan letusan gunung berapi">
+</div>
                                   <div class="form-group">
 
                                     <label>Banjir/angin topan, badai/kerusakan karena air</label>
@@ -651,44 +690,6 @@
 
 
 
-                                <div class="form-group">
-
-                                  <label>Gempa bumi, letusan gunung berapi</label>
-                                  <div class="row">
-                                      <div class="col-md-3">
-                                        <select style="" class="form-control"  name="jaminan_gempa" id="jaminan_gempa"></select>
-                                      </div>
-                                      <div class="col-md-3">
-                                        <select style="" class="form-control"  name="jenis_jaminan_gempa" id="jenis_jaminan_gempa"></select>
-                                      </div>
-                                      <div class="col-md-3">
-                                        <select style="" class="form-control"  name="zona_gempa"
-                                          id="zona_gempa"></select>
-
-                                      </div>
-                                      <div class="col-md-3">
-                                        <select style="" class="form-control"  name="nilai_jaminan_gempa"
-                                          id="nilai_jaminan_gempa"></select>
-                                      </div>
-                                    </div>
-
-                                  <div class="c-inputs-stacked mt-2">
-                                    <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
-                                        id="staffing4" onclick="ShowHideDivGempaBumi()">
-                                      <label class="custom-control-label" for="staffing4">Ya</label>
-                                    </div>
-                                    <div class="d-inline-block custom-control custom-checkbox">
-                                      <input type="radio" name="pertanggungan_gempa" class="custom-control-input"
-                                        id="catering4" value="0" onclick="ShowHideDivGempaBumi()">
-                                      <label class="custom-control-label" for="catering4">Tidak</label>
-                                    </div>
-                                  </div>
-                                  <br>
-                                  <input style="display: none" type="text" class="form-control required"
-                                    id="nilai_pertanggungan_gempa" name="nilai_pertanggungan_gempa"
-                                    placeholder="Harga pertanggungan gempa bumi dan letusan gunung berapi">
-                                </div>
 
 
                                 <!-- <div class="form-group">
@@ -855,73 +856,9 @@
         });
       </script>
       
+ <!-- Gempa -->
 
-      <!-- Banjir -->
-      <script type="text/javascript">
-        $(document).ready(function () {
-          $("#zona_banjir").append('<option value="">Zona Banjir</option>');
-          url = 'get_zona_banjir.php';
-          $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: 'json',
-            success: function (result) {
-              for (var i = 0; i < result.length; i++)
-                $("#zona_banjir").append('<option value="' + result[i].id_zona_banjir + '">' + result[i]
-                  .nilai_zona +
-                  '</option>');
-            }
-          });
-        });
-
-        $(document).ready(function () {
-          $("#daerah_banjir").append('<option value="">Daerah Banjir</option>');
-          url = 'get_daerah_zona_banjir.php';
-
-          $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: 'json',
-            success: function (result) {
-              for (var i = 0; i < result.length; i++)
-                $("#daerah_banjir").append('<option value="' + result[i].id_daerah + '">' + result[i]
-                  .nama +
-                  '</option>');
-            }
-          });
-        });
-
-        $("#daerah_banjir").change(function () {
-          var id_daerah = $("#daerah_banjir").val();
-          var id_zona_banjir = $("#zona_banjir").val();
-          var url = 'get_nilai_zona_banjir.php?id_daerah=' + id_daerah + '&id_zona_banjir=' + id_zona_banjir;
-          $("#nilai_zona_banjir").html('');
-          $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: 'json',
-            success: function (result) {
-              for (var i = 0; i < result.length; i++)
-                $("#nilai_zona_banjir").append('<option value="' + result[i].id_nilai_banjir + '">' + result[
-                    i].nilai +'</option>');
-
-                    nilai_banjir = result[0].nilai;
-                    perluasanJaminanBanjir = total_nilai_bangunan * (nilai_banjir / 100);
-                    premiDasar = premi_dasar;
-                    huruHara = huru_hara;
-                    biayaPolis = biaya_polis;                  
-                   
-                    $("#nilai_pertanggungan_kerusakan").attr("value", huruHara);
-                    $("#total_pembayaran").attr("value", perluasanJaminanBanjir + premiDasar + huruHara + biayaPolis );
-                    $("#nilai_pertanggungan_banjir").attr("value", perluasanJaminanBanjir);
-
-            }
-          });
-        });
-      </script>
-      <!-- Gempa -->
-
-      <script type="text/javascript">
+ <script type="text/javascript">
         $(document).ready(function () {
           $("#jaminan_gempa").append('<option value="">Jaminan gempa</option>');
           url = 'get_jaminan_gempa.php';
@@ -987,14 +924,81 @@
                   '</option>');
 
                   nilai_jaminan_gempa = result[0].nilai_zona_gempa;  
-                  nilaiGempa = total_nilai_bangunan * (nilai_jaminan_gempa/100);
-
-                  $("#nilai_pertanggungan_gempa").attr("value", nilaiGempa);
+                  // nilaiGempa = total_nilai_bangunan * (nilai_jaminan_gempa/100);
+                  // $("#nilai_pertanggungan_gempa").attr("value", nilaiGempa);
 
             }      
           });
         });
       </script>
+      <!-- Banjir -->
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $("#zona_banjir").append('<option value="">Zona Banjir</option>');
+          url = 'get_zona_banjir.php';
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#zona_banjir").append('<option value="' + result[i].id_zona_banjir + '">' + result[i]
+                  .nilai_zona +
+                  '</option>');
+            }
+          });
+        });
+
+        $(document).ready(function () {
+          $("#daerah_banjir").append('<option value="">Daerah Banjir</option>');
+          url = 'get_daerah_zona_banjir.php';
+
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#daerah_banjir").append('<option value="' + result[i].id_daerah + '">' + result[i]
+                  .nama +
+                  '</option>');
+            }
+          });
+        });
+
+        $("#daerah_banjir").change(function () {
+          var id_daerah = $("#daerah_banjir").val();
+          var id_zona_banjir = $("#zona_banjir").val();
+          var url = 'get_nilai_zona_banjir.php?id_daerah=' + id_daerah + '&id_zona_banjir=' + id_zona_banjir;
+          $("#nilai_zona_banjir").html('');
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (result) {
+              for (var i = 0; i < result.length; i++)
+                $("#nilai_zona_banjir").append('<option value="' + result[i].id_nilai_banjir + '">' + result[
+                    i].nilai +'</option>');
+
+                    nilai_banjir = result[0].nilai;
+                    perluasanJaminanBanjir = total_nilai_bangunan * (nilai_banjir / 100);
+                    premiDasar = premi_dasar;
+                    huruHara = huru_hara;
+                    biayaPolis = biaya_polis;                  
+                    nilaiGempa = total_nilai_bangunan * (nilai_jaminan_gempa/100);
+                    
+                    total_pembayaran = nilaiGempa + perluasanJaminanBanjir + premiDasar + huruHara +biayaPolis;
+
+                    $("#nilai_pertanggungan_gempa").attr("value", nilaiGempa);
+                    $("#nilai_pertanggungan_kerusakan").attr("value", huruHara);
+                    $("#total_pembayaran").attr("value", total_pembayaran);
+                    $("#nilai_pertanggungan_banjir").attr("value", perluasanJaminanBanjir);
+
+            }
+          });
+        });
+      </script>
+     
 
 
 

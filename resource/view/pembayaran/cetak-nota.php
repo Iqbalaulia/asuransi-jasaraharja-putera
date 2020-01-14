@@ -51,21 +51,27 @@ $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,1);
 
+$pdf->SetFont('Arial','B',12);
 $pdf->Cell(20,7,'',0,0);
-$pdf->Cell(40,7,$polis['tertanggung'],0,0);
+$pdf->Cell(40,7,strtoupper($polis['tertanggung']),0,0);
 $pdf->Cell(50,7,'',0,0);
 $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,1);
 $i++;
 
+$pdf->SetFont('Arial','',12);
 $pdf->Cell(20,7,'',0,0);
 $pdf->Cell(40,7,$polis['alamat'],0,0);
 $pdf->Cell(50,7,'',0,0);
 $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,1);
 $pdf->Cell(30,7,$polis[''],0,1);
 
+
+$pdf->SetFont('Arial','B',12);
 $pdf->Cell(20,7,'',0,0);
 $pdf->Cell(40,7,'Kami telah menerimah pembayaran berikut ini :',0,0);
 $pdf->Cell(50,7,'',0,0);
@@ -74,48 +80,152 @@ $pdf->Cell(30,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,1);
 
 
-
+$pdf->SetFont('Arial','',12);
+$pdf->Cell(20,7,'',0,0);
+$pdf->Cell(40,7,'Jumlah Pembayaran :',0,0);
 $pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Alamat  ',0,0);
-$pdf->Cell(100,7,$polis['alamat'],0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+
+
+$pdf->SetFont('Arial','',12);
+
+$harga_dibayarkan = $polis['total_kembalian'] + $polis['harga_pertanggungan'];
+
+$pdf->Cell(-120,7,'',0,0);
+$pdf->Cell(-120,7,number_format($harga_dibayarkan,2,'.',','),0,0);
+$pdf->Cell(-120,7,'',0,0);
+$pdf->Cell(-120,7,$polis[''],0,0);
+$pdf->Cell(-120,7,$polis[''],0,1);
+
+$pdf->SetFont('Arial','',12);
+$pdf->Cell(20,7,'',0,0);
+$pdf->Cell(40,7,'Harga Pertanggungan :',0,0);
+$pdf->Cell(50,7,'',0,0);
+$pdf->Cell(20,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+$pdf->Cell(30,7,$polis[''],0,0);
+
+
+$pdf->SetFont('Arial','',12);
+
+$harga_dibayarkan = $polis['total_kembalian'] + $polis['harga_pertanggungan'];
+
+$pdf->Cell(-120,7,'',0,0);
+$pdf->Cell(-120,7,number_format($polis['harga_pertanggungan'],2,'.',','),0,0);
+$pdf->Cell(-120,7,'',0,0);
+$pdf->Cell(-120,7,$polis[''],0,0);
+$pdf->Cell(-120,7,$polis[''],0,1);
+
+$pdf->Cell(20,7,'',0,0);
+$pdf->Cell(40,2,'                                                                    __',0,0);
+$pdf->Cell(50,7,'',0,0);
 $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,1);
 
+$pdf->Cell(20,7,'',0,0);
+$pdf->Cell(40,2,'____________________________________',0,0);
 $pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Obyek Pertanggungan  ',0,0);
-$pdf->Cell(50,7,$polis['obyek_pertanggungan'],0,0);
 $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,1);
 
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Harga Pertanggungan  ',0,0);
-$pdf->Cell(50,7,$polis['harga_pertanggungan'],0,0);
-$pdf->Cell(20,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,1);
 
+$pdf->SetFont('Arial','',12);
+$pdf->Cell(20,7,'',0,0);
+$pdf->Cell(40,7,'Uang Kembalian :',0,0);
 $pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Luas Jaminan  ',0,0);
-$pdf->Cell(50,7,$polis['luas_jaminan'],0,0);
 $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,1);
+$pdf->Cell(30,7,$polis[''],0,0);
 
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Lokasi Obyek ',0,0);
-$pdf->Cell(50,7,$polis['lokasi_obyek'],0,0);
-$pdf->Cell(20,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,1);
 
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Jangka Waktu  ',0,0);
-$pdf->Cell(50,7,$polis['jangka_waktu'],0,0);
-$pdf->Cell(20,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,1);
+$pdf->SetFont('Arial','',12);
+
+$harga_dibayarkan = $polis['total_kembalian'] + $polis['harga_pertanggungan'];
+
+$pdf->Cell(-120,7,'',0,0);
+$pdf->Cell(-120,7,number_format($polis['total_kembalian'],2,'.',','),0,0);
+$pdf->Cell(-120,7,'',0,0);
+$pdf->Cell(-120,7,$polis[''],0,0);
+$pdf->Cell(-120,7,$polis[''],0,1);
+
+
+
+$pdf->SetFont('Arial','B',12);
+$pdf->Cell(183,7,'',0,0);
+$pdf->Cell(63,-90,'No. Polis :',0,0);
+$pdf->Cell(183,-90,$polis['no_polis'],0,0);
+$pdf->Cell(183,7,$polis[''],0,0);
+$pdf->Cell(183,7,$polis[''],0,0);
+$pdf->Cell(183,7,$polis[''],0,1);
+$pdf->SetFont('Arial','',12);
+
+$pdf->Cell(183,7,'',0,0);
+$pdf->Cell(64,-90,'Biaya Materai :',0,0);
+$pdf->Cell(183,-90,number_format(3000,2,'.',','),0,0);
+$pdf->Cell(183,7,$polis[''],0,0);
+$pdf->Cell(183,7,$polis[''],0,0);
+$pdf->Cell(183,7,$polis[''],0,1);
+
+$pdf->Cell(183,7,'',0,0);
+$pdf->Cell(60,-90,'Cara Bayar :',0,0);
+$pdf->SetFont('Arial','B',12);
+$pdf->Cell(183,-90,'Auto Debit',0,0);
+$pdf->Cell(183,7,$polis[''],0,0);
+$pdf->Cell(183,7,$polis[''],0,0);
+$pdf->Cell(183,7,$polis[''],0,1);
+$pdf->SetFont('Arial','',12);
+
+$pdf->Cell(183,7,'',0,0);
+$pdf->Cell(50,-90,'Tanggal Jatuh Tempo :',0,0);
+$pdf->Cell(183,-90,date('d F Y', strtotime($polis['jangka_waktu'])),0,0);
+$pdf->Cell(183,7,$polis[''],0,0);
+$pdf->Cell(183,7,$polis[''],0,0);
+$pdf->Cell(183,7,$polis[''],0,1);
+
+$pdf->Cell(183,7,'',0,0);
+$pdf->Cell(50,-90,'Tanggal Bayar :',0,0);
+$pdf->Cell(183,-90,date('d F Y',strtotime($polis['batas_waktu'])),0,0);
+$pdf->Cell(183,7,$polis[''],0,0);
+$pdf->Cell(183,7,$polis[''],0,0);
+$pdf->Cell(183,7,$polis[''],0,1);
+// $pdf->Cell(50,7,'',0,0);
+// $pdf->Cell(50,7,'Obyek Pertanggungan  ',0,0);
+// $pdf->Cell(50,7,$polis['obyek_pertanggungan'],0,0);
+// $pdf->Cell(20,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,1);
+
+// $pdf->Cell(50,7,'',0,0);
+// $pdf->Cell(50,7,'Harga Pertanggungan  ',0,0);
+// $pdf->Cell(50,7,$polis['harga_pertanggungan'],0,0);
+// $pdf->Cell(20,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,1);
+
+// $pdf->Cell(50,7,'',0,0);
+// $pdf->Cell(50,7,'Luas Jaminan  ',0,0);
+// $pdf->Cell(50,7,$polis['luas_jaminan'],0,0);
+// $pdf->Cell(20,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,1);
+
+// $pdf->Cell(50,7,'',0,0);
+// $pdf->Cell(50,7,'Lokasi Obyek ',0,0);
+// $pdf->Cell(50,7,$polis['lokasi_obyek'],0,0);
+// $pdf->Cell(20,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,1);
+
+// $pdf->Cell(50,7,'',0,0);
+// $pdf->Cell(50,7,'Jangka Waktu  ',0,0);
+// $pdf->Cell(50,7,$polis['jangka_waktu'],0,0);
+// $pdf->Cell(20,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,1);
 
 $pdf->SetFont('Arial','',8);
 }
@@ -128,26 +238,20 @@ $pdf->SetFont('Arial','',8);
 // $pdf->Cell(80,7,'',0,0);
 // $pdf->Cell(80,7,'Surabaya',0,0);
 $pdf->SetFont('Arial','B',12);
-$pdf->Cell(10,7,'',0,1);
-$pdf->Cell(65,7,'',0,0);
-$pdf->Cell(65,7,'',0,0);
-$pdf->Cell(65,7,'',0,0);
-$pdf->Cell(65,7,'PT. JASARAHARJA PUTERA  ',0,0);
+$pdf->Cell(61,7,'',0,1);
+$pdf->Cell(61,7,'',0,0);
+$pdf->Cell(61,7,'',0,0);
+$pdf->Cell(61,7,'',0,0);
+$pdf->Cell(61,-70,'PT. JASARAHARJA PUTERA  ',0,0);
 
 
 $pdf->SetFont('Arial','',12);
-$pdf->Cell(10,7,'',0,1);
-$pdf->Cell(65,7,'',0,0);
-$pdf->Cell(65,7,'',0,0);
-$pdf->Cell(65,7,'',0,0);
-$pdf->Cell(65,7,'Tanggal: '.date('d F Y'),0,0);
+$pdf->Cell(61,7,'',0,1);
+$pdf->Cell(61,7,'',0,0);
+$pdf->Cell(61,7,'',0,0);
+$pdf->Cell(61,7,'',0,0);
+$pdf->Cell(61,-70,'Tanggal: '.date('d F Y'),0,0);
 
-
-$pdf->Cell(10,7,'',0,1);
-$pdf->Cell(10,7,'',0,1);
-$pdf->Cell(10,7,'',0,1);
-$pdf->Cell(10,7,'',0,1);
-$pdf->Cell(10,7,'',0,1);
 
 // $pdf->SetFont('Arial','',10);
 // $pdf->Cell(50,7,'',0,0);
