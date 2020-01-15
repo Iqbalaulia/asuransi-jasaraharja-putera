@@ -10,8 +10,7 @@
       <meta name="keywords"
         content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
       <meta name="author" content="PIXINVENT">
-      <title>Notification Style - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template +
-        Bitcoin Dashboard</title>
+      <title>Customer</title>
       <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
       <link rel="shortcut icon" type="image/x-icon" href=" app-assets/images/ico/favicon.ico">
       <link
@@ -628,7 +627,7 @@
   </div>
 </div>
 <br>
-<input style="display: none" type="text" class="form-control required"
+<input readonly style="display: none" type="text" class="form-control required"
   id="nilai_pertanggungan_gempa" name="nilai_pertanggungan_gempa"
   placeholder="Harga pertanggungan gempa bumi dan letusan gunung berapi">
 </div>

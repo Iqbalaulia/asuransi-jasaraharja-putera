@@ -114,7 +114,7 @@ $result = mysqli_query($koneksi, "SELECT id,nama_lengkap,no_telp,alamat_pemohon,
                                                                     href='form-customer-edit.php?id=<?php echo $form_customer['id'] ?>'>
                                                                     <button type="button"
                                                                         class="btn btn-primary mr-1 mb-1"><i
-                                                                            class="icon-pencil"></i></button>
+                                                                            class="icon-pencil" data-toggle="tooltip" data-placement="top" title="Edit data"></i></button>
                                                                 </a>
 
 
@@ -123,7 +123,7 @@ $result = mysqli_query($koneksi, "SELECT id,nama_lengkap,no_telp,alamat_pemohon,
                                                                 <a
                                                                     href='form_delete_customer.php?id=<?php echo $form_customer['id'] ?>'>
                                                                     <button type="button"
-                                                                        class="btn btn-danger mr-1 mb-1"><i
+                                                                        class="btn btn-danger mr-1 mb-1" data-toggle="tooltip" data-placement="top" title="Delete data"><i
                                                                             class="icon-trash"></i></button>
 
                                                                 </a>
@@ -138,7 +138,7 @@ $result = mysqli_query($koneksi, "SELECT id,nama_lengkap,no_telp,alamat_pemohon,
                                                                         <a
                                                                             href="form-polis-customer.php?id=<?php echo $form_customer['id'] ?>">
                                                                             <button type="submit" name="approved"
-                                                                                class="btn btn-info mr-1 mb-1"> <i
+                                                                                class="btn btn-info mr-1 mb-1" data-toggle="tooltip" data-placement="top" title="Pembuatan form polis"> <i
                                                                                     class="icon-docs"></i></button>
                                                                         </a>
                                                                     </div>
@@ -151,16 +151,16 @@ $result = mysqli_query($koneksi, "SELECT id,nama_lengkap,no_telp,alamat_pemohon,
                                                                     <input type="hidden" name="id"
                                                                         value=<?php echo $form_customer['id'];?>>
                                                                     <button type="submit" name="approved"
-                                                                        class="btn btn-success mr-1 mb-1"> <i
-                                                                            class="icon-check"></i></button>
+                                                                        class="btn btn-success mr-1 mb-1" data-toggle="tooltip" data-placement="top" title="Accept Polis"> <i
+                                                                            class="icon-check" ></i></button>
                                                                 </form>
                                                             </div>
                                                             &nbsp;
                                                             <div class="col-md-2">
                                                                 <a
-                                                                    href="https://api.whatsapp.com/send?phone=<?php echo $form_customer['no_telp'] ?>&text=Kepada%20Bapak/Ibu%20<?php echo $form_customer['nama_lengkap'] ?>%20diberitahukan,%20bahwa%20pengajuan%20Asuransi%20anda%20telah%20kami%20terima.%20Mohon%20segera%20konfirmasi%20pengajuannya%20dengan%20membalas%20pesan%20ini.">
+                                                                    href="https://api.whatsapp.com/send?phone=<?php echo $form_customer['no_telp'] ?>&text=Kepada%20Bapak/Ibu%20<?php echo $form_customer['nama_lengkap'] ?>%20diberitahukan,%20bahwa%20pengajuan%20Asuransi%20anda%20telah%20kami%20terima.%20Mohon%20segera%20konfirmasi%20pengajuannya%20dengan%20membalas%20pesan%20ini." data-toggle="tooltip" data-placement="top" title="Hubungi customer">
                                                                     <button type="submit" name="approved"
-                                                                        class="btn btn-success mr-1 mb-1"> <i
+                                                                        class="btn btn-success mr-1 mb-1" > <i
                                                                             class="icon-call-out"></i></button>
                                                                 </a>
                                                             </div>

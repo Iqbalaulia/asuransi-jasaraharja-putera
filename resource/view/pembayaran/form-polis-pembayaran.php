@@ -2,7 +2,7 @@
 <html class="loading" lang="en" data-textdirection="ltr">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description"
@@ -13,27 +13,27 @@
     <title>Dashboard sales - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
         Dashboard
     </title>
-    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
         rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/css/vendors.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/datatables.min.css">
     <!-- END VENDOR CSS-->
     <!-- BEGIN MODERN CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/app.css">
     <!-- END MODERN CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu-modern.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu-modern.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/fonts/simple-line-icons/style.min.css">
 
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END Custom CSS-->
 </head>
 
@@ -50,14 +50,14 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
     <!-- fixed-top-->
     <?php
       // include database connection file
-      include_once("connection.php");
+      include_once("../../../connection.php");
       $id = $_GET['id'];
       // Fetech user data based on id
       $result = mysqli_query($koneksi, "SELECT * FROM form_polis WHERE id=$id");
       ?>
-    <?php include('navbar.php') ?>
+    <?php include('navbar_pembayaran.php') ?>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
-    <?php include('navbar_right.php')?>
+    <?php include('navbar_pembayaran_right.php')?>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
     <div class="app-content content">
@@ -191,7 +191,7 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                 <tr>
                                                     <td style="width:30%"><label>Status Pembayaran &nbsp;</label></td>
                                                     <td>
-                                                        <input type="text" class="form-control required"
+                                                        <input readonly type="text" class="form-control required"
                                                             id="emailAddress5" name="lokasi_obyek"" value="<?php echo $form_polis['status_pembayaran'] ?>">
                                                     </td>
                                                 </tr>

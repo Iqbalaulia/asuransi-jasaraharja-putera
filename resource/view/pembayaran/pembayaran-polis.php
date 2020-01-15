@@ -13,28 +13,27 @@
     <title>Dashboard sales - Modern Admin - Clean Bootstrap 4 Dashboard HTML Template + Bitcoin
         Dashboard
     </title>
-    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
         rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/css/vendors.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/tables/datatable/datatables.min.css">
     <!-- END VENDOR CSS-->
     <!-- BEGIN MODERN CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/app.css">
     <!-- END MODERN CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu-modern.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/fonts/simple-line-icons/style.min.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/fonts/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/menu/menu-types/vertical-menu-modern.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/fonts/simple-line-icons/style.min.css">
 
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END Custom CSS-->
 </head>
 
@@ -42,7 +41,7 @@
     data-menu="vertical-menu-modern" data-col="2-columns">
     <?php
 // Create database connection using config file
-include_once("connection.php");
+include_once("../../../connection.php");
 
 // Fetch all users data from database
 $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,jangka_waktu,batas_waktu,lokasi_obyek,alamat,status_polis,status_pembayaran FROM form_polis");
@@ -56,9 +55,9 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
 		header("location:index.php?pesan=gagal");
 	}
 	?>
-    <?php include('navbar.php') ?>
+    <?php include('navbar_pembayaran.php') ?>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
-    <?php include('navbar_right.php')?>
+    <?php include('navbar_pembayaran_right.php')?>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
     <div class="app-content content">
@@ -73,7 +72,7 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Customer Jasarahaja</h4>
+                                    <h4 class="card-title">Laporan Keuangan</h4>
                                     <a class="heading-elements-toggle"><i
                                             class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
@@ -96,7 +95,8 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <th>Nomor Telepon</th>
                                                     <th>Obyek Pertanggungan</th>
                                                     <th>Harga Pertanggungan</th>
-                                                    <th></th>
+                                                    <th>Status Pembayaran</th>
+                                                    <th>Pembayaran Polis</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -112,68 +112,33 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <td><?php echo $form_polis['no_telp'] ?></td>
                                                     <td><?php echo $form_polis['obyek_pertanggungan'] ?></td>
                                                     <td><?php echo $form_polis['harga_pertanggungan'] ?></td>
+                                                    <td><?php echo $form_polis['status_pembayaran'] ?></td>
                                                     <td>
-                                                        <div class="row">
-                                                            <?php if($form_polis['status_polis'] == 'Telah Dicetak'){ ?>
-                                                            <!-- <div class="col-md-3">
-                                                                <a hidden
-                                                                    href="form-polis-edit.php?id=<?php echo $form_polis['id'];?>">
-                                                                    <button type="submit" name="approved"
-                                                                        class="btn btn-primary mb-1"> <i
-                                                                            class="icon-pencil"></i> Edit </button>
-                                                                </a>
-                                                            </div>
-                                                            <div class="col-md-3">
-                                                                <a hidden
-                                                                    href="form-preview-polis.php?id=<?php echo $form_polis['id'];?>">
-                                                                    <button type="submit" name="approved"
-                                                                        class="btn btn-success mr-1 mb-1"> <i
-                                                                            class="icon-eye"></i> Preview</button>
-                                                                </a>
-                                                            </div> -->
-                                                            <?php }else { ?>
-                                                                <a href="form-preview-polis.php?id=<?php echo $form_polis['id'];?>">
+                                                        <?php if($form_polis['status_pembayaran'] == 'Lunas') { ?>
+                                                        <form action="cetak-nota.php?id=<?php echo $form_polis['id'];?>"
+                                                            method="post">
+                                                            <a href="" data-toggle="tooltip" data-placement="top" title="Cetak Nota Polis">
                                                                 <button type="submit" name="approved"
-                                                                    class="btn btn-success mb-1" style="width:100%"> <i
-                                                                        class="icon-eye">
-                                                                        Preview Polis</i>
+                                                                    class="btn btn-success mr-1 mb-1"> <i
+                                                                        class="icon-printer"></i>
+                                                                    Cetak Nota
+                                                                    <input type="text" name="status_nota" hidden
+                                                                        value="Telah Dicetak">
+
                                                                 </button>
                                                             </a>
-                                                            <div class="col-md-3">
-                                                                <a href="form-polis-edit.php?id=<?php echo $form_polis['id'];?>">
-                                                                    <button type="submit" name="approved"
-                                                                        class="btn btn-primary mb-1 mr-5"> <i
-                                                                            class="la la-edit"></i> </button>
-                                                                </a>
-                                                            </div>
-                                                            <!-- <div class="col-md-3">
-                                                                <a
-                                                                    href="form-polis-pembayaran.php?id=<?php echo $form_polis['id'];?>">
-                                                                    <button type="submit" name="approved"
-                                                                        class="btn btn-success mr-1 mb-1"> <i class="la la-money"></i> </button>
-                                                                </a>
-                                                            </div> -->
-                                                            
-                                                            <!-- <div class="col-md-3">
-                                                                <a
-                                                                    href="form-polis-pembayaran.php?id=<?php echo $form_polis['id'];?>">
-                                                                    <button type="submit" name="approved"
-                                                                        class="btn btn-success mr-1 mb-1"> <i
-                                                                            class="la la-money"></i> </button>
-                                                                </a>
-                                                            </div> -->
-
-                                                            <!-- <div class="col-md-3">
-                                                                <a
-                                                                    href="form-preview-polis.php?id=<?php echo $form_polis['id'];?>">
-                                                                    <button type="submit" name="approved"
-                                                                        class="btn btn-success mr-1 mb-1"> <i
-                                                                            class="icon-eye"></i> </button>
-                                                                </a>
-                                                            </div> -->
-                                                            <?php }?>
-
+                                                        </form>
+                                                        <?php }else { ?>
+                                                        <div class="col-md-3">
+                                                            <a
+                                                                href="form-polis-pembayaran.php?id=<?php echo $form_polis['id'];?>" 
+                                                                data-toggle="tooltip" data-placement="top" title="Pembayaran Polis">
+                                                                <button type="submit" name="approved"
+                                                                    class="btn btn-success mr-1 mb-1"> <i
+                                                                        class="la la-money"></i> </button>
+                                                            </a>
                                                         </div>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                                 <?php } ?>
@@ -186,7 +151,8 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
                                                     <th>Nomor Telepon</th>
                                                     <th>Obyek Pertanggungan</th>
                                                     <th>Harga Pertanggungan</th>
-                                                    <th></th>
+                                                    <th>Status Pembayaran</th>
+                                                    <th>Pembayaran Polis</th>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -213,18 +179,18 @@ $result = mysqli_query($koneksi, "SELECT id,no_polis,tertanggung,no_telp,obyek_p
         </p>
     </footer>
     <!-- BEGIN VENDOR JS-->
-    <script src="app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <script src="../../../app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="app-assets/vendors/js/tables/datatable/datatables.min.js" type="text/javascript"></script>
+    <script src="../../../app-assets/vendors/js/tables/datatable/datatables.min.js" type="text/javascript"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN MODERN JS-->
-    <script src="app-assets/js/core/app-menu.js" type="text/javascript"></script>
-    <script src="app-assets/js/core/app.js" type="text/javascript"></script>
-    <script src="app-assets/js/scripts/customizer.js" type="text/javascript"></script>
+    <script src="../../../app-assets/js/core/app-menu.js" type="text/javascript"></script>
+    <script src="../../../app-assets/js/core/app.js" type="text/javascript"></script>
+    <script src="../../../app-assets/js/scripts/customizer.js" type="text/javascript"></script>
     <!-- END MODERN JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="app-assets/js/scripts/tables/datatables/datatable-basic.js" type="text/javascript"></script>
+    <script src="../../../app-assets/js/scripts/tables/datatables/datatable-basic.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
 </body>
 

@@ -190,7 +190,7 @@
                                     placeholder="Nama lengkap" value="<?php echo $total_keseluruhan?>">
                                 </div>
                               </div>
-                              <div class="col-md-12">
+                              <!-- <div class="col-md-12">
                                 <div class="form-group">
                                   <label for="firstName3">
                                     Luas Jaminan
@@ -199,7 +199,7 @@
                                   <input type="number" class="form-control required" id="firstName3" name="luas_jaminan"
                                     placeholder="Nama lengkap" value="" required>
                                 </div>
-                              </div>
+                              </div> -->
                                   <div class="col-md-6">
                                     <div class="form-group">
                                       <label for="date3">Jangka waktu pertanggungan yang diminta <span

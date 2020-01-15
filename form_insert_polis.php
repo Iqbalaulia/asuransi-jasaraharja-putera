@@ -29,7 +29,7 @@ if ($datakode) {
     $no_telp = $_POST['no_telp'];
     $obyek_pertanggungan = $_POST['obyek_pertanggungan'];
     $harga_pertanggungan = $_POST['harga_pertanggungan'];
-    $luas_jaminan = $_POST['luas_jaminan'];
+    // $luas_jaminan = $_POST['luas_jaminan'];
     $jangka_waktu = $_POST['jangka_waktu'];
     $batas_waktu = $_POST['batas_waktu'];
     $lokasi_obyek = $_POST['lokasi_obyek'];
@@ -38,9 +38,9 @@ if ($datakode) {
   
 // menginput data ke database
 mysqli_query($koneksi,"INSERT INTO form_polis 
-(id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,luas_jaminan,
+(id,no_polis,tertanggung,no_telp,obyek_pertanggungan,harga_pertanggungan,
 jangka_waktu,batas_waktu,lokasi_obyek,alamat) VALUES
-(NULL,'$no_polis','$tertanggung','$no_telp','$obyek_pertanggungan','$harga_pertanggungan','$luas_jaminan',
+(NULL,'$no_polis','$tertanggung','$no_telp','$obyek_pertanggungan','$harga_pertanggungan',
 '$jangka_waktu','$batas_waktu','$lokasi_obyek','$alamat')");
 
 // mengalihkan halaman kembali ke index.php

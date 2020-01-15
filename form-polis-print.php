@@ -99,12 +99,12 @@ $pdf->Cell(20,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,0);
 $pdf->Cell(30,7,$polis[''],0,1);
 
-$pdf->Cell(50,7,'',0,0);
-$pdf->Cell(50,7,'Luas Jaminan  ',0,0);
-$pdf->Cell(50,7,$polis['luas_jaminan'],0,0);
-$pdf->Cell(20,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,0);
-$pdf->Cell(30,7,$polis[''],0,1);
+// $pdf->Cell(50,7,'',0,0);
+// $pdf->Cell(50,7,'Luas Jaminan  ',0,0);
+// $pdf->Cell(50,7,$polis['luas_jaminan'],0,0);
+// $pdf->Cell(20,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,0);
+// $pdf->Cell(30,7,$polis[''],0,1);
 
 $pdf->Cell(50,7,'',0,0);
 $pdf->Cell(50,7,'Lokasi Obyek ',0,0);
